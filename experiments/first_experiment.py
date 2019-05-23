@@ -9,14 +9,16 @@ sys.path.append(abspath('.'))
 import numpy as np
 
 from art.attacks.carlini import CarliniL2Method
-from art.utils import load_dataset
+from art.utils import load_mnist_vectorized
 from experiment_models import neural_networks
 
 # Read MNIST dataset
-(x_train, y_train), (x_test, y_test), min_, max_ = load_dataset(str('mnist'))
+(x_train, y_train), (x_test, y_test), min_, max_ = load_mnist_vectorized()
 
-classifier = neural_networks.three_layer_dnn(x_train.shape[1:])
-classifier.fit(x_train, y_train, nb_epochs=5, batch_size=128)
+print(x_train.shape)
+
+classifier = neural_networks.three_layer_dnn(x_train.shape[1:], 300, 100)
+classifier.fit(x_train, y_train, nb_epochs=5, batch_size=256)
 
 # Evaluate the classifier on the test set
 preds = np.argmax(classifier.predict(x_test), axis=1)
@@ -25,7 +27,7 @@ print("\nTest accuracy: %.2f%%" % (acc * 100))
 
 # Craft adversarial samples with CW attack
 epsilon = .1  # Maximum perturbation
-adv_crafter = CarliniL2Method(classifier)
+adv_crafter = CarliniL2Method(classifier, targeted=False)
 x_test_adv = adv_crafter.generate(x=x_test[:100])
 
 # Evaluate the classifier on the adversarial examples

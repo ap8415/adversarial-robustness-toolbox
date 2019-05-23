@@ -455,6 +455,39 @@ def load_mnist(raw=False):
     return (x_train, y_train), (x_test, y_test), min_, max_
 
 
+def load_mnist_vectorized(raw=False):
+    """Loads MNIST dataset from `DATA_PATH` or downloads it if necessary, then reshapes it into vector form
+    (1D 784-entry array instead of 2D 28x28-entry matrix with 1 channel) to be used in a DNN.
+
+    :param raw: `True` if no preprocessing should be applied to the data. Otherwise, data is normalized to 1.
+    :type raw: `bool`
+    :return: `(x_train, y_train), (x_test, y_test), min, max`
+    :rtype: `(np.ndarray, np.ndarray), (np.ndarray, np.ndarray), float, float`
+    """
+    from art import DATA_PATH
+
+    path = get_file('mnist.npz', path=DATA_PATH, url='https://s3.amazonaws.com/img-datasets/mnist.npz')
+
+    f = np.load(path)
+    x_train = f['x_train']
+    y_train = f['y_train']
+    x_test = f['x_test']
+    y_test = f['y_test']
+    f.close()
+
+    x_train = x_train.reshape(60000, 784)
+    x_test = x_test.reshape(10000, 784)
+
+    # Add channel axis
+    min_, max_ = 0, 255
+    if not raw:
+        min_, max_ = 0., 1.
+        x_train, y_train = preprocess(x_train, y_train)
+        x_test, y_test = preprocess(x_test, y_test)
+
+    return (x_train, y_train), (x_test, y_test), min_, max_
+
+
 def load_stl():
     """
     Loads the STL-10 dataset from `DATA_PATH` or downloads it if necessary.

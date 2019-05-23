@@ -22,8 +22,10 @@ def two_layer_dnn(input_shape):
 
 # Mostly use 300-100 and 500-150 variations as described in MNIST homepage
 def three_layer_dnn(input_shape, layer1_size, layer2_size):
+    print(input_shape)
+
     model = Sequential()
-    model.add(Dense(layer1_size, input_shape=(input_shape,), activation='relu'))
+    model.add(Dense(layer1_size, input_shape=input_shape, activation='relu'))
     model.add(Dense(layer2_size, activation='relu'))
     model.add(Dense(10, activation='softmax'))
 
