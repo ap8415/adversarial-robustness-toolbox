@@ -26,9 +26,9 @@ def three_layer_dnn(input_shape, layer1_size, layer2_size):
 
     model = Sequential()
     model.add(Dense(layer1_size, input_shape=input_shape, activation='relu'))
-    model.add(Dropout(0.25))
+    model.add(Dropout(0.75))
     model.add(Dense(layer2_size, activation='relu'))
-    model.add(Dropout(0.25))
+    model.add(Dropout(0.75))
     model.add(Dense(10, activation='softmax'))
 
     model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
