@@ -28,12 +28,12 @@ def three_layer_dnn(input_shape, layer1_size, layer2_size, dropout, l1_reg, l2_r
     model.add(Dense(layer1_size,
                     input_shape=input_shape,
                     activation='relu',
-                    activity_regularizer=regularizers.l1_l2(l1_reg, l2_reg)))
+                    kernel_regularizer=regularizers.l1_l2(l1_reg, l2_reg)))
     if dropout > 0:
         model.add(Dropout(dropout))
     model.add(Dense(layer2_size,
                     activation='relu',
-                    activity_regularizer=regularizers.l1_l2(l1_reg, l2_reg)))
+                    kernel_regularizer=regularizers.l1_l2(l1_reg, l2_reg)))
     if dropout > 0:
         model.add(Dropout(dropout))
     model.add(Dense(10, activation='softmax'))
