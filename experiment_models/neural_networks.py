@@ -1,6 +1,7 @@
 import keras.backend as k
 from keras.models import Sequential
 from keras.layers import Dense, Flatten, Conv2D, MaxPooling2D, Dropout
+from keras import regularizers
 import numpy as np
 
 from art.classifiers import KerasClassifier
@@ -21,14 +22,20 @@ def two_layer_dnn(input_shape):
 
 
 # Mostly use 300-100 and 500-150 variations as described in MNIST homepage
-def three_layer_dnn(input_shape, layer1_size, layer2_size):
-    print(input_shape)
+def three_layer_dnn(input_shape, layer1_size, layer2_size, dropout, l1_reg, l2_reg):
 
     model = Sequential()
-    model.add(Dense(layer1_size, input_shape=input_shape, activation='relu'))
-    model.add(Dropout(0.75))
-    model.add(Dense(layer2_size, activation='relu'))
-    model.add(Dropout(0.75))
+    model.add(Dense(layer1_size,
+                    input_shape=input_shape,
+                    activation='relu',
+                    activity_regularizer=regularizers.l1_l2(l1_reg, l2_reg)))
+    if dropout > 0:
+        model.add(Dropout(dropout))
+    model.add(Dense(layer2_size,
+                    activation='relu',
+                    activity_regularizer=regularizers.l1_l2(l1_reg, l2_reg)))
+    if dropout > 0:
+        model.add(Dropout(dropout))
     model.add(Dense(10, activation='softmax'))
 
     model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
