@@ -10,9 +10,12 @@ from art.classifiers import KerasClassifier
 
 
 # Input shape should be 28*28 = 784 for MNIST data
-def two_layer_dnn(input_shape):
+def two_layer_dnn(input_shape, dropout, l1_reg, l2_reg):
     model = Sequential()
-    model.add(Dense(300, input_shape=(input_shape,), activation='relu'))
+    model.add(Dense(300, input_shape=(input_shape,), activation='relu',
+                    kernel_regularizer=regularizers.l1_l2(l1_reg, l2_reg)))
+    if dropout > 0:
+        model.add(Dropout(dropout))
     model.add(Dense(10, activation='softmax'))
 
     model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])

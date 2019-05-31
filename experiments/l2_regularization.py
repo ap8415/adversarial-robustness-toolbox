@@ -18,17 +18,17 @@ from experiment_models import neural_networks
 
 print(x_train.shape)
 
-l2_reg_levels = [0.001, 0.003, 0.005, 0.01, 0.015, 0.025, 0.04]
+l2_reg_levels = [0.0001, 0.0002, 0.0003, 0.0004, 0.0005]
 
 
-for l2_level in range(0, 7):
+for l2_level in range(0, 5):
     classifier = neural_networks.three_layer_dnn(x_train.shape[1:], 300, 100, 0, 0, l2_reg_levels[l2_level])
     classifier.fit(x_train, y_train, nb_epochs=10, batch_size=128)
 
     # Evaluate the classifier on the test set
     preds = np.argmax(classifier.predict(x_test), axis=1)
     acc = np.sum(preds == np.argmax(y_test, axis=1)) / y_test.shape[0]
-    print("\nTest accuracy on L2 regularization level %.2f%%: %.2f%%" % (l2_reg_levels[l2_level], acc * 100))
+    print("\nTest accuracy on L2 regularization level %.5f%%: %.2f%%" % (l2_reg_levels[l2_level], acc * 100))
 
     # Craft adversarial samples with CW attack
     adv_crafter = CarliniL2Method(classifier, targeted=False)
@@ -37,7 +37,7 @@ for l2_level in range(0, 7):
     # Evaluate the classifier on the adversarial examples
     preds = np.argmax(classifier.predict(x_test_adv), axis=1)
     acc = np.sum(preds == np.argmax(y_test, axis=1)) / y_test.shape[0]
-    print("\nTest accuracy on adversarial sample for L2 regularization level %.2f%%: %.2f%%"
+    print("\nTest accuracy on adversarial sample for L2 regularization level %.5f%%: %.2f%%"
           % (l2_reg_levels[l2_level], acc * 100))
 
     # Calculate the average perturbation in L1 and L2 norms. Note that I don't de-normalize the values.
@@ -46,8 +46,8 @@ for l2_level in range(0, 7):
     l2_perturbations = [LA.norm(perturbation, 2) for perturbation in perturbations]
     avg_l1_perturbation = np.average(l1_perturbations)
     avg_l2_perturbation = np.average(l2_perturbations)
-    print("\nAverage L1-norm perturbation from Carlini L2 attack for L2 regularization level %.2f%%: %.2f%%"
+    print("\nAverage L1-norm perturbation from Carlini L2 attack for L2 regularization level %.5f%%: %.2f%%"
           % (l2_reg_levels[l2_level], avg_l1_perturbation))
-    print("\nAverage L2-norm perturbation from Carlini L2 attack for L2 regularization level %.2f%%: %.2f%%"
+    print("\nAverage L2-norm perturbation from Carlini L2 attack for L2 regularization level %.5f%%: %.2f%%"
           % (l2_reg_levels[l2_level], avg_l2_perturbation))
 
