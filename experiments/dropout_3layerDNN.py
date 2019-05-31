@@ -24,7 +24,7 @@ dropout_levels = [0, 0.25, 0.5, 0.75]
 
 for dropout in range(0, 4):
     classifier = neural_networks.three_layer_dnn(x_train.shape[1:], 300, 100, dropout_levels[dropout], 0, 0)
-    classifier.fit(x_train, y_train, nb_epochs=5, batch_size=256)
+    classifier.fit(x_train, y_train, nb_epochs=10, batch_size=128)
 
     # Evaluate the classifier on the test set
     preds = np.argmax(classifier.predict(x_test), axis=1)
