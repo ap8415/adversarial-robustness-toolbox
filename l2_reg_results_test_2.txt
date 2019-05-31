@@ -1,0 +1,41 @@
+(60000, 784)
+
+Test accuracy on L2 regularization level 0.00010%: 98.01%
+
+Test accuracy on adversarial sample for L2 regularization level 0.00010%: 0.00%
+
+Average L1-norm perturbation from Carlini L2 attack for L2 regularization level 0.00010%: 17.78%
+
+Average L2-norm perturbation from Carlini L2 attack for L2 regularization level 0.00010%: 2.45%
+
+Test accuracy on L2 regularization level 0.00020%: 97.76%
+
+Test accuracy on adversarial sample for L2 regularization level 0.00020%: 0.00%
+
+Average L1-norm perturbation from Carlini L2 attack for L2 regularization level 0.00020%: 17.35%
+
+Average L2-norm perturbation from Carlini L2 attack for L2 regularization level 0.00020%: 2.42%
+
+Test accuracy on L2 regularization level 0.00030%: 97.78%
+
+Test accuracy on adversarial sample for L2 regularization level 0.00030%: 0.00%
+
+Average L1-norm perturbation from Carlini L2 attack for L2 regularization level 0.00030%: 17.80%
+
+Average L2-norm perturbation from Carlini L2 attack for L2 regularization level 0.00030%: 2.47%
+
+Test accuracy on L2 regularization level 0.00040%: 97.45%
+
+Test accuracy on adversarial sample for L2 regularization level 0.00040%: 0.00%
+
+Average L1-norm perturbation from Carlini L2 attack for L2 regularization level 0.00040%: 17.96%
+
+Average L2-norm perturbation from Carlini L2 attack for L2 regularization level 0.00040%: 2.48%
+
+Test accuracy on L2 regularization level 0.00050%: 97.97%
+
+Test accuracy on adversarial sample for L2 regularization level 0.00050%: 0.00%
+
+Average L1-norm perturbation from Carlini L2 attack for L2 regularization level 0.00050%: 17.34%
+
+Average L2-norm perturbation from Carlini L2 attack for L2 regularization level 0.00050%: 2.41%
