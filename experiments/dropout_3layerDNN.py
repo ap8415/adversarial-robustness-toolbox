@@ -40,7 +40,8 @@ for dropout in range(0, 4):
     acc = np.sum(preds == np.argmax(y_test, axis=1)) / y_test.shape[0]
     print("\nTest accuracy on adversarial sample for dropout %.2f%%: %.2f%%" % (dropout_levels[dropout], acc * 100))
 
-    perturbations = np.absolute((x_test_adv - x_test[:100]) * 255)  # de-normalize values, take perturbations in abs val
+    # Calculate the average perturbation in L1 and L2 norms. Note that I don't de-normalize the values.
+    perturbations = np.absolute((x_test_adv - x_test[:1000]))
     l1_perturbations = [LA.norm(perturbation, 1) for perturbation in perturbations]
     l2_perturbations = [LA.norm(perturbation, 2) for perturbation in perturbations]
     avg_l1_perturbation = np.average(l1_perturbations)
