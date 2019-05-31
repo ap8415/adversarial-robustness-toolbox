@@ -18,11 +18,11 @@ from experiment_models import neural_networks
 
 print(x_train.shape)
 
-dropout_levels = [0, 0.25, 0.5, 0.75]
+dropout_levels = [0.05, 0.1, 0.15, 0.2, 0.3, 0.4, 0.55, 0.6, 0.65, 0.7]
 # regularization_levels_l2 = [0.001, 0.003, 0.005, 0.01, 0.015, 0.025, 0.04]
 # regularization_levels_l1 = [0.005, 0.01, 0.015, 0.02]
 
-for dropout in range(0, 4):
+for dropout in range(0, 10):
     classifier = neural_networks.three_layer_dnn(x_train.shape[1:], 300, 100, dropout_levels[dropout], 0, 0)
     classifier.fit(x_train, y_train, nb_epochs=10, batch_size=128)
 
