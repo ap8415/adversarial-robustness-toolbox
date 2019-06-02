@@ -1,0 +1,93 @@
+
+Test accuracy on dropout level 0.05%: 98.83%
+
+Test accuracy on adversarial sample for dropout 0.05%: 0.00%
+
+Average L1-norm perturbation from Carlini L2 attack for dropout 0.05%: 16.61%
+
+Average L2-norm perturbation from Carlini L2 attack for dropout 0.05%: 2.53%
+
+
+Test accuracy on dropout level 0.10%: 98.78%
+
+Test accuracy on adversarial sample for dropout 0.10%: 0.00%
+
+Average L1-norm perturbation from Carlini L2 attack for dropout 0.10%: 17.07%
+
+Average L2-norm perturbation from Carlini L2 attack for dropout 0.10%: 2.54%
+
+
+Test accuracy on dropout level 0.15%: 98.89%
+
+Test accuracy on adversarial sample for dropout 0.15%: 0.00%
+
+Average L1-norm perturbation from Carlini L2 attack for dropout 0.15%: 19.69%
+
+Average L2-norm perturbation from Carlini L2 attack for dropout 0.15%: 2.83%
+
+
+Test accuracy on dropout level 0.20%: 98.86%
+
+Test accuracy on adversarial sample for dropout 0.20%: 0.00%
+
+Average L1-norm perturbation from Carlini L2 attack for dropout 0.20%: 20.17%
+
+Average L2-norm perturbation from Carlini L2 attack for dropout 0.20%: 2.86%
+E
+
+Test accuracy on dropout level 0.30%: 98.91%
+
+Test accuracy on adversarial sample for dropout 0.30%: 0.00%
+
+Average L1-norm perturbation from Carlini L2 attack for dropout 0.30%: 19.90%
+
+Average L2-norm perturbation from Carlini L2 attack for dropout 0.30%: 2.87%
+
+
+Test accuracy on dropout level 0.40%: 99.03%
+
+Test accuracy on adversarial sample for dropout 0.40%: 0.00%
+
+Average L1-norm perturbation from Carlini L2 attack for dropout 0.40%: 18.47%
+
+Average L2-norm perturbation from Carlini L2 attack for dropout 0.40%: 2.75%
+
+
+Test accuracy on dropout level 0.55%: 98.94%
+
+Test accuracy on adversarial sample for dropout 0.55%: 0.00%
+
+Average L1-norm perturbation from Carlini L2 attack for dropout 0.55%: 22.35%
+
+Average L2-norm perturbation from Carlini L2 attack for dropout 0.55%: 3.15%
+
+
+
+Test accuracy on dropout level 0.60%: 98.76%
+
+Test accuracy on adversarial sample for dropout 0.60%: 0.00%
+
+Average L1-norm perturbation from Carlini L2 attack for dropout 0.60%: 23.47%
+
+Average L2-norm perturbation from Carlini L2 attack for dropout 0.60%: 3.34%
+
+
+Test accuracy on dropout level 0.65%: 98.83%
+
+Test accuracy on adversarial sample for dropout 0.65%: 0.00%
+
+Average L1-norm perturbation from Carlini L2 attack for dropout 0.65%: 22.96%
+
+Average L2-norm perturbation from Carlini L2 attack for dropout 0.65%: 3.25%
+
+
+
+Test accuracy on dropout level 0.70%: 98.72%
+
+Test accuracy on adversarial sample for dropout 0.70%: 0.00%
+
+Average L1-norm perturbation from Carlini L2 attack for dropout 0.70%: 18.85%
+
+Average L2-norm perturbation from Carlini L2 attack for dropout 0.70%: 2.73%
+
+Process finished with exit code 0
