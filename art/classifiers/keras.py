@@ -308,7 +308,7 @@ class KerasClassifier(Classifier):
             x_preproc, y_preproc = self._apply_defences(x_preproc, y, fit=True)
 
         gen = generator_fit(x_preproc, y_preproc, batch_size)
-        self._model.fit_generator(gen, steps_per_epoch=x_preproc.shape[0] / batch_size, epochs=nb_epochs, verbose = 0,
+        self._model.fit_generator(gen, steps_per_epoch=x_preproc.shape[0] / batch_size, epochs=nb_epochs, verbose=1,
                                   **kwargs)
 
     def fit_generator(self, generator, nb_epochs=20, **kwargs):
