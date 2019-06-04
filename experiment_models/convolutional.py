@@ -55,5 +55,5 @@ def leNet_cnn(dropout_pool1, dropout_pool2, dropout_fc1, dropout_fc2):
     classifier = KerasClassifier(clip_values=(0., 1.), model=model)
     return classifier
 
-def leNet_cnn(dropout):
+def leNet_cnn_single(dropout):
     return leNet_cnn(dropout, dropout, dropout, dropout)

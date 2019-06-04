@@ -1,0 +1,19 @@
+2019-06-04 18:27:50.352550: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-06-04 18:27:50.363116: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3691810000 Hz
+2019-06-04 18:27:50.363792: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55b9134e4c50 executing computations on platform Host. Devices:
+2019-06-04 18:27:50.363816: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-04 18:27:50.466406: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55b912b7d720 executing computations on platform CUDA. Devices:
+2019-06-04 18:27:50.466434: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX TITAN X, Compute Capability 5.2
+2019-06-04 18:27:50.466632: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.2155
+pciBusID: 0000:02:00.0
+totalMemory: 11.93GiB freeMemory: 1.16GiB
+2019-06-04 18:27:50.466647: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-04 18:27:50.467253: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-04 18:27:50.467265: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-04 18:27:50.467270: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-04 18:27:50.467372: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 967 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:02:00.0, compute capability: 5.2)
+2019-06-04 18:27:54.689508: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally
+Using TensorFlow backend.
+experiments/early_vs_late_dropout/dropout.py:72: DeprecationWarning: elementwise comparison failed; this will raise an error in the future.
+  acc = np.sum(preds == np.argmax(y_test, axis=1)) / y_test.shape[0]
