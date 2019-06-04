@@ -51,19 +51,19 @@ def three_layer_dnn(input_shape, layer1_size, layer2_size, dropout, l1_reg, l2_r
 # note: might drop this if it doesnt work even on the gpus
 def six_layer_nn(input_shape, early_dropout, late_dropout):
     model = Sequential()
-    model.add(Dense(2500, input_shape=input_shape, activation='relu'))
+    model.add(Dense(1000, input_shape=input_shape, activation='relu'))
     if early_dropout > 0:
         model.add(Dropout(early_dropout))
-    model.add(Dense(2000, activation='relu'))
+    model.add(Dense(800, activation='relu'))
     if early_dropout > 0:
         model.add(Dropout(early_dropout))
-    model.add(Dense(1500, activation='relu'))
+    model.add(Dense(600, activation='relu'))
     if late_dropout > 0:
         model.add(Dropout(late_dropout))
-    model.add(Dense(1000, activation='relu'))
+    model.add(Dense(400, activation='relu'))
     if late_dropout > 0:
         model.add(Dropout(late_dropout))
-    model.add(Dense(500, activation='relu'))
+    model.add(Dense(300, activation='relu'))
     if late_dropout > 0:
         model.add(Dropout(late_dropout))
     model.add(Dense(10, activation='softmax'))
