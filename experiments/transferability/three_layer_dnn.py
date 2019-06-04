@@ -35,13 +35,13 @@ for dropout in range(0, 16):
 
     # Verify transferability percentage on dropout adversarial examples to baseline model
     baseline_preds = np.argmax(baseline_classifier.predict(x_adv_dropout), axis=1)
-    baseline_transfer = (np.sum(baseline_preds == np.argmax(y_test, axis=1)) / y_test.shape[0]) * 100
+    baseline_transfer = (np.sum(baseline_preds == np.argmax(y_test[:1000], axis=1)) / 1000) * 100
     print("\nAccuracy on adversarial samples generated on the dropout model evaluated by baseline model:"
           "%.3f%%" % baseline_transfer)
 
     # Verify transferability percentage on baseline adversarial examples to dropout model
     dropout_preds = np.argmax(baseline_classifier.predict(x_adv_baseline), axis=1)
-    dropout_transfer = (np.sum(dropout_preds == np.argmax(y_test, axis=1)) / y_test.shape[0]) * 100
+    dropout_transfer = (np.sum(dropout_preds == np.argmax(y_test[:1000], axis=1)) / 1000) * 100
     print("\nAccuracy on adversarial samples generated on the baseline model evaluated by dropout model:"
           "%.3f%%" % dropout_transfer)
 
