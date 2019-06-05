@@ -124,9 +124,9 @@ for confidence in range(1, 6):
     avg_l1_perturbation = np.average(l1_perturbations)
     avg_l2_perturbation = np.average(l2_perturbations)
     print("\nAverage L1-norm perturbation from Carlini L2 attack for dropout %.2f%%: %.2f%%"
-          % (dropout_levels[dropout], avg_l1_perturbation))
+          % (dropout, avg_l1_perturbation))
     print("\nAverage L2-norm perturbation from Carlini L2 attack for dropout %.2f%%: %.2f%%"
-          % (dropout_levels[dropout], avg_l2_perturbation))
+          % (dropout, avg_l2_perturbation))
 
     # WITH DROPOUT
     print('\n\nWITH DROPOUT: \n')
@@ -137,9 +137,9 @@ for confidence in range(1, 6):
     avg_l1_perturbation = np.average(l1_perturbations)
     avg_l2_perturbation = np.average(l2_perturbations)
     print("\nAverage L1-norm perturbation from Carlini L2 attack for dropout %.2f%%: %.2f%%"
-          % (dropout_levels[dropout], avg_l1_perturbation))
+          % (dropout, avg_l1_perturbation))
     print("\nAverage L2-norm perturbation from Carlini L2 attack for dropout %.2f%%: %.2f%%"
-          % (dropout_levels[dropout], avg_l2_perturbation))
+          % (dropout, avg_l2_perturbation))
 
 
 

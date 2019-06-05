@@ -1,0 +1,51 @@
+2019-06-05 14:21:21.480863: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-06-05 14:21:21.488018: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3691870000 Hz
+2019-06-05 14:21:21.488412: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5635b83e2be0 executing computations on platform Host. Devices:
+2019-06-05 14:21:21.488439: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-05 14:21:21.686664: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5635b7a7ae40 executing computations on platform CUDA. Devices:
+2019-06-05 14:21:21.686722: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX TITAN X, Compute Capability 5.2
+2019-06-05 14:21:21.687482: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:03:00.0
+totalMemory: 11.93GiB freeMemory: 11.80GiB
+2019-06-05 14:21:21.687520: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-05 14:21:21.689178: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-05 14:21:21.689211: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-05 14:21:21.689225: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-05 14:21:21.689700: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11483 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2)
+2019-06-05 14:21:23.688674: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally
+2019-06-05 14:21:24.000602: E tensorflow/stream_executor/cuda/cuda_blas.cc:510] failed to create cublas handle: CUBLAS_STATUS_NOT_INITIALIZED
+2019-06-05 14:21:24.030542: E tensorflow/stream_executor/cuda/cuda_blas.cc:510] failed to create cublas handle: CUBLAS_STATUS_NOT_INITIALIZED
+2019-06-05 14:21:24.057896: E tensorflow/stream_executor/cuda/cuda_blas.cc:510] failed to create cublas handle: CUBLAS_STATUS_NOT_INITIALIZED
+2019-06-05 14:21:24.084170: E tensorflow/stream_executor/cuda/cuda_blas.cc:510] failed to create cublas handle: CUBLAS_STATUS_NOT_INITIALIZED
+2019-06-05 14:21:24.115035: E tensorflow/stream_executor/cuda/cuda_blas.cc:510] failed to create cublas handle: CUBLAS_STATUS_NOT_INITIALIZED
+2019-06-05 14:21:24.137711: E tensorflow/stream_executor/cuda/cuda_blas.cc:510] failed to create cublas handle: CUBLAS_STATUS_NOT_INITIALIZED
+2019-06-05 14:21:24.161796: E tensorflow/stream_executor/cuda/cuda_blas.cc:510] failed to create cublas handle: CUBLAS_STATUS_NOT_INITIALIZED
+2019-06-05 14:21:24.185386: E tensorflow/stream_executor/cuda/cuda_blas.cc:510] failed to create cublas handle: CUBLAS_STATUS_NOT_INITIALIZED
+2019-06-05 14:21:24.293420: E tensorflow/stream_executor/cuda/cuda_blas.cc:510] failed to create cublas handle: CUBLAS_STATUS_NOT_INITIALIZED
+2019-06-05 14:21:24.293468: W tensorflow/stream_executor/stream.cc:2130] attempting to perform BLAS operation using StreamExecutor without BLAS support
+Using TensorFlow backend.
+Traceback (most recent call last):
+  File "experiments/transferability/three_layer_dnn.py", line 38, in <module>
+    dropout_classifier.fit(x_train, y_train, nb_epochs=10, batch_size=128)
+  File "/vol/gpudata/ap8415/adversarial-robustness-toolbox/art/classifiers/keras.py", line 312, in fit
+    **kwargs)
+  File "/vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/keras/legacy/interfaces.py", line 91, in wrapper
+    return func(*args, **kwargs)
+  File "/vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/keras/engine/training.py", line 1418, in fit_generator
+    initial_epoch=initial_epoch)
+  File "/vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/keras/engine/training_generator.py", line 217, in fit_generator
+    class_weight=class_weight)
+  File "/vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/keras/engine/training.py", line 1217, in train_on_batch
+    outputs = self.train_function(ins)
+  File "/vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py", line 2715, in __call__
+    return self._call(inputs)
+  File "/vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py", line 2675, in _call
+    fetched = self._callable_fn(*array_vals)
+  File "/vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1439, in __call__
+    run_metadata_ptr)
+  File "/vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/framework/errors_impl.py", line 528, in __exit__
+    c_api.TF_GetCode(self.status.status))
+tensorflow.python.framework.errors_impl.InternalError: Blas GEMM launch failed : a.shape=(128, 784), b.shape=(784, 300), m=128, n=300, k=784
+	 [[{{node dense_1/MatMul}}]]
+	 [[{{node metrics/acc/Mean}}]]
