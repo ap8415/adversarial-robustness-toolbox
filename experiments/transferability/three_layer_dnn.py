@@ -30,10 +30,15 @@ def to_one_hot(c):
     return enc
 
 
-dropout_levels = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75]
+# dropout_levels = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75]
 
-for dropout in range(10, 11):
-    dropout_classifier = neural_networks.three_layer_dnn(x_train.shape[1:], 300, 100, dropout_levels[dropout], 0, 0)
+dropout = 0.5
+
+for confidence in range(1, 6):
+
+    print('30 BINARY SEARCH STEPS, CONFIDENCE VALUE:%.1f%%\n\n\n' % float(confidence * 5))
+
+    dropout_classifier = neural_networks.three_layer_dnn(x_train.shape[1:], 300, 100, dropout, 0, 0)
     baseline_classifier = neural_networks.three_layer_dnn(x_train.shape[1:], 300, 100, 0, 0, 0)
     dropout_classifier.fit(x_train, y_train, nb_epochs=10, batch_size=128)
     baseline_classifier.fit(x_train, y_train, nb_epochs=10, batch_size=128)
@@ -43,8 +48,10 @@ for dropout in range(10, 11):
 
     # Craft adversarial samples with CW attack
     # We direct the attacks to find an adversarial sample with class (true label + 1) mod 10.
-    baseline_attacker = CarliniL2Method(baseline_classifier, targeted=True, binary_search_steps=50)
-    dropout_attacker = CarliniL2Method(dropout_classifier, targeted=True, binary_search_steps=50)
+    baseline_attacker = CarliniL2Method(baseline_classifier,
+                                        targeted=True, binary_search_steps=30, confidence=float(confidence * 5))
+    dropout_attacker = CarliniL2Method(dropout_classifier,
+                                       targeted=True, binary_search_steps=30, confidence=float(confidence * 5))
     x_adv_baseline = baseline_attacker.generate(x=x_test[:1000], y=target_labels)
     x_adv_dropout = dropout_attacker.generate(x=x_test[:1000], y=target_labels)
 
@@ -102,11 +109,11 @@ for dropout in range(10, 11):
     print(true_labels)
 
     print('Acc of baseline predictions on baseline adversarial : \n\n')
-    print(ACC_BASELINE_ADV)
+    print('%3f%%' % ACC_BASELINE_ADV)
     print('\n')
 
     print('Acc of dropout predictions on dropout adversarial : \n\n')
-    print(ACC_DROPOUT_ADV)
+    print('%3f%%' % ACC_DROPOUT_ADV)
     print('\n')
 
     print('WITH BASELINE: \n')
