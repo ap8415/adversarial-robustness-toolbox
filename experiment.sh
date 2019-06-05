@@ -1,4 +1,4 @@
-#PBS -l mem=16GB -l gpu_mem=6GB
+#PBS -l nodes=gpu02 -l mem=8GB -l gpu_mem=8GB
 
 cd /vol/gpudata/ap8415/adversarial-robustness-toolbox 
 
@@ -8,4 +8,4 @@ export LD_LIBRARY_PATH=/vol/cuda/9.0.176/lib64:/vol/cuda/9.0.176/lib:$LD_LIBRARY
 
 source activate venv
 
-python3 experiments/early_vs_late_dropout/dropout.py
+python3 experiments/transferability/three_layer_dnn.py

@@ -1,0 +1,21 @@
+2019-06-04 23:07:16.632208: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-06-04 23:07:16.638373: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3691870000 Hz
+2019-06-04 23:07:16.639091: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x555ab723a190 executing computations on platform Host. Devices:
+2019-06-04 23:07:16.639120: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-04 23:07:16.769766: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x555ab68d2f50 executing computations on platform CUDA. Devices:
+2019-06-04 23:07:16.769822: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX TITAN X, Compute Capability 5.2
+2019-06-04 23:07:16.770477: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:03:00.0
+totalMemory: 11.93GiB freeMemory: 11.81GiB
+2019-06-04 23:07:16.770509: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-04 23:07:16.771944: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-04 23:07:16.771971: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-04 23:07:16.771984: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-04 23:07:16.772435: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11489 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2)
+2019-06-04 23:07:18.466325: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally
+Using TensorFlow backend.
+experiments/early_vs_late_dropout/dropout_five_layer_dnn.py:40: DeprecationWarning: elementwise comparison failed; this will raise an error in the future.
+  acc = np.sum(preds == np.argmax(y_test, axis=1)) / y_test.shape[0]
+experiments/early_vs_late_dropout/dropout_five_layer_dnn.py:72: DeprecationWarning: elementwise comparison failed; this will raise an error in the future.
+  acc = np.sum(preds == np.argmax(y_test, axis=1)) / y_test.shape[0]

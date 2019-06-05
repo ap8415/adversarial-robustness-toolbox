@@ -43,8 +43,8 @@ for dropout in range(10, 11):
 
     # Craft adversarial samples with CW attack
     # We direct the attacks to find an adversarial sample with class (true label + 1) mod 10.
-    baseline_attacker = CarliniL2Method(baseline_classifier, targeted=True, confidence=-20.0)
-    dropout_attacker = CarliniL2Method(dropout_classifier, targeted=True, confidence=-20.0)
+    baseline_attacker = CarliniL2Method(baseline_classifier, targeted=True, binary_search_steps=50)
+    dropout_attacker = CarliniL2Method(dropout_classifier, targeted=True, binary_search_steps=50)
     x_adv_baseline = baseline_attacker.generate(x=x_test[:1000], y=target_labels)
     x_adv_dropout = dropout_attacker.generate(x=x_test[:1000], y=target_labels)
 
