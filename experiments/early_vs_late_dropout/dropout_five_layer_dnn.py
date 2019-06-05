@@ -28,20 +28,25 @@ for dropout in range(0, 16):
 
     # Evaluate the classifier on the test set
     preds = np.argmax(classifier.predict(x_test), axis=1)
+
+    test_inputs = x_test[:1000]
+    test_labels = np.argmax(y_test[:1000], axis=1)
+
+    # Evaluate the classifier on the test set
     acc = np.sum(preds == np.argmax(y_test, axis=1)) / y_test.shape[0]
     print("\nTest accuracy on dropout level %.2f%%: %.2f%%" % (dropout_levels[dropout], acc * 100))
 
     # Craft adversarial samples with CW attack
     adv_crafter = CarliniL2Method(classifier, targeted=False)
-    x_test_adv = adv_crafter.generate(x=x_test[:1000])
+    x_test_adv = adv_crafter.generate(test_inputs)
 
     # Evaluate the classifier on the adversarial examples
-    preds = np.argmax(classifier.predict(x_test_adv), axis=1)
-    acc = np.sum(preds == np.argmax(y_test, axis=1)) / y_test.shape[0]
+    adv_preds = np.argmax(classifier.predict(x_test_adv), axis=1)
+    acc = np.sum(adv_preds == test_labels) / test_labels.shape[0]
     print("\nTest accuracy on adversarial sample for dropout %.2f%%: %.2f%%" % (dropout_levels[dropout], acc * 100))
 
     # Calculate the average perturbation in L1 and L2 norms. Note that I don't de-normalize the values.
-    perturbations = np.absolute((x_test_adv - x_test[:1000]))
+    perturbations = np.absolute(x_test_adv - test_inputs)
     l1_perturbations = [LA.norm(perturbation, 1) for perturbation in perturbations]
     l2_perturbations = [LA.norm(perturbation, 2) for perturbation in perturbations]
     avg_l1_perturbation = np.average(l1_perturbations)
@@ -51,7 +56,6 @@ for dropout in range(0, 16):
     print("\nAverage L2-norm perturbation from Carlini L2 attack for dropout %.2f%%: %.2f%%"
           % (dropout_levels[dropout], avg_l2_perturbation))
 
-
 print("\n LATE DROPOUT TEST:")
 
 for dropout in range(0, 16):
@@ -60,20 +64,25 @@ for dropout in range(0, 16):
 
     # Evaluate the classifier on the test set
     preds = np.argmax(classifier.predict(x_test), axis=1)
+
+    test_inputs = x_test[:1000]
+    test_labels = np.argmax(y_test[:1000], axis=1)
+
+    # Evaluate the classifier on the test set
     acc = np.sum(preds == np.argmax(y_test, axis=1)) / y_test.shape[0]
     print("\nTest accuracy on dropout level %.2f%%: %.2f%%" % (dropout_levels[dropout], acc * 100))
 
     # Craft adversarial samples with CW attack
     adv_crafter = CarliniL2Method(classifier, targeted=False)
-    x_test_adv = adv_crafter.generate(x=x_test[:1000])
+    x_test_adv = adv_crafter.generate(test_inputs)
 
     # Evaluate the classifier on the adversarial examples
-    preds = np.argmax(classifier.predict(x_test_adv), axis=1)
-    acc = np.sum(preds == np.argmax(y_test, axis=1)) / y_test.shape[0]
+    adv_preds = np.argmax(classifier.predict(x_test_adv), axis=1)
+    acc = np.sum(adv_preds == test_labels) / test_labels.shape[0]
     print("\nTest accuracy on adversarial sample for dropout %.2f%%: %.2f%%" % (dropout_levels[dropout], acc * 100))
 
     # Calculate the average perturbation in L1 and L2 norms. Note that I don't de-normalize the values.
-    perturbations = np.absolute((x_test_adv - x_test[:1000]))
+    perturbations = np.absolute(x_test_adv - test_inputs)
     l1_perturbations = [LA.norm(perturbation, 1) for perturbation in perturbations]
     l2_perturbations = [LA.norm(perturbation, 2) for perturbation in perturbations]
     avg_l1_perturbation = np.average(l1_perturbations)
