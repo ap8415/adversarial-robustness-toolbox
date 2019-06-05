@@ -58,7 +58,7 @@ for dropout in range(0, 16):
 
 print("\n LATE DROPOUT TEST:")
 
-for dropout in range(8, 16):
+for dropout in range(0, 16):
     classifier = neural_networks.asymmetric_six_layer_nn(x_train.shape[1:], 0, dropout_levels[dropout])
     classifier.fit(x_train, y_train, nb_epochs=10, batch_size=128)
 
