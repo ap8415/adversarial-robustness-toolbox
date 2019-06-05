@@ -109,6 +109,31 @@ for dropout in range(10, 11):
     print(ACC_DROPOUT_ADV)
     print('\n')
 
+    print('WITH BASELINE: \n')
+    # Calculate the average perturbation in L1 and L2 norms. Note that I don't de-normalize the values.
+    perturbations = np.absolute((x_adv_baseline - x_test[:1000]))
+    l1_perturbations = [LA.norm(perturbation, 1) for perturbation in perturbations]
+    l2_perturbations = [LA.norm(perturbation, 2) for perturbation in perturbations]
+    avg_l1_perturbation = np.average(l1_perturbations)
+    avg_l2_perturbation = np.average(l2_perturbations)
+    print("\nAverage L1-norm perturbation from Carlini L2 attack for dropout %.2f%%: %.2f%%"
+          % (dropout_levels[dropout], avg_l1_perturbation))
+    print("\nAverage L2-norm perturbation from Carlini L2 attack for dropout %.2f%%: %.2f%%"
+          % (dropout_levels[dropout], avg_l2_perturbation))
+
+    # WITH DROPOUT
+    print('\n\nWITH DROPOUT: \n')
+    # Calculate the average perturbation in L1 and L2 norms. Note that I don't de-normalize the values.
+    perturbations = np.absolute((x_adv_dropout - x_test[:1000]))
+    l1_perturbations = [LA.norm(perturbation, 1) for perturbation in perturbations]
+    l2_perturbations = [LA.norm(perturbation, 2) for perturbation in perturbations]
+    avg_l1_perturbation = np.average(l1_perturbations)
+    avg_l2_perturbation = np.average(l2_perturbations)
+    print("\nAverage L1-norm perturbation from Carlini L2 attack for dropout %.2f%%: %.2f%%"
+          % (dropout_levels[dropout], avg_l1_perturbation))
+    print("\nAverage L2-norm perturbation from Carlini L2 attack for dropout %.2f%%: %.2f%%"
+          % (dropout_levels[dropout], avg_l2_perturbation))
+
 
 
 
