@@ -14,7 +14,7 @@ from art.utils import load_mnist_vectorized
 from experiment_models import neural_networks
 from experiment_models.utils import mmd_evaluation
 
-print('\n\n\nTWO-LAYER DNN DROPOUT EXPERIMENT, DROPOUT FROM 0->0.75 IN INCREMENTS OF 0.05\n\n\n')
+print('\n\n\nTHREE-LAYER DNN DROPOUT EXPERIMENT, DROPOUT FROM 0->0.75 IN INCREMENTS OF 0.05\n\n\n')
 
 # Read MNIST dataset
 (x_train, y_train), (x_test, y_test), min_, max_ = load_mnist_vectorized()

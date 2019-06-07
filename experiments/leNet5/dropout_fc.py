@@ -3,9 +3,6 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 import sys
 from os.path import abspath
-
-from experiment_models.utils import mmd_evaluation_2d
-
 sys.path.append(abspath('.'))
 
 import numpy as np
@@ -14,6 +11,7 @@ import numpy.linalg as LA
 from art.attacks.carlini import CarliniL2Method
 from art.utils import load_mnist
 from experiment_models import convolutional
+from experiment_models.utils import mmd_evaluation_2d
 
 print('\n\n\nLENET5 CNN DROPOUT EXPERIMENT ON DENSE LAYERS, DROPOUT FROM 0->0.75 IN INCREMENTS OF 0.05\n\n\n')
 
