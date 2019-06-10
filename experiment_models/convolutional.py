@@ -94,7 +94,7 @@ def leNet_cifar(dropout_pool1, dropout_pool2, dropout_fc1, dropout_fc2, type):
     return classifier
 
 
-def mini_VGG():
+def mini_VGG(dropout):
     """
     Implements a VGG-style architecture for use with the CIFAR-10 data set.
     """
@@ -102,18 +102,22 @@ def mini_VGG():
     model.add(Conv2D(32, (3, 3), activation='relu', padding='same', input_shape=(32, 32, 3)))
     model.add(Conv2D(32, (3, 3), activation='relu', padding='same'))
     model.add(MaxPooling2D((2, 2)))
-    # model.add(Dropout(0.2))
+    if dropout > 0:
+        model.add(Dropout(dropout))
     model.add(Conv2D(64, (3, 3), activation='relu', padding='same'))
     model.add(Conv2D(64, (3, 3), activation='relu', padding='same'))
     model.add(MaxPooling2D((2, 2)))
-    # model.add(Dropout(0.2))
+    if dropout > 0:
+        model.add(Dropout(dropout))
     model.add(Conv2D(128, (3, 3), activation='relu', padding='same'))
     model.add(Conv2D(128, (3, 3), activation='relu', padding='same'))
     model.add(MaxPooling2D((2, 2)))
-    # model.add(Dropout(0.2))
+    if dropout > 0:
+        model.add(Dropout(dropout))
     model.add(Flatten())
     model.add(Dense(128, activation='relu', kernel_initializer='he_uniform'))
-    # model.add(Dropout(0.2))
+    if dropout > 0:
+        model.add(Dropout(dropout))
     model.add(Dense(10, activation='softmax'))
 
     model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])

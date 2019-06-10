@@ -39,13 +39,16 @@ def to_one_hot(c):
     enc[c] = 1.0
     return enc
 
+dropout_levels = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75]
 
 print('\n%s : L1 REG EXPERIMENT - GENERATES HEATMAPS: FROM 0 TO 0.0009 REG LEVEL' % 'pula')
 
-for l1_reg in range(6, 7):
+for dropout in dropout_levels:
     heatmap = np.zeros((28, 28))
 
-    classifier = convolutional.mini_VGG()
+    print("DROPOUT LEVEL %.03f%%" % dropout)
+
+    classifier = convolutional.mini_VGG(dropout)
     # classifier = neural_networks.three_layer_dnn(x_train.shape[1:], 300, 100, 0, 0, 0)
     # TODO: add other types of experiments; the only real variable here is the classifier.
 
@@ -54,5 +57,5 @@ for l1_reg in range(6, 7):
     # Evaluate the classifier on the test set
     preds = np.argmax(classifier.predict(x_test), axis=1)
     acc = (np.sum(preds == np.argmax(y_test, axis=1)) / len(y_test)) * 100
-    print("\nTest accuracy on L1 regularization level %.2f%%: %.3f%%" % (l1_regularization[l1_reg], acc))
+    print("\nTest accuracy on dropout level %.2f%%: %.3f%%" % (dropout, acc))
 
