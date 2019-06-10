@@ -65,7 +65,7 @@ def to_one_hot(c):
 
 print('\n%s : L1 REG EXPERIMENT - GENERATES HEATMAPS: FROM 0 TO 0.0009 REG LEVEL' % args.experiment_type)
 
-for l1_reg in range(0, 10):
+for l1_reg in range(6, 10):
     heatmap = np.zeros((28, 28))
     for i in range(0, 4):
 
