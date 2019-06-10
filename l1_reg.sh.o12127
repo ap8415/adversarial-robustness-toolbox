@@ -1,0 +1,628 @@
+
+six_layer_dnn : L1 REG EXPERIMENT - GENERATES HEATMAPS: FROM 0 TO 0.0009 REG LEVEL
+
+Test accuracy on L1 regularization level 0.00%: 98.390%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 30.132%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 20.4398%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 2.9411%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.6542%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0246662627%
+And in log-scale: -3.702319%
+
+Test accuracy on L1 regularization level 0.00%: 98.250%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 14.449%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 15.4004%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 2.5355%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.7335%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0198607280%
+And in log-scale: -3.919011%
+
+Test accuracy on L1 regularization level 0.00%: 98.260%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 30.396%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 14.6758%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 2.3115%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.6411%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0173360631%
+And in log-scale: -4.054966%
+
+Test accuracy on L1 regularization level 0.00%: 98.300%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 30.220%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 17.2810%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 2.6243%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.6534%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0229167108%
+And in log-scale: -3.775889%
+
+Test accuracy on L1 regularization level 0.00%: 97.760%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 1.145%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 19.2294%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 3.1836%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.9130%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0378332563%
+And in log-scale: -3.274567%
+
+Test accuracy on L1 regularization level 0.00%: 97.580%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 1.850%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 12.5827%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 2.2534%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.7893%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0165114866%
+And in log-scale: -4.103699%
+
+Test accuracy on L1 regularization level 0.00%: 97.920%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 4.317%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 21.4634%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 3.4472%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.9094%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0497314690%
+And in log-scale: -3.001117%
+
+Test accuracy on L1 regularization level 0.00%: 97.800%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 5.022%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 23.1483%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 3.6418%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.9109%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0658830472%
+And in log-scale: -2.719874%
+
+Test accuracy on L1 regularization level 0.00%: 97.060%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 1.586%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 19.0559%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 3.1623%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.9027%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0459855370%
+And in log-scale: -3.079428%
+
+Test accuracy on L1 regularization level 0.00%: 96.880%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 1.938%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 25.2312%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 3.8971%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.9444%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0692152208%
+And in log-scale: -2.670534%
+
+Test accuracy on L1 regularization level 0.00%: 97.340%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 1.674%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 19.4644%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 3.2057%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.9117%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0429957157%
+And in log-scale: -3.146655%
+
+Test accuracy on L1 regularization level 0.00%: 97.760%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 2.731%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 23.1432%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 3.6328%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.9136%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0548732385%
+And in log-scale: -2.902730%
+
+Test accuracy on L1 regularization level 0.00%: 97.240%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 1.586%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 20.4775%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 3.3288%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.9050%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0445390085%
+And in log-scale: -3.111390%
+
+Test accuracy on L1 regularization level 0.00%: 96.670%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 2.291%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 15.7126%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 2.6757%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.8173%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0261991592%
+And in log-scale: -3.642028%
+
+Test accuracy on L1 regularization level 0.00%: 96.960%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 2.379%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 21.1017%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 3.3948%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.9088%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0460849075%
+And in log-scale: -3.077270%
+
+Test accuracy on L1 regularization level 0.00%: 96.980%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 2.555%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 19.5380%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 3.1880%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.8857%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0440199227%
+And in log-scale: -3.123113%
+
+Test accuracy on L1 regularization level 0.00%: 96.460%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 2.379%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 23.3571%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 3.6319%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.9174%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0584119606%
+And in log-scale: -2.840235%
+
+Test accuracy on L1 regularization level 0.00%: 96.810%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 1.145%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 21.6601%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 3.4296%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.9076%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0569427142%
+And in log-scale: -2.865710%
+
+Test accuracy on L1 regularization level 0.00%: 96.640%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 1.498%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 22.5844%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 3.5653%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.9260%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0592873367%
+And in log-scale: -2.825360%
+
+Test accuracy on L1 regularization level 0.00%: 96.180%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 1.057%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 18.6702%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 3.0689%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.8891%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0404644101%
+And in log-scale: -3.207332%
+
+Test accuracy on L1 regularization level 0.00%: 96.310%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 1.145%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 22.5746%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 3.5822%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.9363%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0756574098%
+And in log-scale: -2.581540%
+
+Test accuracy on L1 regularization level 0.00%: 96.340%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 2.026%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 18.6173%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 3.0899%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.8978%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0353188513%
+And in log-scale: -3.343338%
+
+Test accuracy on L1 regularization level 0.00%: 96.150%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 2.291%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 18.3310%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 3.0294%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.8697%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0505895021%
+And in log-scale: -2.984011%
+
+Test accuracy on L1 regularization level 0.00%: 96.000%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 4.670%
+
+Average L1-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 20.8128%
+
+Average L2-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 3.2753%
+
+Average LInf-norm perturbation from carlini_l2 attack for l1 reg 0.00%: 0.8653%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0501365407%
+And in log-scale: -2.993005%
+
+six_layer_dnn : L1 REG EXPERIMENT - GENERATES HEATMAPS: FROM 0 TO 0.0009 REG LEVEL
+
+Test accuracy on L1 regularization level 0.00%: 98.150%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 48.282%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 16.3126%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 1.8724%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.2545%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0128462725%
+And in log-scale: -4.354702%
+
+Test accuracy on L1 regularization level 0.00%: 98.200%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 72.159%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 8.3958%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.9750%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.1343%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0033217815%
+And in log-scale: -5.707254%
+
+Test accuracy on L1 regularization level 0.00%: 98.070%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 56.476%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 11.4764%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 1.4393%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.2114%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0081494177%
+And in log-scale: -4.809809%
+
+Test accuracy on L1 regularization level 0.00%: 97.990%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 71.013%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 9.5606%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 1.0650%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.1407%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0043345977%
+And in log-scale: -5.441126%
+
+Test accuracy on L1 regularization level 0.00%: 97.840%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 6.784%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 20.3869%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 2.7857%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.4612%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0315635385%
+And in log-scale: -3.455753%
+
+Test accuracy on L1 regularization level 0.00%: 97.840%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 28.018%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 27.9580%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 3.0036%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.3595%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0431742645%
+And in log-scale: -3.142511%
+
+Test accuracy on L1 regularization level 0.00%: 97.460%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 13.392%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 22.9643%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 2.8651%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.4276%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0360618473%
+And in log-scale: -3.322520%
+
+Test accuracy on L1 regularization level 0.00%: 97.830%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 22.203%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 24.6361%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 2.8747%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.3848%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0350043220%
+And in log-scale: -3.352284%
+
+Test accuracy on L1 regularization level 0.00%: 97.250%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 16.564%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 19.1973%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 2.5725%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.4152%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0279573826%
+And in log-scale: -3.577074%
+
+Test accuracy on L1 regularization level 0.00%: 97.220%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 29.956%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 17.8023%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 2.2740%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.3467%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0232594992%
+And in log-scale: -3.761042%
+
+Test accuracy on L1 regularization level 0.00%: 97.420%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 13.656%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 25.2271%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 3.0562%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.4280%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0467038357%
+And in log-scale: -3.063929%
+
+Test accuracy on L1 regularization level 0.00%: 97.430%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 20.176%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 23.2736%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 2.8323%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.3963%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0408960632%
+And in log-scale: -3.196721%
+
+Test accuracy on L1 regularization level 0.00%: 96.360%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 22.467%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 26.0197%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 2.9828%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.3845%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0498591762%
+And in log-scale: -2.998553%
+
+Test accuracy on L1 regularization level 0.00%: 97.030%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 19.912%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 23.0740%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 2.8163%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.3971%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0409770850%
+And in log-scale: -3.194742%
+
+Test accuracy on L1 regularization level 0.00%: 97.370%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 16.211%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 24.3856%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 2.9700%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.4167%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0375504176%
+And in log-scale: -3.282071%
+
+Test accuracy on L1 regularization level 0.00%: 96.600%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 14.978%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 21.8889%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 2.7947%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.4213%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0390148387%
+And in log-scale: -3.243813%
+
+Test accuracy on L1 regularization level 0.00%: 96.830%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 9.780%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 21.0795%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 2.7999%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.4467%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0358346309%
+And in log-scale: -3.328841%
+
+Test accuracy on L1 regularization level 0.00%: 97.160%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 19.559%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 22.6937%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 2.7970%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.3994%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0386677743%
+And in log-scale: -3.252749%
+
+Test accuracy on L1 regularization level 0.00%: 96.660%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 18.502%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 16.9234%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 2.3482%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.3990%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0277427651%
+And in log-scale: -3.584780%
+
+Test accuracy on L1 regularization level 0.00%: 96.300%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 21.145%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 24.1346%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 2.8401%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.3881%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0369489807%
+And in log-scale: -3.298217%
+
+Test accuracy on L1 regularization level 0.00%: 96.510%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 5.198%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 19.4308%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 2.7183%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.4694%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0399435513%
+And in log-scale: -3.220288%
+
+Test accuracy on L1 regularization level 0.00%: 96.120%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 26.344%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 24.4398%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 2.8124%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.3658%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0492757306%
+And in log-scale: -3.010324%
+
+Test accuracy on L1 regularization level 0.00%: 96.630%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 11.454%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 23.3367%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 2.9478%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.4395%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0478231225%
+And in log-scale: -3.040246%
+
+Test accuracy on L1 regularization level 0.00%: 96.120%
+(784,)
+
+Test accuracy on adversarial sample for L1 REGULARIZATION 0.00%: 14.714%
+
+Average L1-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 26.8715%
+
+Average L2-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 3.1558%
+
+Average LInf-norm perturbation from carlini_lInf attack for l1 reg 0.00%: 0.4246%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0580605659%
+And in log-scale: -2.846269%
