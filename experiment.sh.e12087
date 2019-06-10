@@ -1,0 +1,102 @@
+2019-06-07 19:37:26.656304: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-06-07 19:37:26.663144: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3691155000 Hz
+2019-06-07 19:37:26.663784: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55deb6b43c30 executing computations on platform Host. Devices:
+2019-06-07 19:37:26.663823: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-07 19:37:26.848115: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55deb6b36b80 executing computations on platform CUDA. Devices:
+2019-06-07 19:37:26.848176: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX TITAN X, Compute Capability 5.2
+2019-06-07 19:37:26.848371: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.2155
+pciBusID: 0000:03:00.0
+totalMemory: 11.93GiB freeMemory: 11.82GiB
+2019-06-07 19:37:26.848407: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-07 19:37:26.849907: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-07 19:37:26.849926: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-07 19:37:26.849933: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-07 19:37:26.849994: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11498 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2)
+2019-06-07 19:37:31.837545: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally
+Using TensorFlow backend.
+2019-06-07 19:54:18.016281: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-06-07 19:54:18.020758: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3691155000 Hz
+2019-06-07 19:54:18.021566: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55d8a3bcb170 executing computations on platform Host. Devices:
+2019-06-07 19:54:18.021611: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-07 19:54:18.073088: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55d8a3605840 executing computations on platform CUDA. Devices:
+2019-06-07 19:54:18.073140: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX TITAN X, Compute Capability 5.2
+2019-06-07 19:54:18.073327: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.2155
+pciBusID: 0000:03:00.0
+totalMemory: 11.93GiB freeMemory: 11.82GiB
+2019-06-07 19:54:18.073359: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-07 19:54:18.075241: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-07 19:54:18.075270: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-07 19:54:18.075283: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-07 19:54:18.075399: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11498 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2)
+2019-06-07 19:54:18.784086: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally
+Using TensorFlow backend.
+2019-06-07 20:12:45.845663: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-06-07 20:12:45.851989: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3691155000 Hz
+2019-06-07 20:12:45.852967: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55df3fd3a090 executing computations on platform Host. Devices:
+2019-06-07 20:12:45.853042: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-07 20:12:45.926456: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55df3fd3ebe0 executing computations on platform CUDA. Devices:
+2019-06-07 20:12:45.926517: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX TITAN X, Compute Capability 5.2
+2019-06-07 20:12:45.926737: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.2155
+pciBusID: 0000:03:00.0
+totalMemory: 11.93GiB freeMemory: 11.82GiB
+2019-06-07 20:12:45.926774: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-07 20:12:45.929007: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-07 20:12:45.929042: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-07 20:12:45.929059: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-07 20:12:45.929179: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11498 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2)
+2019-06-07 20:12:46.725260: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally
+Using TensorFlow backend.
+2019-06-07 20:34:35.415149: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-06-07 20:34:35.419321: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3691155000 Hz
+2019-06-07 20:34:35.419743: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55c340c4eac0 executing computations on platform Host. Devices:
+2019-06-07 20:34:35.419763: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-07 20:34:35.473165: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55c340b3fb90 executing computations on platform CUDA. Devices:
+2019-06-07 20:34:35.473196: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX TITAN X, Compute Capability 5.2
+2019-06-07 20:34:35.473305: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.2155
+pciBusID: 0000:03:00.0
+totalMemory: 11.93GiB freeMemory: 11.82GiB
+2019-06-07 20:34:35.473321: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-07 20:34:35.474496: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-07 20:34:35.474515: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-07 20:34:35.474524: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-07 20:34:35.474599: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11498 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2)
+2019-06-07 20:34:36.314245: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally
+Using TensorFlow backend.
+2019-06-07 20:57:33.794153: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-06-07 20:57:33.798998: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3691155000 Hz
+2019-06-07 20:57:33.799705: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55cb41081330 executing computations on platform Host. Devices:
+2019-06-07 20:57:33.799726: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-07 20:57:33.859607: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55cb40c0fc70 executing computations on platform CUDA. Devices:
+2019-06-07 20:57:33.859666: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX TITAN X, Compute Capability 5.2
+2019-06-07 20:57:33.859874: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.2155
+pciBusID: 0000:03:00.0
+totalMemory: 11.93GiB freeMemory: 11.82GiB
+2019-06-07 20:57:33.859909: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-07 20:57:33.861958: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-07 20:57:33.861989: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-07 20:57:33.862003: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-07 20:57:33.862120: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11498 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2)
+2019-06-07 20:57:34.640990: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally
+Using TensorFlow backend.
+2019-06-07 21:26:33.241633: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-06-07 21:26:33.263484: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3691155000 Hz
+2019-06-07 21:26:33.264126: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x558fd9635240 executing computations on platform Host. Devices:
+2019-06-07 21:26:33.264169: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-07 21:26:33.333919: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x558fd9639d90 executing computations on platform CUDA. Devices:
+2019-06-07 21:26:33.333974: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX TITAN X, Compute Capability 5.2
+2019-06-07 21:26:33.334167: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.2155
+pciBusID: 0000:03:00.0
+totalMemory: 11.93GiB freeMemory: 11.82GiB
+2019-06-07 21:26:33.334199: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-07 21:26:33.336172: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-07 21:26:33.336207: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-07 21:26:33.336222: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-07 21:26:33.336332: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11498 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2)
+2019-06-07 21:26:34.131185: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally
+Using TensorFlow backend.
