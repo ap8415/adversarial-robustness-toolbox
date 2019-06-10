@@ -71,6 +71,26 @@ def asymmetric_six_layer_nn(input_shape, early_dropout, late_dropout):
     classifier = KerasClassifier(clip_values=(0., 1.), model=model)
     return classifier
 
+def asymmetric_six_layer_nn_regularized(input_shape, l1_reg):
+    model = Sequential()
+    model.add(Dense(1000, input_shape=input_shape, activation='relu',
+                    kernel_regularizer=regularizers.l1(l1_reg)))
+
+    model.add(Dense(800, activation='relu', kernel_regularizer=regularizers.l1(l1_reg)))
+
+    model.add(Dense(600, activation='relu', kernel_regularizer=regularizers.l1(l1_reg)))
+
+    model.add(Dense(400, activation='relu', kernel_regularizer=regularizers.l1(l1_reg)))
+
+    model.add(Dense(300, activation='relu', kernel_regularizer=regularizers.l1(l1_reg)))
+
+    model.add(Dense(10, activation='softmax', kernel_regularizer=regularizers.l1(l1_reg)))
+
+    model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+    classifier = KerasClassifier(clip_values=(0., 1.), model=model)
+    return classifier
+
 
 # Symmetric five layer NN.
 def symmetric_five_layer_nn(input_shape, early_dropout, late_dropout):

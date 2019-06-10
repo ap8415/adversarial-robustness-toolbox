@@ -8,7 +8,7 @@ export LD_LIBRARY_PATH=/vol/cuda/9.0.176/lib64:/vol/cuda/9.0.176/lib:$LD_LIBRARY
 
 source activate venv
 
-python3 experiments/adversarial_examples_heatmap.py three_layer_dnn carlini_l2
-python3 experiments/adversarial_examples_heatmap.py three_layer_dnn carlini_lInf
+python3 experiments/adversarial_examples_heatmap.py six_layer_dnn carlini_l2
+python3 experiments/adversarial_examples_heatmap.py six_layer_dnn carlini_lInf
 
 
