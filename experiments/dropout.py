@@ -18,6 +18,7 @@ from experiment_models.utils import mmd_evaluation
 parser = argparse.ArgumentParser(description='Experiment parameters.')
 parser.add_argument("experiment_type", help="The model type used by the experiment.")
 parser.add_argument("attack_type", help="The attack type that we use to perform evaluation.")
+parser.add_argument("dataset", help="The data set used for training.")
 parser.add_argument("-binary_steps", help="The number of BS steps used by the attack.", type=int, default=20)
 parser.add_argument("-confidence", help="The confidence parameter of the attack.", type=int, default=0)
 args = parser.parse_args()

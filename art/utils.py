@@ -357,7 +357,8 @@ def compute_success(classifier, x_clean, labels, x_adv, targeted=False):
 
 
 def load_cifar10(raw=False):
-    """Loads CIFAR10 dataset from config.CIFAR10_PATH or downloads it if necessary.
+    """Loads CIFAR10 dataset from config.CIFAR10_PATH or downloads it if necessary, then reshapes it into image form
+    (3-channel 32x32 image) to be used in a CNN.
 
     :param raw: `True` if no preprocessing should be applied to the data. Otherwise, data is normalized to 1.
     :type raw: `bool`
@@ -423,6 +424,68 @@ def load_cifar10(raw=False):
 
     return (x_train, y_train), (x_test, y_test), min_, max_
 
+
+def load_cifar10_vectorized(raw=False):
+    """Loads CIFAR10 dataset from config.CIFAR10_PATH or downloads it if necessary.
+
+    :param raw: `True` if no preprocessing should be applied to the data. Otherwise, data is normalized to 1.
+    :type raw: `bool`
+    :return: `(x_train, y_train), (x_test, y_test), min, max`
+    :rtype: `(np.ndarray, np.ndarray), (np.ndarray, np.ndarray), float, float`
+    """
+
+    def load_batch(fpath):
+        """
+        Utility function for loading CIFAR batches, as written in Keras.
+
+        :param fpath: Full path to the batch file.
+        :return: `(data, labels)`
+        """
+        import sys
+        from six.moves import cPickle
+
+        with open(fpath, 'rb') as file_:
+            if sys.version_info < (3,):
+                content = cPickle.load(file_)
+            else:
+                content = cPickle.load(file_, encoding='bytes')
+                content_decoded = {}
+                for key, value in content.items():
+                    content_decoded[key.decode('utf8')] = value
+                content = content_decoded
+        data = content['data']
+        labels = content['labels']
+
+        return data, labels
+
+    from art import DATA_PATH
+
+    path = get_file('cifar-10-batches-py', extract=True, path=DATA_PATH,
+                    url='http://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz')
+
+    num_train_samples = 50000
+
+    x_train = np.zeros((num_train_samples, 3072), dtype=np.uint8)
+    y_train = np.zeros((num_train_samples,), dtype=np.uint8)
+
+    for i in range(1, 6):
+        fpath = os.path.join(path, 'data_batch_' + str(i))
+        data, labels = load_batch(fpath)
+        x_train[(i - 1) * 10000: i * 10000, :] = data
+        y_train[(i - 1) * 10000: i * 10000] = labels
+
+    fpath = os.path.join(path, 'test_batch')
+    x_test, y_test = load_batch(fpath)
+    y_train = np.reshape(y_train, (len(y_train), 1))
+    y_test = np.reshape(y_test, (len(y_test), 1))
+
+    min_, max_ = 0, 255
+    if not raw:
+        min_, max_ = 0., 1.
+        x_train, y_train = preprocess(x_train, y_train, clip_values=(0, 255))
+        x_test, y_test = preprocess(x_test, y_test, clip_values=(0, 255))
+
+    return (x_train, y_train), (x_test, y_test), min_, max_
 
 def load_mnist(raw=False):
     """Loads MNIST dataset from `DATA_PATH` or downloads it if necessary.
