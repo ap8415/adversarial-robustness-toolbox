@@ -59,7 +59,7 @@ for dropout in dropout_levels:
     # classifier = neural_networks.three_layer_dnn(x_train.shape[1:], 300, 100, 0, 0, 0)
     # TODO: add other types of experiments; the only real variable here is the classifier.
 
-    classifier.fit(x_train, y_train, nb_epochs=1, batch_size=128)
+    classifier.fit(x_train, y_train, nb_epochs=100, batch_size=128)
 
     # Evaluate the classifier on the test set
     preds = np.argmax(classifier.predict(x_test), axis=1)
