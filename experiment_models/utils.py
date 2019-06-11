@@ -65,14 +65,14 @@ def mmd_evaluation(x, y):
     :return:
     """
     if len(x.shape) > 2:
-        x_flat = x.reshape(x.shape[0], x[0].shape[0] * x[0].shape[1])
-        y_flat = y.reshape(y.shape[0], y[0].shape[0] * y[0].shape[1])
+        x_flat = x.reshape(x.shape[0], len(x[0].flatten()))
+        y_flat = y.reshape(y.shape[0], len(y[0].flatten()))
         return maximum_mean_discrepancy(x_flat, y_flat, linear_kernel)
     else:
         return maximum_mean_discrepancy(x, y, linear_kernel)
 
 
 def mmd_evaluation_2d(x, y):
-    x_flat = x.reshape(x.shape[0], x[0].shape[0] * x[0].shape[1])
-    y_flat = y.reshape(y.shape[0], y[0].shape[0] * y[0].shape[1])
+    x_flat = x.reshape(x.shape[0], len(x[0].flatten()))
+    y_flat = y.reshape(y.shape[0], len(y[0].flatten()))
     return maximum_mean_discrepancy(x_flat, y_flat, linear_kernel)
