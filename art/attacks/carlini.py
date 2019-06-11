@@ -18,6 +18,7 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 
 import logging
+import sys
 
 import numpy as np
 
@@ -26,6 +27,13 @@ from art.attacks.attack import Attack
 from art.utils import compute_success, get_labels_np_array, tanh_to_original, original_to_tanh
 
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+handler = logging.StreamHandler(sys.stdout)
+handler.setLevel(logging.INFO)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+logger.addHandler(handler)
 
 
 class CarliniL2Method(Attack):
@@ -39,8 +47,8 @@ class CarliniL2Method(Attack):
                                             'binary_search_steps', 'initial_const', 'max_halving', 'max_doubling',
                                             'batch_size']
 
-    def __init__(self, classifier, confidence=0.0, targeted=True, learning_rate=0.01, binary_search_steps=20,
-                 max_iter=20, initial_const=0.01, max_halving=10, max_doubling=10, batch_size=128):
+    def __init__(self, classifier, confidence=0.0, targeted=True, learning_rate=0.01, binary_search_steps=15,
+                 max_iter=50, initial_const=0.01, max_halving=5, max_doubling=5, batch_size=128):
         """
         Create a Carlini L_2 attack instance.
 
@@ -184,6 +192,8 @@ class CarliniL2Method(Attack):
         :return: An array holding the adversarial examples.
         :rtype: `np.ndarray`
         """
+        print(__name__)
+
         x_adv = x.astype(NUMPY_DTYPE)
         if hasattr(self.classifier, 'clip_values') and self.classifier.clip_values is not None:
             clip_min, clip_max = self.classifier.clip_values
@@ -201,6 +211,7 @@ class CarliniL2Method(Attack):
         # Compute perturbation with implicit batching
         nb_batches = int(np.ceil(x_adv.shape[0] / float(self.batch_size)))
         for batch_id in range(nb_batches):
+            print("HERE")
             logger.debug('Processing batch %i out of %i', batch_id, nb_batches)
 
             batch_index_1, batch_index_2 = batch_id * self.batch_size, (batch_id + 1) * self.batch_size
@@ -220,7 +231,7 @@ class CarliniL2Method(Attack):
             best_x_adv_batch = x_batch.copy()
 
             for bss in range(self.binary_search_steps):
-                logger.debug('Binary search step %i out of %i (c_mean==%f)', bss, self.binary_search_steps, np.mean(c))
+                logger.info('Binary search step %i out of %i (c_mean==%f)', bss, self.binary_search_steps, np.mean(c))
                 nb_active = int(np.sum(c < self._c_upper_bound))
                 logger.debug('Number of samples with c < _c_upper_bound: %i out of %i', nb_active, x_batch.shape[0])
                 if nb_active == 0:
@@ -236,11 +247,11 @@ class CarliniL2Method(Attack):
                 overall_attack_success = attack_success
 
                 for it in range(self.max_iter):
-                    logger.debug('Iteration step %i out of %i', it, self.max_iter)
+                    logger.info('Iteration step %i out of %i', it, self.max_iter)
                     logger.debug('Average Loss: %f', np.mean(loss))
                     logger.debug('Average L2Dist: %f', np.mean(l2dist))
                     logger.debug('Average Margin Loss: %f', np.mean(loss-l2dist))
-                    logger.debug('Current number of succeeded attacks: %i out of %i', int(np.sum(attack_success)),
+                    logger.info('Current number of succeeded attacks: %i out of %i', int(np.sum(attack_success)),
                                  len(attack_success))
 
                     improved_adv = attack_success & (l2dist < best_l2dist)
@@ -332,7 +343,7 @@ class CarliniL2Method(Attack):
                     lr[halving == 1] /= 2
 
                     update_adv = (best_lr[active] > 0)
-                    logger.debug('Number of adversarial samples to be finally updated: %i', int(np.sum(update_adv)))
+                    logger.info('Number of adversarial samples to be finally updated: %i', int(np.sum(update_adv)))
 
                     if np.sum(update_adv) > 0:
                         active_and_update_adv = active.copy()
@@ -352,7 +363,7 @@ class CarliniL2Method(Attack):
 
                 # Update depending on attack success:
                 improved_adv = attack_success & (l2dist < best_l2dist)
-                logger.debug('Number of improved L2 distances: %i', int(np.sum(improved_adv)))
+                logger.info('Number of improved L2 distances: %i', int(np.sum(improved_adv)))
 
                 if np.sum(improved_adv) > 0:
                     best_l2dist[improved_adv] = l2dist[improved_adv]

@@ -49,7 +49,7 @@ elif args.experiment_type == "leNet5":
 
 print('\n%s : DROPOUT EXPERIMENT, DROPOUT FROM 0->0.75 IN INCREMENTS OF 0.05\n' % args.experiment_type)
 
-for dropout in range(10, 16):
+for dropout in range(0, 16):
 
     if args.experiment_type == "two_layer_dnn":
         classifier = neural_networks.two_layer_dnn(x_train.shape[1:], dropout_levels[dropout], 0, 0)
@@ -81,8 +81,8 @@ for dropout in range(10, 16):
                                    targeted=False, binary_search_steps=args.binary_steps, confidence=args.confidence)
     elif args.attack_type == "carlini_lInf":
         attacker = CarliniLInfMethod(classifier, targeted=False, confidence=args.confidence)
-    x_real = x_test[:100]
-    y_real = np.argmax(y_test[:100], axis=1)
+    x_real = x_test[:1000]
+    y_real = np.argmax(y_test[:1000], axis=1)
     x_test_adv = attacker.generate(x_real)
 
     # Evaluate the classifier on the adversarial examples
@@ -106,7 +106,7 @@ for dropout in range(10, 16):
     print("\nAverage LInf-norm perturbation from %s attack for dropout %.2f%%: %.4f%%"
           % (args.attack_type, dropout_levels[dropout], avg_lInf_perturbation))
 
-    linear_mmd_real_vs_adversarial = mmd_evaluation(x_test[:100], x_test_adv)
+    linear_mmd_real_vs_adversarial = mmd_evaluation(x_test[:1000], x_test_adv)
     print('Estimate of Maximum Mean Discrepancy using the normalized linear kernel: %.10f%%'
           % linear_mmd_real_vs_adversarial)
     print('And in log-scale: %.6f%%' % np.math.log(linear_mmd_real_vs_adversarial))

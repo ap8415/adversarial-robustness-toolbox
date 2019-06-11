@@ -97,7 +97,7 @@ for l1_reg in range(6, 10):
             attacker = CarliniL2Method(classifier,
                                        targeted=True, binary_search_steps=args.binary_steps, confidence=args.confidence)
         elif args.attack_type == "carlini_lInf":
-            attacker = CarliniLInfMethod(classifier, targeted=True, confidence=args.confidence)
+            attacker = CarliniLInfMethod(classifier, targeted=True, confidence=args.confidence, eps=0.1)
         x_real = np.take(x_test, ones, axis=0)
         print(x_real[0].shape)
         y_real = np.array([1 for x in x_real])
