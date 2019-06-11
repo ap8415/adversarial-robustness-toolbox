@@ -68,8 +68,8 @@ print('\n%s : L1 REG EXPERIMENT - GENERATES HEATMAPS: FROM 0 TO 0.0009 REG LEVEL
 for l1_reg in range(0, 10):
     heatmap = np.zeros((28, 28))
     for i in range(0, 4):
-	print("Iteration %i of 4:" % (i+1))
-	if args.experiment_type == "two_layer_dnn":
+        print("Iteration %i of 4:" % (i+1))
+        if args.experiment_type == "two_layer_dnn":
             classifier = neural_networks.two_layer_dnn(x_train.shape[1:], 0, l1_regularization[l1_reg], 0)
         elif args.experiment_type == "three_layer_dnn":
             classifier = neural_networks.three_layer_dnn(x_train.shape[1:], 300, 100, 0, l1_regularization[l1_reg], 0)
