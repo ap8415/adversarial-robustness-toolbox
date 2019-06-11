@@ -1,0 +1,14 @@
+(50000, 32, 32, 3)
+
+pula : L1 REG EXPERIMENT - GENERATES HEATMAPS: FROM 0 TO 0.0009 REG LEVEL
+DROPOUT LEVEL 0.000%
+
+Test accuracy on dropout level 0.00%: 55.450%
+
+Test accuracy on adversarial sample for dropout 0.00%: 22.000%
+
+Average L1-norm perturbation from carlini_l2 attack for dropout 0.00%: 12.4177%
+
+Average L2-norm perturbation from carlini_l2 attack for dropout 0.00%: 0.3640%
+
+Average LInf-norm perturbation from carlini_l2 attack for dropout 0.00%: 0.0493%
