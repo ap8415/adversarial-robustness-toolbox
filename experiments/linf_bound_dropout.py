@@ -11,11 +11,14 @@ import numpy as np
 import numpy.linalg as LA
 import logging
 import sys
+import tensorflow as tf
 
 from art.attacks.carlini import CarliniL2Method, CarliniLInfMethod
 from art.utils import load_mnist_vectorized, load_mnist
 from experiment_models import neural_networks, convolutional
 from experiment_models.utils import mmd_evaluation
+from keras.backend.tensorflow_backend import set_session
+
 
 parser = argparse.ArgumentParser(description='Experiment parameters.')
 parser.add_argument("experiment_type", help="The model type used by the experiment.")
@@ -24,6 +27,9 @@ parser.add_argument("-binary_steps", help="The number of BS steps used by the at
 parser.add_argument("-confidence", help="The confidence parameter of the attack.", type=int, default=0)
 args = parser.parse_args()
 
+config = tf.ConfigProto()
+config.gpu_options.allow_growth = True
+set_session(tf.Session(config=config))
 
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
