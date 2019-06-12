@@ -124,10 +124,10 @@ for eps in eps_values:
     avg_lInf_perturbation /= 5
 
     print("\nAverage L1-norm perturbation from L-inf attack for dropout %.2f%%: %.4f%%"
-          % (dropout_levels[dropout], avg_l1_perturbation))
+          % (dropout, avg_l1_perturbation))
     print("\nAverage L2-norm perturbation from L-inf attack for dropout %.2f%%: %.4f%%"
-          % (dropout_levels[dropout], avg_l2_perturbation))
+          % (dropout, avg_l2_perturbation))
     print("\nAverage LInf-norm perturbation from L-inf attack for dropout %.2f%%: %.4f%%"
-          % (dropout_levels[dropout], avg_lInf_perturbation))
+          % (dropout, avg_lInf_perturbation))
     print("Overall success of the L-infinity attack on dropout level %.2f%% with LInf bound %.3f: " %
           (dropout, eps))
