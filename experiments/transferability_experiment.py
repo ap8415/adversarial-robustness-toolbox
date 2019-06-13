@@ -4,8 +4,6 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 import sys
 from os.path import abspath
 
-from experiment_models.utils import to_one_hot
-
 sys.path.append(abspath('.'))
 
 import argparse
@@ -15,6 +13,7 @@ import tensorflow as tf
 from art.attacks.carlini import CarliniL2Method
 from art.utils import load_mnist_vectorized, load_mnist
 from experiment_models import neural_networks, convolutional
+from experiment_models.utils import to_one_hot
 from keras.backend.tensorflow_backend import set_session
 
 config = tf.ConfigProto()
