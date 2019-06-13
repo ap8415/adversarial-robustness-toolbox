@@ -76,3 +76,14 @@ def mmd_evaluation_2d(x, y):
     x_flat = x.reshape(x.shape[0], len(x[0].flatten()))
     y_flat = y.reshape(y.shape[0], len(y[0].flatten()))
     return maximum_mean_discrepancy(x_flat, y_flat, linear_kernel)
+
+
+def to_one_hot(c):
+    """
+    Converts c to a one-hot representation.
+    :param c: class
+    :return: one-hot representation.
+    """
+    enc = [0.0 for _ in range(0, 10)]
+    enc[c] = 1.0
+    return enc

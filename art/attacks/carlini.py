@@ -48,7 +48,7 @@ class CarliniL2Method(Attack):
                                             'batch_size']
 
     def __init__(self, classifier, confidence=0.0, targeted=True, learning_rate=0.01, binary_search_steps=15,
-                 max_iter=50, initial_const=0.01, max_halving=10, max_doubling=10, batch_size=128):
+                 max_iter=30, initial_const=0.01, max_halving=10, max_doubling=10, batch_size=128):
         """
         Create a Carlini L_2 attack instance.
 
@@ -211,7 +211,6 @@ class CarliniL2Method(Attack):
         # Compute perturbation with implicit batching
         nb_batches = int(np.ceil(x_adv.shape[0] / float(self.batch_size)))
         for batch_id in range(nb_batches):
-            print("HERE")
             logger.debug('Processing batch %i out of %i', batch_id, nb_batches)
 
             batch_index_1, batch_index_2 = batch_id * self.batch_size, (batch_id + 1) * self.batch_size
