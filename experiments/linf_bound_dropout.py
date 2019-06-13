@@ -19,6 +19,9 @@ from experiment_models import neural_networks, convolutional
 from experiment_models.utils import mmd_evaluation
 from keras.backend.tensorflow_backend import set_session
 
+config = tf.ConfigProto()
+config.gpu_options.allow_growth = True
+set_session(tf.Session(config=config))
 
 parser = argparse.ArgumentParser(description='Experiment parameters.')
 parser.add_argument("experiment_type", help="The model type used by the experiment.")
@@ -26,13 +29,6 @@ parser.add_argument("dropout", help="Level of dropout for which to perform exper
 parser.add_argument("-binary_steps", help="The number of BS steps used by the attack.", type=int, default=20)
 parser.add_argument("-confidence", help="The confidence parameter of the attack.", type=int, default=0)
 args = parser.parse_args()
-
-config = tf.ConfigProto()
-config.gpu_options.allow_growth = True
-set_session(tf.Session(config=config))
-
-logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
-
 
 classifier = None
 x_train = None

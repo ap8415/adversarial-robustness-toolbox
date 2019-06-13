@@ -94,12 +94,16 @@ def leNet_cifar(dropout_pool1, dropout_pool2, dropout_fc1, dropout_fc2, type):
     return classifier
 
 
-def mini_VGG(dropout):
+def mini_VGG(dropout, type):
     """
-    Implements a VGG-style architecture for use with the CIFAR-10 data set.
+    Implements a VGG-style architecture. This is the only architecture we use which achieves high enough accuracy
+    on CIFAR-10.
     """
     model = Sequential()
-    model.add(Conv2D(32, (3, 3), activation='relu', padding='same', input_shape=(32, 32, 3)))
+    if type == 'cifar10':
+        model.add(Conv2D(32, (3, 3), activation='relu', padding='same', input_shape=(32, 32, 3)))
+    else:  # MNIST
+        model.add(Conv2D(32, (3, 3), activation='relu', padding='same', input_shape=(32, 32, 1)))
     model.add(Conv2D(32, (3, 3), activation='relu', padding='same'))
     model.add(MaxPooling2D((2, 2)))
     if dropout > 0:

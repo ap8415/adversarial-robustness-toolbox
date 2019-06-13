@@ -31,7 +31,10 @@ l1_regularization = [0, 0.0001, 0.0002, 0.0003, 0.0004, 0.0005, 0.0006, 0.0007, 
 classifier = None
 
 
-(x_train, y_train), (x_test, y_test), min_, max_ = load_cifar10()
+(x_train, y_train), (x_test, y_test), min_, max_ = load_mnist()
+# Pad images to 32x32 size in order to fit the LeNet/VGG architectures
+x_train = np.pad(x_train, ((0, 0), (2, 2), (2, 2), (0, 0)), 'constant')
+x_test = np.pad(x_test, ((0, 0), (2, 2), (2, 2), (0, 0)), 'constant')
 print(x_train.shape)
 
 
@@ -55,7 +58,7 @@ for dropout in dropout_levels:
 
     print("DROPOUT LEVEL %.03f%%" % dropout)
 
-    classifier = convolutional.mini_VGG(dropout)
+    classifier = convolutional.mini_VGG(dropout, 'mnist')
     # classifier = neural_networks.three_layer_dnn(x_train.shape[1:], 300, 100, 0, 0, 0)
     # TODO: add other types of experiments; the only real variable here is the classifier.
 

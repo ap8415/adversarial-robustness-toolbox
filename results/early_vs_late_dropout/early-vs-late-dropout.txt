@@ -4,7 +4,6 @@ EARLY DROPOUT TEST:
 Test accuracy on dropout level 0.00%: 97.97%
 
 Test accuracy on adversarial sample for dropout 0.00%: 0.00%
-
 Average L1-norm perturbation from Carlini L2 attack for dropout 0.00%: 19.58%
 
 Average L2-norm perturbation from Carlini L2 attack for dropout 0.00%: 2.67%
