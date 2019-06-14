@@ -1,0 +1,136 @@
+2019-06-12 18:17:46.859597: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-06-12 18:17:46.865456: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3691430000 Hz
+2019-06-12 18:17:46.865856: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5643a499a900 executing computations on platform Host. Devices:
+2019-06-12 18:17:46.865884: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-12 18:17:47.266237: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5643a478b1f0 executing computations on platform CUDA. Devices:
+2019-06-12 18:17:47.266265: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX TITAN X, Compute Capability 5.2
+2019-06-12 18:17:47.268847: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:03:00.0
+totalMemory: 11.93GiB freeMemory: 11.69GiB
+2019-06-12 18:17:47.268874: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-12 18:17:47.270064: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-12 18:17:47.270083: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-12 18:17:47.270090: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-12 18:17:47.270323: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11375 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2)
+Using TensorFlow backend.
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3298: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-06-12 18:18:00.532440: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally
+2019-06-12 20:56:12.081238: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-06-12 20:56:12.087957: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3691430000 Hz
+2019-06-12 20:56:12.088376: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55948ba012d0 executing computations on platform Host. Devices:
+2019-06-12 20:56:12.088402: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-12 20:56:12.159582: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55948ba05e20 executing computations on platform CUDA. Devices:
+2019-06-12 20:56:12.159634: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX TITAN X, Compute Capability 5.2
+2019-06-12 20:56:12.160092: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:03:00.0
+totalMemory: 11.93GiB freeMemory: 10.65GiB
+2019-06-12 20:56:12.160120: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-12 20:56:12.161031: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-12 20:56:12.161054: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-12 20:56:12.161066: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-12 20:56:12.161360: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10359 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2)
+Using TensorFlow backend.
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3298: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-06-12 20:56:14.245356: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally
+2019-06-12 23:35:34.240780: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-06-12 23:35:34.263315: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3691430000 Hz
+2019-06-12 23:35:34.263822: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5585bc71d2a0 executing computations on platform Host. Devices:
+2019-06-12 23:35:34.263880: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-12 23:35:34.338218: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5585bc721df0 executing computations on platform CUDA. Devices:
+2019-06-12 23:35:34.338257: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX TITAN X, Compute Capability 5.2
+2019-06-12 23:35:34.338668: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:03:00.0
+totalMemory: 11.93GiB freeMemory: 10.53GiB
+2019-06-12 23:35:34.338690: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-12 23:35:34.339521: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-12 23:35:34.339541: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-12 23:35:34.339550: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-12 23:35:34.339826: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10239 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2)
+Using TensorFlow backend.
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3298: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-06-12 23:35:36.377715: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally
+2019-06-13 02:15:43.711681: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-06-13 02:15:43.735331: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3691430000 Hz
+2019-06-13 02:15:43.735872: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55d44b00b5f0 executing computations on platform Host. Devices:
+2019-06-13 02:15:43.735904: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-13 02:15:43.818177: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55d44ad2aa90 executing computations on platform CUDA. Devices:
+2019-06-13 02:15:43.818222: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX TITAN X, Compute Capability 5.2
+2019-06-13 02:15:43.818645: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:03:00.0
+totalMemory: 11.93GiB freeMemory: 10.51GiB
+2019-06-13 02:15:43.818671: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-13 02:15:43.819513: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-13 02:15:43.819535: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-13 02:15:43.819549: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-13 02:15:43.819820: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10224 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2)
+Using TensorFlow backend.
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3298: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-06-13 02:15:45.700571: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally

@@ -1,0 +1,211 @@
+(50000, 32, 32, 3)
+
+pula : L1 REG EXPERIMENT - GENERATES HEATMAPS: FROM 0 TO 0.0009 REG LEVEL
+DROPOUT LEVEL 0.000%
+
+Test accuracy on dropout level 0.00%: 76.930%
+
+Test accuracy on adversarial sample for dropout 0.00%: 11.700%
+
+Average L1-norm perturbation from carlini_l2 attack for dropout 0.00%: 5.2825%
+
+Average L2-norm perturbation from carlini_l2 attack for dropout 0.00%: 0.1483%
+
+Average LInf-norm perturbation from carlini_l2 attack for dropout 0.00%: 0.0182%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0000000034%
+And in log-scale: -19.511406%
+DROPOUT LEVEL 0.050%
+
+Test accuracy on dropout level 0.05%: 78.880%
+
+Test accuracy on adversarial sample for dropout 0.05%: 11.700%
+
+Average L1-norm perturbation from carlini_l2 attack for dropout 0.05%: 5.6142%
+
+Average L2-norm perturbation from carlini_l2 attack for dropout 0.05%: 0.1576%
+
+Average LInf-norm perturbation from carlini_l2 attack for dropout 0.05%: 0.0199%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0000000064%
+And in log-scale: -18.859679%
+DROPOUT LEVEL 0.100%
+
+Test accuracy on dropout level 0.10%: 80.120%
+
+Test accuracy on adversarial sample for dropout 0.10%: 10.200%
+
+Average L1-norm perturbation from carlini_l2 attack for dropout 0.10%: 5.5229%
+
+Average L2-norm perturbation from carlini_l2 attack for dropout 0.10%: 0.1555%
+
+Average LInf-norm perturbation from carlini_l2 attack for dropout 0.10%: 0.0194%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0000000097%
+And in log-scale: -18.455205%
+DROPOUT LEVEL 0.150%
+
+Test accuracy on dropout level 0.15%: 81.480%
+
+Test accuracy on adversarial sample for dropout 0.15%: 10.100%
+
+Average L1-norm perturbation from carlini_l2 attack for dropout 0.15%: 5.7053%
+
+Average L2-norm perturbation from carlini_l2 attack for dropout 0.15%: 0.1600%
+
+Average LInf-norm perturbation from carlini_l2 attack for dropout 0.15%: 0.0194%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0000000060%
+And in log-scale: -18.928984%
+DROPOUT LEVEL 0.200%
+
+Test accuracy on dropout level 0.20%: 82.850%
+
+Test accuracy on adversarial sample for dropout 0.20%: 10.300%
+
+Average L1-norm perturbation from carlini_l2 attack for dropout 0.20%: 5.6340%
+
+Average L2-norm perturbation from carlini_l2 attack for dropout 0.20%: 0.1600%
+
+Average LInf-norm perturbation from carlini_l2 attack for dropout 0.20%: 0.0202%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0000000079%
+And in log-scale: -18.652445%
+DROPOUT LEVEL 0.250%
+
+Test accuracy on dropout level 0.25%: 82.590%
+
+Test accuracy on adversarial sample for dropout 0.25%: 10.300%
+
+Average L1-norm perturbation from carlini_l2 attack for dropout 0.25%: 5.5966%
+
+Average L2-norm perturbation from carlini_l2 attack for dropout 0.25%: 0.1602%
+
+Average LInf-norm perturbation from carlini_l2 attack for dropout 0.25%: 0.0207%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0000000035%
+And in log-scale: -19.479493%
+DROPOUT LEVEL 0.300%
+
+Test accuracy on dropout level 0.30%: 83.860%
+
+Test accuracy on adversarial sample for dropout 0.30%: 9.300%
+
+Average L1-norm perturbation from carlini_l2 attack for dropout 0.30%: 6.1282%
+
+Average L2-norm perturbation from carlini_l2 attack for dropout 0.30%: 0.1748%
+
+Average LInf-norm perturbation from carlini_l2 attack for dropout 0.30%: 0.0222%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0000000021%
+And in log-scale: -19.969888%
+DROPOUT LEVEL 0.350%
+
+Test accuracy on dropout level 0.35%: 83.900%
+
+Test accuracy on adversarial sample for dropout 0.35%: 10.300%
+
+Average L1-norm perturbation from carlini_l2 attack for dropout 0.35%: 6.2381%
+
+Average L2-norm perturbation from carlini_l2 attack for dropout 0.35%: 0.1801%
+
+Average LInf-norm perturbation from carlini_l2 attack for dropout 0.35%: 0.0237%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0000000061%
+And in log-scale: -18.922338%
+DROPOUT LEVEL 0.400%
+
+Test accuracy on dropout level 0.40%: 84.010%
+
+Test accuracy on adversarial sample for dropout 0.40%: 10.300%
+
+Average L1-norm perturbation from carlini_l2 attack for dropout 0.40%: 6.0061%
+
+Average L2-norm perturbation from carlini_l2 attack for dropout 0.40%: 0.1750%
+
+Average LInf-norm perturbation from carlini_l2 attack for dropout 0.40%: 0.0237%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0000000058%
+And in log-scale: -18.970455%
+DROPOUT LEVEL 0.450%
+
+Test accuracy on dropout level 0.45%: 82.360%
+
+Test accuracy on adversarial sample for dropout 0.45%: 9.300%
+
+Average L1-norm perturbation from carlini_l2 attack for dropout 0.45%: 6.1085%
+
+Average L2-norm perturbation from carlini_l2 attack for dropout 0.45%: 0.1768%
+
+Average LInf-norm perturbation from carlini_l2 attack for dropout 0.45%: 0.0235%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0000000063%
+And in log-scale: -18.885375%
+DROPOUT LEVEL 0.500%
+
+Test accuracy on dropout level 0.50%: 82.070%
+
+Test accuracy on adversarial sample for dropout 0.50%: 10.400%
+
+Average L1-norm perturbation from carlini_l2 attack for dropout 0.50%: 6.2119%
+
+Average L2-norm perturbation from carlini_l2 attack for dropout 0.50%: 0.1806%
+
+Average LInf-norm perturbation from carlini_l2 attack for dropout 0.50%: 0.0245%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0000000050%
+And in log-scale: -19.114871%
+DROPOUT LEVEL 0.550%
+
+Test accuracy on dropout level 0.55%: 78.790%
+
+Test accuracy on adversarial sample for dropout 0.55%: 13.000%
+
+Average L1-norm perturbation from carlini_l2 attack for dropout 0.55%: 6.0059%
+
+Average L2-norm perturbation from carlini_l2 attack for dropout 0.55%: 0.1709%
+
+Average LInf-norm perturbation from carlini_l2 attack for dropout 0.55%: 0.0227%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0000000225%
+And in log-scale: -17.610552%
+DROPOUT LEVEL 0.600%
+
+Test accuracy on dropout level 0.60%: 76.670%
+
+Test accuracy on adversarial sample for dropout 0.60%: 12.500%
+
+Average L1-norm perturbation from carlini_l2 attack for dropout 0.60%: 5.8794%
+
+Average L2-norm perturbation from carlini_l2 attack for dropout 0.60%: 0.1719%
+
+Average LInf-norm perturbation from carlini_l2 attack for dropout 0.60%: 0.0233%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0000000167%
+And in log-scale: -17.905931%
+DROPOUT LEVEL 0.650%
+
+Test accuracy on dropout level 0.65%: 66.050%
+
+Test accuracy on adversarial sample for dropout 0.65%: 17.700%
+
+Average L1-norm perturbation from carlini_l2 attack for dropout 0.65%: 5.6924%
+
+Average L2-norm perturbation from carlini_l2 attack for dropout 0.65%: 0.1666%
+
+Average LInf-norm perturbation from carlini_l2 attack for dropout 0.65%: 0.0226%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0000000335%
+And in log-scale: -17.212895%
+DROPOUT LEVEL 0.700%
+
+Test accuracy on dropout level 0.70%: 65.490%
+
+Test accuracy on adversarial sample for dropout 0.70%: 18.300%
+
+Average L1-norm perturbation from carlini_l2 attack for dropout 0.70%: 5.2745%
+
+Average L2-norm perturbation from carlini_l2 attack for dropout 0.70%: 0.1543%
+
+Average LInf-norm perturbation from carlini_l2 attack for dropout 0.70%: 0.0204%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0000000296%
+And in log-scale: -17.334927%
+DROPOUT LEVEL 0.750%
+
+Test accuracy on dropout level 0.75%: 54.530%
+
+Test accuracy on adversarial sample for dropout 0.75%: 21.300%
+
+Average L1-norm perturbation from carlini_l2 attack for dropout 0.75%: 6.1663%
+
+Average L2-norm perturbation from carlini_l2 attack for dropout 0.75%: 0.1818%
+
+Average LInf-norm perturbation from carlini_l2 attack for dropout 0.75%: 0.0254%
+Estimate of Maximum Mean Discrepancy using the normalized linear kernel: 0.0000000680%
+And in log-scale: -16.504427%

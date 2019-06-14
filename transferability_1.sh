@@ -8,5 +8,4 @@ export LD_LIBRARY_PATH=/vol/cuda/9.0.176/lib64:/vol/cuda/9.0.176/lib:$LD_LIBRARY
 
 source activate venv
 
-python3 experiments/transferability_experiment.py three_layer_dn
-
+python3 experiments/transferability_experiment.py three_layer_dnn
