@@ -1,0 +1,14 @@
+Skipped layer 'input' of type 'Input' because it doesn't have any weights
+Converted weights for layer 'conv1' of type 'Convolution'
+Skipped layer 'pool1' of type 'Pooling' because it doesn't have any weights
+Converted weights for layer 'conv2' of type 'Convolution'
+Skipped layer 'pool2' of type 'Pooling' because it doesn't have any weights
+Converted weights for layer 'ip1' of type 'InnerProduct'
+Skipped layer 'relu1' of type 'ReLU' because it doesn't have any weights
+Converted weights for layer 'ip2' of type 'InnerProduct'
+Skipped layer 'prob' of type 'Softmax' because it doesn't have any weights
+Weight conversion complete.
+4 	 layers were processed, out of which:
+0 	 were of an unknown layer type
+0 	 did not have any weights
+File saved as leNet5_weights_sparse.h5
