@@ -1,0 +1,4 @@
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+F0615 02:07:22.579752 16390 db_lmdb.hpp:15] Check failed: mdb_status == 0 (2 vs. 0) No such file or directory
+*** Check failure stack trace: ***
+/var/spool/pbs/mom_priv/jobs/12378.firecrest.doc.ic.ac.uk.SC: line 14: 16390 Aborted                 python3 caffe_weight_converter/caffe_weight_converter.py 'slimnet' 'caffe_models/lenet5/slimnet.prototxt' 'caffe_models/lenet5/slimnet_fx_310k_iter_39000.caffemodel' --verbose
