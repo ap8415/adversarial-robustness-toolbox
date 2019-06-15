@@ -48,7 +48,7 @@ class CarliniL2Method(Attack):
                                             'batch_size']
 
     def __init__(self, classifier, confidence=0.0, targeted=True, learning_rate=0.01, binary_search_steps=15,
-                 max_iter=30, initial_const=0.01, max_halving=10, max_doubling=10, batch_size=128):
+                 max_iter=20, initial_const=0.01, max_halving=10, max_doubling=10, batch_size=128):
         """
         Create a Carlini L_2 attack instance.
 

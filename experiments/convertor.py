@@ -1,5 +1,5 @@
 from keras.models import Sequential, load_model
-from keras.layers import Dense, Flatten, Conv2D, MaxPooling2D, Dropout, AveragePooling2D
+from keras.layers import Dense, Flatten, Conv2D, MaxPooling2D, Dropout, AveragePooling2D, ReLU, Softmax
 
 from art.utils import load_mnist
 
@@ -16,17 +16,19 @@ seed(42)# keras seed fixing
 
 model = Sequential()
 
-model.add(Conv2D(20, (5, 5), activation='relu', input_shape=(28, 28, 1)))
+model.add(Conv2D(20, (5, 5), input_shape=(28, 28, 1), name='conv1'))
 model.add(MaxPooling2D())
 
-model.add(Conv2D(50, (5, 5), activation='relu'))
+model.add(Conv2D(50, (5, 5), name='conv2'))
 model.add(MaxPooling2D())
 
 model.add(Flatten())
 
-model.add(Dense(units=500, activation='relu'))
+model.add(Dense(units=500, name='ip1'))
+model.add(ReLU())
 
-model.add(Dense(units=10, activation='softmax'))
+model.add(Dense(units=10, name='ip2'))
+model.add(Softmax())
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 (x_train, y_train), (x_test, y_test), min_, max_ = load_mnist()
@@ -39,8 +41,7 @@ print(model.evaluate(x_test, y_test))
 
 # print(model.layers[5].get_weights()[0])
 
-model.load_weights('leNet5_weights_sparse.h5')
-
+model.load_weights('leNet5_weights_sparse.h5', by_name=True)
 
 print(model.evaluate(x_test, y_test))
 

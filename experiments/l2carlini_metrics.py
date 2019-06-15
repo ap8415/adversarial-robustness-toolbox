@@ -25,7 +25,7 @@ set_session(tf.Session(config=config))
 
 parser = argparse.ArgumentParser(description='Experiment parameters.')
 parser.add_argument("experiment_type", help="The model type used by the experiment.")
-parser.add_argument("-binary_steps", help="The number of BS steps used by the attack.", type=int, default=20)
+parser.add_argument("-binary_steps", help="The number of BS steps used by the attack.", type=int, default=10)
 parser.add_argument("-confidence", help="The confidence parameter of the attack.", type=int, default=0)
 args = parser.parse_args()
 
@@ -76,7 +76,7 @@ for dropout in range(0, 18):
     avg_lInf_perturbation = []
     mmd_statistic = []
     accuracy = []
-    for i in range(0, 10):
+    for i in range(0, 5):
         if args.experiment_type == "three_layer_dnn":
             classifier = neural_networks.three_layer_dnn(x_train.shape[1:], 300, 100, dropout_levels[dropout], 0, 0)
         elif args.experiment_type == "five_layer_dnn":
