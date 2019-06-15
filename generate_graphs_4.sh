@@ -1,4 +1,4 @@
-#PBS -l nodes=gpu04 -l mem=8GB -l gpu_mem=3GB
+#PBS -l nodes=gpu04 -l mem=6GB -l gpu_mem=3GB
 
 cd /vol/gpudata/ap8415/adversarial-robustness-toolbox 
 
