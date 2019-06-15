@@ -1,32 +1,5 @@
-name: "SlimNet_FX_310"
-layer {
-  name: "mnist"
-  type: "Data"
-  top: "data"
-  top: "label"
-  include {
-    phase: TRAIN
-  }
-  data_param {
-    source: "examples/mnist/mnist_train_lmdb_norm2"
-    batch_size: 100
-    backend: LMDB
-  }
-}
-layer {
-  name: "mnist"
-  type: "Data"
-  top: "data"
-  top: "label"
-  include {
-    phase: TEST
-  }
-  data_param {
-    source: "examples/mnist/mnist_test_lmdb_norm2"
-    batch_size: 100
-    backend: LMDB
-  }
-}
+name: "SIMPNET_SLIM"
+#Put Your DataLayer Here
 layer {
   name: "conv1"
   type: "Convolution"
