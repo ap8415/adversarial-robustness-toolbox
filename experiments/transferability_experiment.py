@@ -49,7 +49,7 @@ ones = np.where(np.argmax(y_test, axis=1) == 1)[0]
 dropout = 0.5
 
 for confidence in [0, 20]:
-    for it in range(0, 5):
+    for it in range(0, 1):
         print('20 BINARY SEARCH STEPS, CONFIDENCE VALUE:%.1f%%\n\n\n' % float(confidence))
 
         if args.experiment_type == "three_layer_dnn":

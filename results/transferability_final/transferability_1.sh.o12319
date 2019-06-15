@@ -1,0 +1,374 @@
+20 BINARY SEARCH STEPS, CONFIDENCE VALUE:0.0%
+
+
+
+art.attacks.carlini
+art.attacks.carlini
+
+Accuracy on adversarial samples generated on the dropout model evaluated by baseline model:47.200%
+
+Accuracy on adversarial samples generated on the baseline model evaluated by dropout model:80.900%
+Fraction of predictions that are the same on both baseline and dropout: 39.400%
+Acc of baseline predictions on baseline adversarial : 
+
+
+1.100000%
+
+
+Acc of dropout predictions on dropout adversarial : 
+
+
+7.600000%
+
+
+art.attacks.carlini
+art.attacks.carlini
+
+Accuracy on adversarial samples generated on the dropout model evaluated by baseline model:40.000%
+
+Accuracy on adversarial samples generated on the baseline model evaluated by dropout model:94.978%
+Fraction of predictions that are the same on both baseline and dropout: 39.912%
+Acc of baseline predictions on baseline adversarial : 
+
+
+0.792952%
+
+
+Acc of dropout predictions on dropout adversarial : 
+
+
+5.550661%
+
+
+Accuracy on adversarial samples generated on the dropout model evaluated by baseline model:48.600%
+
+Accuracy on adversarial samples generated on the baseline model evaluated by dropout model:83.400%
+Fraction of predictions that are the same on both baseline and dropout: 42.400%
+Acc of baseline predictions on baseline adversarial : 
+
+
+0.800000%
+
+
+Acc of dropout predictions on dropout adversarial : 
+
+
+7.500000%
+
+
+art.attacks.carlini
+art.attacks.carlini
+
+Accuracy on adversarial samples generated on the dropout model evaluated by baseline model:47.489%
+
+Accuracy on adversarial samples generated on the baseline model evaluated by dropout model:94.097%
+Fraction of predictions that are the same on both baseline and dropout: 46.960%
+Acc of baseline predictions on baseline adversarial : 
+
+
+1.497797%
+
+
+Acc of dropout predictions on dropout adversarial : 
+
+
+9.603524%
+
+
+Accuracy on adversarial samples generated on the dropout model evaluated by baseline model:46.200%
+
+Accuracy on adversarial samples generated on the baseline model evaluated by dropout model:80.900%
+Fraction of predictions that are the same on both baseline and dropout: 41.100%
+Acc of baseline predictions on baseline adversarial : 
+
+
+1.100000%
+
+
+Acc of dropout predictions on dropout adversarial : 
+
+
+7.700000%
+
+
+art.attacks.carlini
+art.attacks.carlini
+
+Accuracy on adversarial samples generated on the dropout model evaluated by baseline model:33.568%
+
+Accuracy on adversarial samples generated on the baseline model evaluated by dropout model:96.035%
+Fraction of predictions that are the same on both baseline and dropout: 33.040%
+Acc of baseline predictions on baseline adversarial : 
+
+
+1.145374%
+
+
+Acc of dropout predictions on dropout adversarial : 
+
+
+14.449339%
+
+
+Accuracy on adversarial samples generated on the dropout model evaluated by baseline model:48.700%
+
+Accuracy on adversarial samples generated on the baseline model evaluated by dropout model:76.200%
+Fraction of predictions that are the same on both baseline and dropout: 41.100%
+Acc of baseline predictions on baseline adversarial : 
+
+
+0.900000%
+
+
+Acc of dropout predictions on dropout adversarial : 
+
+
+5.100000%
+
+
+art.attacks.carlini
+art.attacks.carlini
+
+Accuracy on adversarial samples generated on the dropout model evaluated by baseline model:57.974%
+
+Accuracy on adversarial samples generated on the baseline model evaluated by dropout model:90.837%
+Fraction of predictions that are the same on both baseline and dropout: 56.740%
+Acc of baseline predictions on baseline adversarial : 
+
+
+0.969163%
+
+
+Acc of dropout predictions on dropout adversarial : 
+
+
+7.136564%
+
+
+20 BINARY SEARCH STEPS, CONFIDENCE VALUE:0.0%
+
+Accuracy on adversarial samples generated on the dropout model evaluated by baseline model:51.700%
+
+Accuracy on adversarial samples generated on the baseline model evaluated by dropout model:77.300%
+Fraction of predictions that are the same on both baseline and dropout: 42.400%
+Acc of baseline predictions on baseline adversarial : 
+
+
+1.100000%
+
+
+Acc of dropout predictions on dropout adversarial : 
+
+
+7.500000%
+
+
+art.attacks.carlini
+art.attacks.carlini
+
+Accuracy on adversarial samples generated on the dropout model evaluated by baseline model:51.542%
+
+Accuracy on adversarial samples generated on the baseline model evaluated by dropout model:96.388%
+Fraction of predictions that are the same on both baseline and dropout: 51.806%
+Acc of baseline predictions on baseline adversarial : 
+
+
+0.881057%
+
+
+Acc of dropout predictions on dropout adversarial : 
+
+
+8.105727%
+
+
+20 BINARY SEARCH STEPS, CONFIDENCE VALUE:20.0%
+
+
+Accuracy on adversarial samples generated on the dropout model evaluated by baseline model:29.900%
+
+Accuracy on adversarial samples generated on the baseline model evaluated by dropout model:24.900%
+Fraction of predictions that are the same on both baseline and dropout: 60.900%
+Acc of baseline predictions on baseline adversarial : 
+
+
+16.400000%
+
+
+Acc of dropout predictions on dropout adversarial : 
+
+
+30.100000%
+
+
+art.attacks.carlini
+art.attacks.carlini
+
+Accuracy on adversarial samples generated on the dropout model evaluated by baseline model:40.176%
+
+Accuracy on adversarial samples generated on the baseline model evaluated by dropout model:53.040%
+Fraction of predictions that are the same on both baseline and dropout: 50.925%
+Acc of baseline predictions on baseline adversarial : 
+
+
+52.070485%
+
+
+Acc of dropout predictions on dropout adversarial : 
+
+
+40.088106%
+
+
+20 BINARY SEARCH STEPS, CONFIDENCE VALUE:20.0%
+
+Accuracy on adversarial samples generated on the dropout model evaluated by baseline model:27.000%
+
+Accuracy on adversarial samples generated on the baseline model evaluated by dropout model:21.500%
+Fraction of predictions that are the same on both baseline and dropout: 65.000%
+Acc of baseline predictions on baseline adversarial : 
+
+
+16.200000%
+
+
+Acc of dropout predictions on dropout adversarial : 
+
+
+26.900000%
+
+
+art.attacks.carlini
+art.attacks.carlini
+
+Accuracy on adversarial samples generated on the dropout model evaluated by baseline model:40.793%
+
+Accuracy on adversarial samples generated on the baseline model evaluated by dropout model:38.414%
+Fraction of predictions that are the same on both baseline and dropout: 55.771%
+Acc of baseline predictions on baseline adversarial : 
+
+
+37.709251%
+
+
+Acc of dropout predictions on dropout adversarial : 
+
+
+40.792952%
+
+
+20 BINARY SEARCH STEPS, CONFIDENCE VALUE:20.0%
+
+
+Accuracy on adversarial samples generated on the dropout model evaluated by baseline model:31.000%
+
+Accuracy on adversarial samples generated on the baseline model evaluated by dropout model:23.800%
+Fraction of predictions that are the same on both baseline and dropout: 62.800%
+Acc of baseline predictions on baseline adversarial : 
+
+
+15.300000%
+
+
+Acc of dropout predictions on dropout adversarial : 
+
+
+30.700000%
+
+
+art.attacks.carlini
+art.attacks.carlini
+
+Accuracy on adversarial samples generated on the dropout model evaluated by baseline model:50.220%
+
+Accuracy on adversarial samples generated on the baseline model evaluated by dropout model:36.388%
+Fraction of predictions that are the same on both baseline and dropout: 53.392%
+Acc of baseline predictions on baseline adversarial : 
+
+
+35.682819%
+
+
+Acc of dropout predictions on dropout adversarial : 
+
+
+50.220264%
+
+
+20 BINARY SEARCH STEPS, CONFIDENCE VALUE:20.0%
+
+
+Accuracy on adversarial samples generated on the dropout model evaluated by baseline model:29.300%
+
+Accuracy on adversarial samples generated on the baseline model evaluated by dropout model:18.900%
+Fraction of predictions that are the same on both baseline and dropout: 62.400%
+Acc of baseline predictions on baseline adversarial : 
+
+
+14.100000%
+
+
+Acc of dropout predictions on dropout adversarial : 
+
+
+29.300000%
+
+
+art.attacks.carlini
+art.attacks.carlini
+
+Accuracy on adversarial samples generated on the dropout model evaluated by baseline model:34.978%
+
+Accuracy on adversarial samples generated on the baseline model evaluated by dropout model:49.956%
+Fraction of predictions that are the same on both baseline and dropout: 51.366%
+Acc of baseline predictions on baseline adversarial : 
+
+
+45.462555%
+
+
+Acc of dropout predictions on dropout adversarial : 
+
+
+34.889868%
+
+
+20 BINARY SEARCH STEPS, CONFIDENCE VALUE:20.0%
+
+
+
+Accuracy on adversarial samples generated on the dropout model evaluated by baseline model:28.900%
+
+Accuracy on adversarial samples generated on the baseline model evaluated by dropout model:22.300%
+Fraction of predictions that are the same on both baseline and dropout: 60.100%
+Acc of baseline predictions on baseline adversarial : 
+
+
+15.200000%
+
+
+Acc of dropout predictions on dropout adversarial : 
+
+
+28.800000%
+
+
+art.attacks.carlini
+art.attacks.carlini
+
+Accuracy on adversarial samples generated on the dropout model evaluated by baseline model:45.639%
+
+Accuracy on adversarial samples generated on the baseline model evaluated by dropout model:41.938%
+Fraction of predictions that are the same on both baseline and dropout: 52.599%
+Acc of baseline predictions on baseline adversarial : 
+
+
+41.938326%
+
+
+Acc of dropout predictions on dropout adversarial : 
+
+
+45.726872%
+
+

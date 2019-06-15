@@ -1,0 +1,66 @@
+3layer DNN
+
+confidence 0:
+
+untargeted:
+
+baseline on dropout: 47.2, 48.6, 46.2, 48.7, 51.7
+
+dropout on baseline: 80, 83.4, 80.9, 76.2, 77.3
+
+targeted (1s to 7s):
+
+baseline on dropout: 40, 47.489, 33.568, 57.974, 51.542
+
+dropout on baseline: 94.978, 94.097, 96.035, 90.837, 96.388
+
+
+
+confidence 20:
+
+untargeted:
+
+baseline on dropout: 29.9, 27, 31, 29.3, 28.9
+
+dropout on baseline: 24.9, 21.5, 23.8, 18.9, 22.3
+
+targeted (1s to 7s):
+
+baseline on dropout: 40.176, 40.793, 50.220, 34.978, 45.639
+
+dropout on baseline: 53.040, 38.414, 36.388, 49.956, 41.938
+
+
+
+
+5layer DNN
+
+confidence 0:
+
+untargeted:
+
+baseline on dropout: 66.2, 67.100, 60.500, 63.4, 48.600
+
+dropout on baseline: 75.1, 74.400, 78.400, 77.9, 51.800
+
+targeted (1s to 7s):
+
+baseline on dropout: 63.965, 62.203, 74.978, 73.128, 69.515
+
+dropout on baseline: 87.665, 90.396, 89.427, 86.079, 68.899
+
+
+
+confidence 20:
+
+untargeted:
+
+baseline on dropout: 47.600 51.400 44.500 49.200
+
+dropout on baseline: 58.100  56.700 51.000 50.900
+
+targeted (1s to 7s):
+
+baseline on dropout: 52.599 60.705 66.256 68.370
+
+dropout on baseline: 51.542 59.119 47.930 52.511
