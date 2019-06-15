@@ -1045,29 +1045,8 @@ layer {
   }
 }
 layer {
-  name: "accuracy"
-  type: "Accuracy"
-  bottom: "ip1"
-  bottom: "label"
-  top: "accuracy"
-  include {
-    phase: TEST
-  }
-}
-layer {
-  name: "accuracy_training"
-  type: "Accuracy"
-  bottom: "ip1"
-  bottom: "label"
-  top: "accuracy_training"
-  include {
-    phase: TRAIN
-  }
-}
-layer {
   name: "loss"
-  type: "SoftmaxWithLoss"
-  bottom: "ip1"
-  bottom: "label"
-  top: "loss"
+  type: "Softmax"
+  bottom: "ip2"
+  top: "prob"
 }
