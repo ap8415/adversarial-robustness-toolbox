@@ -1,5 +1,9 @@
 name: "SIMPNET_SLIM"
-#Put Your DataLayer Here
+input: "data"
+input_dim: 64
+input_dim: 1
+input_dim: 28
+input_dim: 28
 layer {
   name: "conv1"
   type: "Convolution"
