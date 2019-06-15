@@ -10,6 +10,6 @@ source activate venv
 
 python3 caffe_weight_converter/caffe_weight_converter.py \
    'slimnet' \
-   'caffe_models/lenet5/slimnet.prototxt' \
+   'caffe_models/lenet5/lenet5.prototxt' \
    'caffe_models/lenet5/slimnet_fx_310k_iter_39000.caffemodel' --verbose
 
