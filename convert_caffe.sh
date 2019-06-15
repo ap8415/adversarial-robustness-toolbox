@@ -11,5 +11,5 @@ source activate venv
 python3 caffe_weight_converter/caffe_weight_converter.py \
    'lenet_300_100' \
    'caffe_models/lenet300100/lenet300100.prototxt' \
-   'caffe_models/lenet5300100/caffe_lenet5_sparse.caffemodel' --verbose
+   'caffe_models/lenet300100/caffe_lenet300100_sparse.caffemodel' --verbose
 

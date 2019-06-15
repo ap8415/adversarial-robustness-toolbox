@@ -1,0 +1,13 @@
+Skipped layer 'input' of type 'Input' because it doesn't have any weights
+Converted weights for layer 'ip1' of type 'InnerProduct'
+Skipped layer 'relu1' of type 'ReLU' because it doesn't have any weights
+Converted weights for layer 'ip2' of type 'InnerProduct'
+Skipped layer 'relu2' of type 'ReLU' because it doesn't have any weights
+Skipped layer 'ip2_relu2_0_split' of type 'Split' because it doesn't have any weights
+Converted weights for layer 'ip3' of type 'InnerProduct'
+Skipped layer 'prob' of type 'Softmax' because it doesn't have any weights
+Weight conversion complete.
+3 	 layers were processed, out of which:
+0 	 were of an unknown layer type
+0 	 did not have any weights
+File saved as lenet_300_100.h5
