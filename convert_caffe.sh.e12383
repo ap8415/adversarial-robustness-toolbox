@@ -1,4 +1,0 @@
-WARNING: Logging before InitGoogleLogging() is written to STDERR
-F0615 02:24:07.014087 18050 net.cpp:757] Cannot copy param 0 weights from layer 'conv1'; shape mismatch.  Source param shape is 32 1 3 3 (288); target param shape is 64 1 3 3 (576). To learn this layer's parameters from scratch rather than copying from a saved net, rename the layer.
-*** Check failure stack trace: ***
-/var/spool/pbs/mom_priv/jobs/12383.firecrest.doc.ic.ac.uk.SC: line 14: 18050 Aborted                 python3 caffe_weight_converter/caffe_weight_converter.py 'slimnet' 'caffe_models/lenet5/slimnet.prototxt' 'caffe_models/lenet5/slimnet_fx_310k_iter_39000.caffemodel' --verbose

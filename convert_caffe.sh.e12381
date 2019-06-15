@@ -1,4 +1,0 @@
-WARNING: Logging before InitGoogleLogging() is written to STDERR
-F0615 02:17:42.492090 17526 insert_splits.cpp:29] Unknown bottom blob 'label' (layer 'accuracy', bottom index 1)
-*** Check failure stack trace: ***
-/var/spool/pbs/mom_priv/jobs/12381.firecrest.doc.ic.ac.uk.SC: line 14: 17526 Aborted                 python3 caffe_weight_converter/caffe_weight_converter.py 'slimnet' 'caffe_models/lenet5/slimnet.prototxt' 'caffe_models/lenet5/slimnet_fx_310k_iter_39000.caffemodel' --verbose
