@@ -1,3 +1,8 @@
+import sys
+from os.path import abspath
+
+sys.path.append(abspath('.'))
+
 from foolbox.models import KerasModel
 import keras.backend as k
 from keras import regularizers
