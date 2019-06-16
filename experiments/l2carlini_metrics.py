@@ -70,13 +70,13 @@ mean_l2_perturbation = []
 mean_lInf_perturbation = []
 mean_mmd = []
 
-for dropout in range(0, 18):
+for dropout in [0, 5, 10]:
     avg_l1_perturbation = []
     avg_l2_perturbation = []
     avg_lInf_perturbation = []
     mmd_statistic = []
     accuracy = []
-    for i in range(0, 5):
+    for i in range(0, 1):
         if args.experiment_type == "three_layer_dnn":
             classifier = neural_networks.three_layer_dnn(x_train.shape[1:], 300, 100, dropout_levels[dropout], 0, 0)
         elif args.experiment_type == "five_layer_dnn":
@@ -90,7 +90,7 @@ for dropout in range(0, 18):
         elif args.experiment_type == "leNet5":
             classifier = convolutional.leNet_cnn_single(dropout_levels[dropout])
 
-        classifier.fit(x_train, y_train, nb_epochs=20, batch_size=128)
+        classifier.fit(x_train, y_train, nb_epochs=50, batch_size=128)
 
         # Evaluate the classifier on the test set
         preds = np.argmax(classifier.predict(x_test), axis=1)
