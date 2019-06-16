@@ -12,6 +12,7 @@ from keras.layers import Dense, Flatten, Conv2D, MaxPooling2D, Dropout, AverageP
 from foolbox.batch_attacks import CarliniWagnerL2Attack
 from foolbox.criteria import Misclassification
 from foolbox.distances import Linf
+import numpy.linalg as LA
 
 from art.utils import load_mnist
 
@@ -44,37 +45,50 @@ import time
 
 print(time.time())
 
-model = Sequential()
-model.add(Conv2D(32, (3, 3), activation='relu', padding='same', input_shape=(32, 32, 1)))
-model.add(Conv2D(32, (3, 3), activation='relu', padding='same'))
-model.add(MaxPooling2D((2, 2)))
-model.add(Dropout(0.3))
-model.add(Conv2D(64, (3, 3), activation='relu', padding='same'))
-model.add(Conv2D(64, (3, 3), activation='relu', padding='same'))
-model.add(MaxPooling2D((2, 2)))
-model.add(Dropout(0.3))
-model.add(Conv2D(128, (3, 3), activation='relu', padding='same'))
-model.add(Conv2D(128, (3, 3), activation='relu', padding='same'))
-model.add(MaxPooling2D((2, 2)))
-model.add(Dropout(0.3))
-model.add(Flatten())
-model.add(Dense(128, activation='relu', kernel_initializer='he_uniform'))
-model.add(Dropout(0.3))
-model.add(Dense(10, activation='softmax'))
+dr = [0, 0.25, 0.5, 0.6, 0.7]
 
-model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+for dropout in dr:
 
-model.fit(x_train, y_train, verbose=0, epochs=20, batch_size=128)
+    model = Sequential()
+    model.add(Conv2D(32, (3, 3), activation='relu', padding='same', input_shape=(32, 32, 1)))
+    model.add(Conv2D(32, (3, 3), activation='relu', padding='same'))
+    model.add(MaxPooling2D((2, 2)))
+    model.add(Dropout(dr))
+    model.add(Conv2D(64, (3, 3), activation='relu', padding='same'))
+    model.add(Conv2D(64, (3, 3), activation='relu', padding='same'))
+    model.add(MaxPooling2D((2, 2)))
+    model.add(Dropout(dr))
+    model.add(Conv2D(128, (3, 3), activation='relu', padding='same'))
+    model.add(Conv2D(128, (3, 3), activation='relu', padding='same'))
+    model.add(MaxPooling2D((2, 2)))
+    model.add(Dropout(dr))
+    model.add(Flatten())
+    model.add(Dense(128, activation='relu', kernel_initializer='he_uniform'))
+    model.add(Dropout(dr))
+    model.add(Dense(10, activation='softmax'))
 
-kmodel = KerasModel(model=model, bounds=(0, 1))
+    model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
-attack = CarliniWagnerL2Attack(kmodel, Misclassification())
+    model.fit(x_train, y_train, verbose=0, epochs=20, batch_size=128)
 
-adversarial = attack(x_test[:1000], np.argmax(y_test[:1000], axis=1), binary_search_steps=10, max_iterations=200)
+    kmodel = KerasModel(model=model, bounds=(0, 1))
 
-preds = np.argmax(model.predict(adversarial), axis=1)
+    attack = CarliniWagnerL2Attack(kmodel, Misclassification())
 
-acc = (np.sum(preds == np.argmax(y_test[:1000], axis=1)) / len(y_test)) * 100
-print(acc)
+    adversarial = attack(x_test[:1000], np.argmax(y_test[:1000], axis=1), binary_search_steps=10, max_iterations=200)
 
-print(time.time())
+    preds = np.argmax(model.predict(adversarial), axis=1)
+
+    acc = (np.sum(preds == np.argmax(y_test[:1000], axis=1)) / len(y_test)) * 100
+    print(acc)
+
+    perturbations = np.absolute((adversarial - x_test[:1000]))
+    l1_perturbations = [LA.norm(perturbation.flatten(), 1) for perturbation in perturbations]
+    l2_perturbations = [LA.norm(perturbation.flatten(), 2) for perturbation in perturbations]
+    lInf_perturbations = [LA.norm(perturbation.flatten(), np.inf) for perturbation in perturbations]
+
+    print(np.average(l1_perturbations))
+    print(np.average(l2_perturbations))
+    print(np.average(lInf_perturbations))
+
+    print(time.time())
