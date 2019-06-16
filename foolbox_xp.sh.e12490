@@ -1,0 +1,12 @@
+Using TensorFlow backend.
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Traceback (most recent call last):
+  File "foolbox_exp/experiment.py", line 56, in <module>
+    model.add(Dropout(dr))
+  File "/vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/keras/legacy/interfaces.py", line 91, in wrapper
+    return func(*args, **kwargs)
+  File "/vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/keras/layers/core.py", line 104, in __init__
+    self.rate = min(1., max(0., rate))
+TypeError: '>' not supported between instances of 'list' and 'float'

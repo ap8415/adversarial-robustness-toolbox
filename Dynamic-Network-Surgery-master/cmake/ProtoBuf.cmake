@@ -1,6 +1,10 @@
 # Finds Google Protocol Buffers library and compilers and extends
 # the standard cmake script with version and python generation support
 
+set(Protobuf_LIBRARY "/homes/ap8415/protobuf" CACHE PATH "")
+set(Protobuf_INCLUDE_DIR "/homes/ap8415/protobuf/include" CACHE PATH "")
+set(Protobuf_PROTOC_EXECUTABLE "/homes/ap8415/protobuf/bin/protoc" CACHE FILEPATH "")
+
 find_package( Protobuf REQUIRED )
 include_directories(SYSTEM ${PROTOBUF_INCLUDE_DIR})
 list(APPEND Caffe_LINKER_LIBS ${PROTOBUF_LIBRARIES})
