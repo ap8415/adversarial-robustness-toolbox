@@ -133,7 +133,7 @@ for dropout in [0, 5, 10]:
     mean_lInf_perturbation.append(mean(avg_lInf_perturbation))
     mean_mmd.append(np.math.log(mean(mmd_statistic)))
 
-dropout_levels = [100 * d for d in dropout_levels]  # show levels as percentages
+dropout_levels = [100 * d for d in [0, 0.25, 0.5]]  # show levels as percentages
 
 # Plot all the measurements
 
@@ -144,7 +144,7 @@ plt.plot(dropout_levels, min_l1_perturbation,
 fig.suptitle(actual_names[args.experiment_type] + ' on MNIST, L1 distance')
 plt.xlabel('Dropout%')
 plt.ylabel('L1 distance')
-plt.savefig(args.experiment_type + '_l1.png')
+plt.savefig(args.experiment_type + '_l1_x.png')
 
 fig = plt.figure()
 plt.plot(dropout_levels, min_l2_perturbation,
@@ -153,7 +153,7 @@ plt.plot(dropout_levels, min_l2_perturbation,
 fig.suptitle(actual_names[args.experiment_type] + ' on MNIST, L2 distance')
 plt.xlabel('Dropout%')
 plt.ylabel('L2 distance')
-plt.savefig(args.experiment_type + '_l2.png')
+plt.savefig(args.experiment_type + '_l2_x.png')
 
 fig = plt.figure()
 plt.plot(dropout_levels, min_lInf_perturbation,
@@ -162,7 +162,7 @@ plt.plot(dropout_levels, min_lInf_perturbation,
 fig.suptitle(actual_names[args.experiment_type] + ' on MNIST, LInf distance')
 plt.xlabel('Dropout%')
 plt.ylabel('LInf distance')
-plt.savefig(args.experiment_type + '_lInf.png')
+plt.savefig(args.experiment_type + '_lInf_x.png')
 
 # Note: MMD is plotted in log-space for relevancy
 fig = plt.figure()
@@ -172,4 +172,4 @@ plt.plot(dropout_levels, min_mmd,
 fig.suptitle(actual_names[args.experiment_type] + ' on MNIST, linear MMD in log-space')
 plt.xlabel('Dropout%')
 plt.ylabel('Linear MMD')
-plt.savefig(args.experiment_type + '_mmd.png')
+plt.savefig(args.experiment_type + '_mmd_x.png')
