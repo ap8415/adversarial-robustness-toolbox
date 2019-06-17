@@ -12,6 +12,7 @@ Average l1, l2, linf normalized perturbations over the successful attacks:
 0.8580050834542735
 0.1680039738718936
 Current time: 1560782620.22
+
 Initially failed: 0
 Failed after the 2nd attack attempt: 0
 Failed attacks: 0
@@ -25,6 +26,7 @@ Average l1, l2, linf normalized perturbations over the successful attacks:
 0.9193014028247827
 0.1786421659284071
 Current time: 1560783196.02
+
 Initially failed: 0
 Failed after the 2nd attack attempt: 0
 Failed attacks: 1
@@ -38,6 +40,7 @@ Average l1, l2, linf normalized perturbations over the successful attacks:
 0.9118617753914134
 0.17507001355773003
 Current time: 1560783768.97
+
 Initially failed: 0
 Failed after the 2nd attack attempt: 0
 Failed attacks: 0
@@ -51,6 +54,7 @@ Average l1, l2, linf normalized perturbations over the successful attacks:
 0.9290777577631965
 0.17926056641451
 Current time: 1560784345.57
+
 Initially failed: 0
 Failed after the 2nd attack attempt: 0
 Failed attacks: 0
@@ -64,6 +68,7 @@ Average l1, l2, linf normalized perturbations over the successful attacks:
 0.9041828024652372
 0.17831748871857306
 Current time: 1560784921.25
+
 Initially failed: 0
 Failed after the 2nd attack attempt: 0
 Failed attacks: 1
@@ -77,6 +82,7 @@ Average l1, l2, linf normalized perturbations over the successful attacks:
 0.9583856342197776
 0.19159006573145757
 Current time: 1560785501.14
+
 Initially failed: 0
 Failed after the 2nd attack attempt: 0
 Failed attacks: 0
@@ -90,6 +96,7 @@ Average l1, l2, linf normalized perturbations over the successful attacks:
 0.9419974635349079
 0.18569398492775968
 Current time: 1560786078.77
+
 Initially failed: 0
 Failed after the 2nd attack attempt: 0
 Failed attacks: 0
@@ -103,6 +110,7 @@ Average l1, l2, linf normalized perturbations over the successful attacks:
 0.9930473068762135
 0.19588365862880447
 Current time: 1560786657.82
+
 Initially failed: 0
 Failed after the 2nd attack attempt: 0
 Failed attacks: 0
@@ -116,6 +124,7 @@ Average l1, l2, linf normalized perturbations over the successful attacks:
 0.9566664898224183
 0.18585532353005965
 Current time: 1560787234.07
+
 Initially failed: 0
 Failed after the 2nd attack attempt: 0
 Failed attacks: 0
@@ -129,6 +138,7 @@ Average l1, l2, linf normalized perturbations over the successful attacks:
 0.9877437282256621
 0.1969579073596833
 Current time: 1560787815.85
+
 Initially failed: 0
 Failed after the 2nd attack attempt: 0
 Failed attacks: 0
@@ -142,6 +152,7 @@ Average l1, l2, linf normalized perturbations over the successful attacks:
 0.9499266541490153
 0.18660147718764808
 Current time: 1560788395.23
+
 Initially failed: 0
 Failed after the 2nd attack attempt: 0
 Failed attacks: 0
@@ -155,6 +166,7 @@ Average l1, l2, linf normalized perturbations over the successful attacks:
 1.00022538964255
 0.20813692006831974
 Current time: 1560788972.18
+
 Initially failed: 0
 Failed after the 2nd attack attempt: 0
 Failed attacks: 1
@@ -168,6 +180,7 @@ Average l1, l2, linf normalized perturbations over the successful attacks:
 1.0071302715194936
 0.2059427368439454
 Current time: 1560789555.47
+
 Initially failed: 3
 Failed after the 2nd attack attempt: 0
 Failed attacks: 1
@@ -181,6 +194,7 @@ Average l1, l2, linf normalized perturbations over the successful attacks:
 1.0249465700390796
 0.20502910853960732
 Current time: 1560790183.49
+
 Initially failed: 1
 Failed after the 2nd attack attempt: 1
 Failed attacks: 1
@@ -194,6 +208,7 @@ Average l1, l2, linf normalized perturbations over the successful attacks:
 1.0912651509547033
 0.2148941733331629
 Current time: 1560790782.53
+
 Initially failed: 2
 Failed after the 2nd attack attempt: 1
 Failed attacks: 0
