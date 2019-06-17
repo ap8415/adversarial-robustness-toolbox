@@ -24,24 +24,25 @@ list(APPEND Caffe_LINKER_LIBS ${GFLAGS_LIBRARIES})
 include(cmake/ProtoBuf.cmake)
 
 # ---[ HDF5
+set(HDF5_ROOT "/vol/gpudata/ap8415/HDF5-1.10.1/HDF_Group/HDF5/1.10.1" CACHE PATH "")
 find_package(HDF5 COMPONENTS HL REQUIRED)
 include_directories(SYSTEM ${HDF5_INCLUDE_DIRS} ${HDF5_HL_INCLUDE_DIR})
 list(APPEND Caffe_LINKER_LIBS ${HDF5_LIBRARIES})
 
 # ---[ LMDB
-find_package(LMDB REQUIRED)
-include_directories(SYSTEM ${LMDB_INCLUDE_DIR})
-list(APPEND Caffe_LINKER_LIBS ${LMDB_LIBRARIES})
+#find_package(LMDB REQUIRED)
+#include_directories(SYSTEM ${LMDB_INCLUDE_DIR})
+#list(APPEND Caffe_LINKER_LIBS ${LMDB_LIBRARIES})
 
 # ---[ LevelDB
-find_package(LevelDB REQUIRED)
-include_directories(SYSTEM ${LevelDB_INCLUDE})
-list(APPEND Caffe_LINKER_LIBS ${LevelDB_LIBRARIES})
+#find_package(LevelDB REQUIRED)
+#include_directories(SYSTEM ${LevelDB_INCLUDE})
+#list(APPEND Caffe_LINKER_LIBS ${LevelDB_LIBRARIES})
 
 # ---[ Snappy
-find_package(Snappy REQUIRED)
-include_directories(SYSTEM ${Snappy_INCLUDE_DIR})
-list(APPEND Caffe_LINKER_LIBS ${Snappy_LIBRARIES})
+#find_package(Snappy REQUIRED)
+#include_directories(SYSTEM ${Snappy_INCLUDE_DIR})
+#list(APPEND Caffe_LINKER_LIBS ${Snappy_LIBRARIES})
 
 # ---[ CUDA
 include(cmake/Cuda.cmake)
@@ -57,13 +58,13 @@ if(NOT HAVE_CUDA)
 endif()
 
 # ---[ OpenCV
-find_package(OpenCV QUIET COMPONENTS core highgui imgproc imgcodecs)
-if(NOT OpenCV_FOUND) # if not OpenCV 3.x, then imgcodecs are not found
-  find_package(OpenCV REQUIRED COMPONENTS core highgui imgproc)
-endif()
-include_directories(SYSTEM ${OpenCV_INCLUDE_DIRS})
-list(APPEND Caffe_LINKER_LIBS ${OpenCV_LIBS})
-message(STATUS "OpenCV found (${OpenCV_CONFIG_PATH})")
+#find_package(OpenCV QUIET COMPONENTS core highgui imgproc imgcodecs)
+#if(NOT OpenCV_FOUND) # if not OpenCV 3.x, then imgcodecs are not found
+#  find_package(OpenCV REQUIRED COMPONENTS core highgui imgproc)
+#endif()
+#include_directories(SYSTEM ${OpenCV_INCLUDE_DIRS})
+#list(APPEND Caffe_LINKER_LIBS ${OpenCV_LIBS})
+#message(STATUS "OpenCV found (${OpenCV_CONFIG_PATH})")
 
 # ---[ BLAS
 if(NOT APPLE)

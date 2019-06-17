@@ -1,10 +1,10 @@
 import sys
 from os.path import abspath
 
+sys.path.append(abspath('.'))
+
 from experiment_models import neural_networks
 from experiment_models.utils import mmd_evaluation
-
-sys.path.append(abspath('.'))
 
 from foolbox.models import KerasModel
 from keras.models import Sequential

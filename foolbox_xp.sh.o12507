@@ -1,0 +1,178 @@
+Current time: 1560782039.67
+Initially failed: 0
+Failed after the 2nd attack attempt: 0
+Failed attacks: 0
+Size of perturbation vectors: 1000
+Average l1, l2, linf perturbations over the successful attacks:
+15.025501141211233
+1.0265198601141896
+0.21571801863630566
+Average l1, l2, linf normalized perturbations over the successful attacks:
+15.025501141211233
+1.0265198601141896
+0.21571801863630566
+Current time: 1560782647.54
+Initially failed: 0
+Failed after the 2nd attack attempt: 0
+Failed attacks: 0
+Size of perturbation vectors: 1000
+Average l1, l2, linf perturbations over the successful attacks:
+14.326451921978288
+1.00520218027718
+0.2185989578695996
+Average l1, l2, linf normalized perturbations over the successful attacks:
+14.326451921978288
+1.00520218027718
+0.2185989578695996
+Current time: 1560783259.30
+Initially failed: 0
+Failed after the 2nd attack attempt: 0
+Failed attacks: 0
+Size of perturbation vectors: 1000
+Average l1, l2, linf perturbations over the successful attacks:
+15.533515784948067
+1.0723794201630175
+0.23341404865601845
+Average l1, l2, linf normalized perturbations over the successful attacks:
+15.533515784948067
+1.0723794201630175
+0.23341404865601845
+Current time: 1560783874.65
+Initially failed: 0
+Failed after the 2nd attack attempt: 0
+Failed attacks: 0
+Size of perturbation vectors: 1000
+Average l1, l2, linf perturbations over the successful attacks:
+15.457110001271904
+1.0607666422103343
+0.2327554997807586
+Average l1, l2, linf normalized perturbations over the successful attacks:
+15.457110001271904
+1.0607666422103343
+0.2327554997807586
+Current time: 1560784492.31
+Initially failed: 0
+Failed after the 2nd attack attempt: 0
+Failed attacks: 0
+Size of perturbation vectors: 1000
+Average l1, l2, linf perturbations over the successful attacks:
+15.39099380044271
+1.0655107245175859
+0.23596534722938328
+Average l1, l2, linf normalized perturbations over the successful attacks:
+15.39099380044271
+1.0655107245175859
+0.23596534722938328
+Current time: 1560785107.94
+Initially failed: 0
+Failed after the 2nd attack attempt: 0
+Failed attacks: 0
+Size of perturbation vectors: 1000
+Average l1, l2, linf perturbations over the successful attacks:
+15.367963779765734
+1.0595985067908904
+0.23321927939891487
+Average l1, l2, linf normalized perturbations over the successful attacks:
+15.367963779765734
+1.0595985067908904
+0.23321927939891487
+Current time: 1560785729.43
+Initially failed: 0
+Failed after the 2nd attack attempt: 0
+Failed attacks: 0
+Size of perturbation vectors: 1000
+Average l1, l2, linf perturbations over the successful attacks:
+15.291440521496025
+1.041550640381264
+0.23008995038511532
+Average l1, l2, linf normalized perturbations over the successful attacks:
+15.291440521496025
+1.041550640381264
+0.23008995038511532
+Current time: 1560786344.39
+Initially failed: 0
+Failed after the 2nd attack attempt: 0
+Failed attacks: 0
+Size of perturbation vectors: 1000
+Average l1, l2, linf perturbations over the successful attacks:
+15.181529397916439
+1.0429895071335946
+0.23517340153390606
+Average l1, l2, linf normalized perturbations over the successful attacks:
+15.181529397916439
+1.0429895071335946
+0.23517340153390606
+Current time: 1560786963.60
+Initially failed: 0
+Failed after the 2nd attack attempt: 0
+Failed attacks: 0
+Size of perturbation vectors: 1000
+Average l1, l2, linf perturbations over the successful attacks:
+15.406545602960547
+1.0604782514836029
+0.23289343684092823
+Average l1, l2, linf normalized perturbations over the successful attacks:
+15.406545602960547
+1.0604782514836029
+0.23289343684092823
+Current time: 1560787582.48
+Initially failed: 0
+Failed after the 2nd attack attempt: 0
+Failed attacks: 0
+Size of perturbation vectors: 1000
+Average l1, l2, linf perturbations over the successful attacks:
+15.592224430263872
+1.0636222780369595
+0.23525241165000663
+Average l1, l2, linf normalized perturbations over the successful attacks:
+15.592224430263872
+1.0636222780369595
+0.23525241165000663
+Current time: 1560788199.40
+Initially failed: 0
+Failed after the 2nd attack attempt: 0
+Failed attacks: 0
+Size of perturbation vectors: 1000
+Average l1, l2, linf perturbations over the successful attacks:
+16.057734956184365
+1.085603191293902
+0.23792105393180737
+Average l1, l2, linf normalized perturbations over the successful attacks:
+16.057734956184365
+1.085603191293902
+0.23792105393180737
+Current time: 1560788810.96
+Initially failed: 3
+Failed after the 2nd attack attempt: 3
+Failed attacks: 0
+Size of perturbation vectors: 997
+Average l1, l2, linf perturbations over the successful attacks:
+15.609566071746434
+1.067296272925249
+0.23360076698898932
+Average l1, l2, linf normalized perturbations over the successful attacks:
+22.299380102494904
+1.5247089613217844
+0.3337153814128419
+Current time: 1560789454.54
+Initially failed: 1
+Failed after the 2nd attack attempt: 1
+Failed attacks: 0
+Size of perturbation vectors: 999
+Average l1, l2, linf perturbations over the successful attacks:
+15.381431007517945
+1.0425719068236443
+0.2241226264760812
+Average l1, l2, linf normalized perturbations over the successful attacks:
+17.09047889724216
+1.1584132298040493
+0.24902514052897912
+Current time: 1560790096.66
+Initially failed: 11
+Failed after the 2nd attack attempt: 10
+Failed attacks: 1
+Size of perturbation vectors: 990
+Average l1, l2, linf perturbations over the successful attacks:
+15.186144079982276
+1.0267536174214948
+0.2117872100707753

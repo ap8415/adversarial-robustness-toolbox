@@ -8,4 +8,4 @@ export LD_LIBRARY_PATH=/vol/cuda/9.0.176/lib64:/vol/cuda/9.0.176/lib:$LD_LIBRARY
 
 source activate venv
 
-python3 foolbox_exp/experiment.py five_layer_dnn
+python3 foolbox_exp/l_inf_experiment.py five_layer_dnn
