@@ -66,6 +66,18 @@ def symmetric_five_layer_nn(input_shape, early_dropout, late_dropout):
 
     return model
 
+# Symmetric five layer NN.
+def symmetric_five_layer_nn_l1reg(input_shape, l1reg_early, l1reg_late):
+    model = Sequential()
+    model.add(Dense(500, input_shape=input_shape, activation='relu', kernel_regularizer=regularizers.l1(l1reg_early)))
+    model.add(Dense(800, activation='relu', kernel_regularizer=regularizers.l1(l1reg_early)))
+    model.add(Dense(800, activation='relu', kernel_regularizer=regularizers.l1(l1reg_late)))
+    model.add(Dense(500, activation='relu', kernel_regularizer=regularizers.l1(l1reg_late)))
+    model.add(Dense(10, activation='softmax'))
+    model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+    return model
+
 
 def asymmetric_six_layer_nn(input_shape, early_dropout, late_dropout):
     model = Sequential()
@@ -127,6 +139,12 @@ def three_layer_dnn_foolbox(input_shape, layer1_size, layer2_size, dropout, l1_r
 # Symmetric five layer NN.
 def symmetric_five_layer_nn_foolbox(input_shape, early_dropout, late_dropout):
     model = symmetric_five_layer_nn(input_shape, early_dropout, late_dropout)
+    kmodel = KerasModel(model=model, bounds=(0, 1))
+    return kmodel
+
+
+def symmetric_five_layer_nn_l1reg_foolbox(input_shape, l1reg_early, l1reg_late):
+    model = symmetric_five_layer_nn_l1reg(input_shape, l1reg_early, l1reg_late)
     kmodel = KerasModel(model=model, bounds=(0, 1))
     return kmodel
 
