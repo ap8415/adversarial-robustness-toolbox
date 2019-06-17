@@ -3,11 +3,20 @@ from __future__ import division
 
 import numpy as np
 import logging
+import sys
 
 from .base import BatchAttack
 from .base import generator_decorator
 from ..utils import onehot_like
 
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+handler = logging.StreamHandler(sys.stdout)
+handler.setLevel(logging.INFO)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+logger.addHandler(handler)
 
 class CarliniWagnerL2Attack(BatchAttack):
     """The L2 version of the Carlini & Wagner attack.

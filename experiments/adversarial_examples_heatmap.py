@@ -70,14 +70,14 @@ for l1_reg in range(0, 10):
     for i in range(0, 4):
         print("Iteration %i of 4:" % (i+1))
         if args.experiment_type == "two_layer_dnn":
-            classifier = neural_networks.two_layer_dnn(x_train.shape[1:], 0, l1_regularization[l1_reg], 0)
+            classifier = neural_networks.two_layer_dnn_art(x_train.shape[1:], 0, l1_regularization[l1_reg], 0)
         elif args.experiment_type == "three_layer_dnn":
             classifier = neural_networks.three_layer_dnn(x_train.shape[1:], 300, 100, 0, l1_regularization[l1_reg], 0)
         # elif args.experiment_type == "five_layer_dnn":
         #     classifier = neural_networks.symmetric_five_layer_nn(x_train.shape[1:],
         #                                                          dropout_levels[dropout], dropout_levels[dropout])
         elif args.experiment_type == "six_layer_dnn":
-            classifier = neural_networks.asymmetric_six_layer_nn_regularized(x_train.shape[1:], l1_regularization[l1_reg])
+            classifier = neural_networks.asymmetric_six_layer_nn_l1reg(x_train.shape[1:], l1_regularization[l1_reg])
         # elif args.experiment_type == "simple_cnn":
         #     classifier = convolutional.simple_cnn(dropout_levels[dropout])
         # elif args.experiment_type == "leNet5":

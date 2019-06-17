@@ -51,6 +51,7 @@ class KerasModel(DifferentiableModel):
         inputs = model.input
         labels = K.placeholder(shape=(None,))
         predictions = model.output
+        self.model = model
 
         shape = K.int_shape(predictions)
         _, num_classes = shape
@@ -127,3 +128,15 @@ class KerasModel(DifferentiableModel):
         g = self._process_gradient(dpdx, g)
         assert g.shape == inputs.shape
         return g
+
+    def fit(self, x, y, epochs, batch_size):
+        """
+        Fits the underlying model.
+        """
+        self.model.fit(x, y, verbose=0, epochs=epochs, batch_size=batch_size)
+
+    def predict(self, x):
+        """
+        Gets probabilistic predictions from the underlying model.
+        """
+        return self.model.predict(x)

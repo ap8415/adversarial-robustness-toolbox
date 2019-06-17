@@ -78,12 +78,12 @@ for dropout in [0, 5, 10]:
     accuracy = []
     for i in range(0, 1):
         if args.experiment_type == "three_layer_dnn":
-            classifier = neural_networks.three_layer_dnn(x_train.shape[1:], 300, 100, dropout_levels[dropout], 0, 0)
+            classifier = neural_networks.three_layer_dnn_art(x_train.shape[1:], 300, 100, dropout_levels[dropout], 0, 0)
         elif args.experiment_type == "five_layer_dnn":
-            classifier = neural_networks.symmetric_five_layer_nn(x_train.shape[1:],
+            classifier = neural_networks.symmetric_five_layer_nn_art(x_train.shape[1:],
                                                                  dropout_levels[dropout], dropout_levels[dropout])
         elif args.experiment_type == "six_layer_dnn":
-            classifier = neural_networks.asymmetric_six_layer_nn(x_train.shape[1:],
+            classifier = neural_networks.asymmetric_six_layer_nn_art(x_train.shape[1:],
                                                                  dropout_levels[dropout], dropout_levels[dropout])
         elif args.experiment_type == "VGG":
             classifier = convolutional.mini_VGG(dropout_levels[dropout], "mnist")

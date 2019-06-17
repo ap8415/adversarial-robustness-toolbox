@@ -26,16 +26,6 @@ from art import NUMPY_DTYPE
 from art.attacks.attack import Attack
 from art.utils import compute_success, get_labels_np_array, tanh_to_original, original_to_tanh
 
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
-
-handler = logging.StreamHandler(sys.stdout)
-handler.setLevel(logging.DEBUG)
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-handler.setFormatter(formatter)
-logger.addHandler(handler)
-
-
 class CarliniL2Method(Attack):
     """
     The L_2 optimized attack of Carlini and Wagner (2016). This attack is among the most effective and should be used

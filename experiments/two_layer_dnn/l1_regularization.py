@@ -21,7 +21,7 @@ print(x_train.shape)
 l1_reg_levels = [0.0001, 0.0002, 0.0003, 0.0004, 0.0005]
 
 for l1_level in range(0, 5):
-    classifier = neural_networks.two_layer_dnn(x_train.shape[1:], 0, l1_reg_levels[l1_level], 0)
+    classifier = neural_networks.two_layer_dnn_art(x_train.shape[1:], 0, l1_reg_levels[l1_level], 0)
     classifier.fit(x_train, y_train, nb_epochs=10, batch_size=128)
 
     # Evaluate the classifier on the test set

@@ -22,7 +22,7 @@ print('\n\n\nTWO-LAYER DNN DROPOUT EXPERIMENT, DROPOUT FROM 0->0.75 IN INCREMENT
 dropout_levels = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75]
 
 for dropout in range(0, 16):
-    classifier = neural_networks.two_layer_dnn(x_train.shape[1:], dropout_levels[dropout], 0, 0)
+    classifier = neural_networks.two_layer_dnn_art(x_train.shape[1:], dropout_levels[dropout], 0, 0)
     classifier.fit(x_train, y_train, nb_epochs=10, batch_size=128)
 
     # Evaluate the classifier on the test set

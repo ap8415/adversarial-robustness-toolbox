@@ -64,7 +64,7 @@ for eps in eps_values:
     for i in range(0, 5):
         print("Iteration %d of 5:" % (i+1))
         if args.experiment_type == "two_layer_dnn":
-            classifier = neural_networks.two_layer_dnn(x_train.shape[1:], dropout, 0, 0)
+            classifier = neural_networks.two_layer_dnn_art(x_train.shape[1:], dropout, 0, 0)
         elif args.experiment_type == "three_layer_dnn":
             classifier = neural_networks.three_layer_dnn(x_train.shape[1:], 300, 100, dropout, 0, 0)
         elif args.experiment_type == "five_layer_dnn":
