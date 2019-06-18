@@ -54,8 +54,8 @@ import time
 
 print("Current time: %.2f" % time.time())
 
-# dr = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85]
-dr = [0.5, 0]
+dr = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85]
+# dr = [0.5, 0]
 
 l1_std = []
 l2_std = []
@@ -87,17 +87,17 @@ for dropout in dr:
         else:
             kmodel = convolutional.leNet_cnn_foolbox(0, dropout, "mnist")
 
-    kmodel.fit(x_train, y_train, epochs=1, batch_size=128)
-    # kmodel.fit(x_train, y_train, epochs=50, batch_size=128)
+    # kmodel.fit(x_train, y_train, epochs=1, batch_size=128)
+    kmodel.fit(x_train, y_train, epochs=50, batch_size=128)
 
     preds = np.argmax(kmodel.predict(x_test), axis=1)
 
     attack = CarliniWagnerL2Attack(kmodel, Misclassification())
 
-    x_sample = x_test[:10]
-    y_sample = y_test[:10]
-    # x_sample = x_test[:1000]
-    # y_sample = y_test[:1000]
+    # x_sample = x_test[:10]
+    # y_sample = y_test[:10]
+    x_sample = x_test[:1000]
+    y_sample = y_test[:1000]
 
     adversarial = attack(x_sample, np.argmax(y_sample, axis=1), binary_search_steps=5, max_iterations=600)
 
