@@ -20,10 +20,14 @@ Module providing convenience functions.
 """
 from __future__ import absolute_import, division, print_function, unicode_literals
 
+import csv
 import logging
+import math
 import os
 
 import numpy as np
+
+import os
 
 logger = logging.getLogger(__name__)
 
@@ -550,6 +554,73 @@ def load_mnist_vectorized(raw=False):
 
     return (x_train, y_train), (x_test, y_test), min_, max_
 
+
+def load_spambase():
+
+    def normalize(val, minval, maxval):
+        v = 100 * (val - minval) / (maxval - minval)
+        return max(0, min(100, v))
+
+    from art import DATA_PATH
+    data = []
+
+    path = get_file('spambase.data', path=DATA_PATH,
+                    url='https://archive.ics.uci.edu/ml/machine-learning-databases/spambase/spambase.data')
+
+    # Read the training data
+    f = open(path)
+    reader = csv.reader(f)
+    next(reader, None)
+    for row in reader:
+        data.append(row)
+    f.close()
+
+    X = np.array([x[:-1] for x in data]).astype(np.float)
+    Y = np.array([x[-1] for x in data]).astype(np.float)
+    del data  # free up the memory
+
+    # First, we normalize all the features to the range [0, 100].
+    # If we normalize to [0, 1], we end up with a lot of features with values that are nonzero, but less than 10^-6
+    # which is not particularly desirable.
+
+    minvals = np.amin(X, axis=0)
+    maxvals = np.amax(X, axis=0)
+
+    X_normalised = []
+    for sample in X:
+        X_normalised.append([normalize(sample[i], minvals[i], maxvals[i]) for i in range(len(sample))])
+    X = np.array(X_normalised)
+
+    clean = np.where(Y == 0)[0]
+    spam = np.where(Y == 1)[0]
+
+    X_clean = np.take(X, clean, axis=0)
+    X_spam = np.take(X, spam, axis=0)
+
+    split_clean = int(len(X_clean) * 4 / 5)
+    split_spam = int(len(X_spam) * 4 / 5)
+
+    # approx 80-20 train-test split
+    X_train = np.concatenate((X_clean[:split_clean], X_spam[:split_spam]), axis=0)
+    X_test = np.concatenate((X_clean[split_clean:], X_spam[split_spam:]), axis=0)
+    Y_train = [0 for _ in range(split_clean)] + [1 for _ in range(split_spam)]
+    Y_test = [0 for _ in range(len(X_clean) - split_clean)] + [1 for _ in range(len(X_spam) - split_spam)]
+
+
+    def binary(c):
+        """
+        Converts c to a one-hot binaryrepresentation.
+        :param c: class
+        :return: one-hot representation.
+        """
+        enc = [0.0 for _ in range(0, 2)]
+        enc[c] = 1.0
+        return enc
+
+    Y_train = np.array([binary(c) for c in Y_train])
+    Y_test = np.array([binary(c) for c in Y_test])
+
+    return (X_train, Y_train), (X_test, Y_test), 0, 100
 
 def load_stl():
     """
