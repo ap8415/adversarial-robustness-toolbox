@@ -53,7 +53,7 @@ import time
 
 print("Current time: %.2f" % time.time())
 
-l1_regularization = [0, 1e-6]#1e-5, 2e-5, 3e-5, 4e-5, 5e-5, 7.5e-5, 1e-4, 1.5e-4, 2e-4, 3e-4, 5e-4]
+l1_regularization = [0, 1e-7]#1e-5, 2e-5, 3e-5, 4e-5, 5e-5, 7.5e-5, 1e-4, 1.5e-4, 2e-4, 3e-4, 5e-4]
 
 l1_std = []
 l2_std = []
