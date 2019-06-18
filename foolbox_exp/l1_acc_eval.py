@@ -55,7 +55,7 @@ import time
 print("Current time: %.2f" % time.time())
 print("\n\n\n%s\n\n\n", args.experiment_type)
 
-l1_regularization = [1e-6, 2e-6, 4e-6, 7e-6, 1e-5, 2e-5, 3e-5, 5e-5, 7.5e-5, 1e-4, 1.25e-4, 1.5e-4, 2e-4, 3e-4, 5e-4]
+l1_regularization = [1e-5, 1e-6]#[0, 1e-6, 2e-6, 4e-6, 7e-6, 1e-5, 2e-5, 3e-5, 5e-5, 7.5e-5, 1e-4, 1.25e-4, 1.5e-4, 2e-4, 3e-4, 5e-4]
 
 for l1_reg in l1_regularization:
     kmodel = None
