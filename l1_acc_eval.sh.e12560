@@ -1,0 +1,123 @@
+Using TensorFlow backend.
+2019-06-18 14:24:11.271850: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-06-18 14:24:11.296837: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3691870000 Hz
+2019-06-18 14:24:11.297514: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55e37c61e160 executing computations on platform Host. Devices:
+2019-06-18 14:24:11.297565: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-18 14:24:11.381941: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55e37c61f590 executing computations on platform CUDA. Devices:
+2019-06-18 14:24:11.381995: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX TITAN X, Compute Capability 5.2
+2019-06-18 14:24:11.382376: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:03:00.0
+totalMemory: 11.93GiB freeMemory: 10.88GiB
+2019-06-18 14:24:11.382397: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-18 14:24:11.383274: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-18 14:24:11.383294: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-18 14:24:11.383301: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-18 14:24:11.383535: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10586 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2)
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-06-18 14:24:13.116524: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally
+Using TensorFlow backend.
+2019-06-18 14:51:00.420724: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-06-18 14:51:00.424873: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3691870000 Hz
+2019-06-18 14:51:00.425270: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x559f7d2a8760 executing computations on platform Host. Devices:
+2019-06-18 14:51:00.425290: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-18 14:51:00.499636: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x559f7bdd7680 executing computations on platform CUDA. Devices:
+2019-06-18 14:51:00.499683: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX TITAN X, Compute Capability 5.2
+2019-06-18 14:51:00.500232: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:03:00.0
+totalMemory: 11.93GiB freeMemory: 10.38GiB
+2019-06-18 14:51:00.500259: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-18 14:51:00.501507: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-18 14:51:00.501548: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-18 14:51:00.501562: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-18 14:51:00.501972: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10100 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2)
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-06-18 14:51:02.283157: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally
+Using TensorFlow backend.
+2019-06-18 15:29:48.514265: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-06-18 15:29:48.536797: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3691870000 Hz
+2019-06-18 15:29:48.537348: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55712c73f880 executing computations on platform Host. Devices:
+2019-06-18 15:29:48.537371: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-18 15:29:48.613684: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55712c95c3d0 executing computations on platform CUDA. Devices:
+2019-06-18 15:29:48.613735: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX TITAN X, Compute Capability 5.2
+2019-06-18 15:29:48.614433: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:03:00.0
+totalMemory: 11.93GiB freeMemory: 11.13GiB
+2019-06-18 15:29:48.614471: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-18 15:29:48.615886: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-18 15:29:48.615933: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-18 15:29:48.615949: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-18 15:29:48.616452: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10829 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2)
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-06-18 15:29:50.530022: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally
+Using TensorFlow backend.
+2019-06-18 16:15:17.695577: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-06-18 16:15:17.720807: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3691870000 Hz
+2019-06-18 16:15:17.721507: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55c75ef71d30 executing computations on platform Host. Devices:
+2019-06-18 16:15:17.721561: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-18 16:15:17.793270: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55c75f18e370 executing computations on platform CUDA. Devices:
+2019-06-18 16:15:17.793305: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX TITAN X, Compute Capability 5.2
+2019-06-18 16:15:17.793631: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:03:00.0
+totalMemory: 11.93GiB freeMemory: 10.88GiB
+2019-06-18 16:15:17.793651: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-18 16:15:17.794537: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-18 16:15:17.794555: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-18 16:15:17.794563: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-18 16:15:17.794836: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10586 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2)
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-06-18 16:15:21.136353: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally
+Traceback (most recent call last):
+  File "foolbox_exp/l1_acc_eval.py", line 90, in <module>
+    weights = layer.get_weights()[0] # ignore bias vector
+IndexError: list index out of range
+Using TensorFlow backend.
+2019-06-18 16:21:17.993029: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-06-18 16:21:18.016829: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3691870000 Hz
+2019-06-18 16:21:18.017387: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55cce820f330 executing computations on platform Host. Devices:
+2019-06-18 16:21:18.017421: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-18 16:21:18.100895: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55cce810a660 executing computations on platform CUDA. Devices:
+2019-06-18 16:21:18.100944: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX TITAN X, Compute Capability 5.2
+2019-06-18 16:21:18.101365: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:03:00.0
+totalMemory: 11.93GiB freeMemory: 10.88GiB
+2019-06-18 16:21:18.101394: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-18 16:21:18.102293: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-18 16:21:18.102316: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-18 16:21:18.102341: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-18 16:21:18.102618: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10586 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2)
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-06-18 16:21:21.160025: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally
+Traceback (most recent call last):
+  File "foolbox_exp/l1_acc_eval.py", line 90, in <module>
+    weights = layer.get_weights()[0] # ignore bias vector
+IndexError: list index out of range
