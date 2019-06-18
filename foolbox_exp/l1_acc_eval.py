@@ -4,7 +4,7 @@ from os.path import abspath
 
 sys.path.append(abspath('.'))
 
-from experiment_models import neural_networks
+from experiment_models import neural_networks, convolutional
 from experiment_models.utils import mmd_evaluation
 
 from foolbox.models import KerasModel
@@ -53,42 +53,54 @@ elif args.experiment_type in ["VGG", "leNet5"]:
 import time
 
 print("Current time: %.2f" % time.time())
+print("\n\n\n%s\n\n\n", args.experiment_type)
 
-l1_regularization = [5e-4]
-
+l1_regularization = [1e-6, 2e-6, 4e-6, 7e-6, 1e-5, 2e-5, 3e-5, 5e-5, 7.5e-5, 1e-4, 1.25e-4, 1.5e-4, 2e-4, 3e-4, 5e-4]
 
 for l1_reg in l1_regularization:
     kmodel = None
 
+    print("Regularization lambda: %.8f" % l1_reg)
+
     if args.experiment_type == "three_layer_dnn":
         kmodel = neural_networks.three_layer_dnn_foolbox(x_train.shape[1:], 300, 100, 0, l1_reg, 0)
     elif args.experiment_type == "five_layer_dnn":
-        kmodel = neural_networks.symmetric_five_layer_nn_foolbox(x_train.shape[1:], 0, 0)
+        kmodel = neural_networks.symmetric_five_layer_nn_l1reg_foolbox(x_train.shape[1:], l1_reg, l1_reg)
     elif args.experiment_type == "six_layer_dnn":
-        kmodel = neural_networks.asymmetric_six_layer_nn_foolbox(x_train.shape[1:], 0, 0)
-    # elif args.experiment_type == "VGG":
-    #     classifier = convolutional.mini_VGG(dropout_levels[dropout], "mnist")
-    # elif args.experiment_type == "leNet5":
-    #     classifier = convolutional.leNet_cnn_single(dropout_levels[dropout])
+        kmodel = neural_networks.asymmetric_six_layer_nn_l1reg_foolbox(x_train.shape[1:], l1_reg)
+    elif args.experiment_type == "VGG":
+        kmodel = convolutional.mini_VGG_foolbox(0, 0, l1_reg, "mnist")
+    elif args.experiment_type == "leNet5":
+        kmodel = convolutional.leNet_cnn_l1reg_foolbox(l1_reg, "mnist")
 
+    acc = 0
     for i in range(0, 10):
-        kmodel.fit(x_train, y_train, epochs=4, batch_size=128)
+        kmodel.fit(x_train, y_train, epochs=5, batch_size=128)
         acc = np.sum(np.argmax(kmodel.predict(x_test), axis=1) == np.argmax(y_test, axis=1))
         print(acc)
+    print("Final accuracy: %d" % acc)
 
     total_weights = 0
-    zero_weights = 0
+    small_weights_4 = 0
+    small_weights_5 = 0
+    small_weights_6 = 0
+    small_weights_7 = 0
 
     for layer in kmodel.model.layers:
         weights = layer.get_weights()[0] # ignore bias vector
         # print(weights)
         total_weights += len(weights.flatten())
         for w in weights.flatten():
-            if math.fabs(w) < 1e-4:
-                zero_weights += 1
+            if math.fabs(w) <= 1e-4:
+                small_weights_4 += 1
+            if math.fabs(w) <= 1e-5:
+                small_weights_5 += 1
+            if math.fabs(w) <= 1e-6:
+                small_weights_6 += 1
+            if math.fabs(w) <= 1e-7:
+                small_weights_7 += 1
 
-    print(total_weights)
-    print(zero_weights)
-
+    print("Total weights: %d; smaller than 10^-4: %d'; smaller than 10^-5: %d; smaller than 10^-6: %d; smaller than"
+          " 10^-7: %d" % (total_weights, small_weights_4, small_weights_5, small_weights_6, small_weights_7))
 
     print("Current time: %.2f" % time.time())
