@@ -3,7 +3,7 @@ from os.path import abspath
 
 sys.path.append(abspath('.'))
 
-from experiment_models import neural_networks
+from experiment_models import neural_networks, convolutional
 from experiment_models.utils import mmd_evaluation
 
 from foolbox.models import KerasModel
@@ -80,10 +80,10 @@ for dropout in dr:
         kmodel = neural_networks.symmetric_five_layer_nn_foolbox(x_train.shape[1:], dropout, dropout)
     elif args.experiment_type == "six_layer_dnn":
         kmodel = neural_networks.asymmetric_six_layer_nn_foolbox(x_train.shape[1:], dropout, dropout)
-    # elif args.experiment_type == "VGG":
-    #     classifier = convolutional.mini_VGG(dropout_levels[dropout], "mnist")
-    # elif args.experiment_type == "leNet5":
-    #     classifier = convolutional.leNet_cnn_single(dropout_levels[dropout])
+    elif args.experiment_type == "VGG":
+        kmodel = convolutional.mini_VGG_foolbox(dropout, dropout, 0, "mnist")
+    elif args.experiment_type == "leNet5":
+        kmodel = convolutional.leNet_cnn_foolbox(dropout, dropout, "mnist")
 
     # kmodel.fit(x_train, y_train, epochs=10, batch_size=128)
     kmodel.fit(x_train, y_train, epochs=50, batch_size=128)

@@ -3,7 +3,7 @@ from os.path import abspath
 
 sys.path.append(abspath('.'))
 
-from experiment_models import neural_networks
+from experiment_models import neural_networks, convolutional
 from experiment_models.utils import mmd_evaluation
 
 from foolbox.models import KerasModel
@@ -27,7 +27,7 @@ set_session(tf.Session(config=config))
 
 parser = argparse.ArgumentParser(description='Experiment parameters.')
 parser.add_argument("experiment_type", help="The model type used by the experiment.")
-parser.add_argument("dropout_type", help="The dropout type used by the experiment: early or late.")
+parser.add_argument("dropout_type", help="The dropout type used by the experiment: pooling or dense.")
 parser.add_argument("-confidence", help="The confidence parameter of the attack.", type=int, default=0)
 args = parser.parse_args()
 
@@ -54,7 +54,8 @@ import time
 
 print("Current time: %.2f" % time.time())
 
-dr = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
+# dr = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85]
+dr = [0.5, 0]
 
 l1_std = []
 l2_std = []
@@ -75,28 +76,28 @@ linear_mmd = []
 for dropout in dr:
     kmodel = None
 
-    if args.experiment_type == "five_layer_dnn":
-        if args.dropout_type == "early":
-            kmodel = neural_networks.symmetric_five_layer_nn_foolbox(x_train.shape[1:], dropout, 0)
+    if args.experiment_type == "VGG":
+        if args.dropout_type == "pooling":
+            kmodel = convolutional.mini_VGG_foolbox(dropout, 0, 0, "mnist")
         else:
-            kmodel = neural_networks.symmetric_five_layer_nn_foolbox(x_train.shape[1:], 0, dropout)
-    elif args.experiment_type == "six_layer_dnn":
-        if args.dropout_type == "early":
-            kmodel = neural_networks.asymmetric_six_layer_nn_foolbox(x_train.shape[1:], dropout, 0)
+            kmodel = convolutional.mini_VGG_foolbox(0, dropout, 0, "mnist")
+    elif args.experiment_type == "leNet5":
+        if args.dropout_type == "pooling":
+            kmodel = convolutional.leNet_cnn_foolbox(dropout, 0, "mnist")
         else:
-            kmodel = neural_networks.asymmetric_six_layer_nn_foolbox(x_train.shape[1:], 0, dropout)
+            kmodel = convolutional.leNet_cnn_foolbox(0, dropout, "mnist")
 
-    # kmodel.fit(x_train, y_train, epochs=10, batch_size=128)
-    kmodel.fit(x_train, y_train, epochs=50, batch_size=128)
+    kmodel.fit(x_train, y_train, epochs=1, batch_size=128)
+    # kmodel.fit(x_train, y_train, epochs=50, batch_size=128)
 
     preds = np.argmax(kmodel.predict(x_test), axis=1)
 
     attack = CarliniWagnerL2Attack(kmodel, Misclassification())
 
-    # x_sample = x_test[:10]
-    # y_sample = y_test[:10]
-    x_sample = x_test[:1000]
-    y_sample = y_test[:1000]
+    x_sample = x_test[:10]
+    y_sample = y_test[:10]
+    # x_sample = x_test[:1000]
+    # y_sample = y_test[:1000]
 
     adversarial = attack(x_sample, np.argmax(y_sample, axis=1), binary_search_steps=5, max_iterations=600)
 

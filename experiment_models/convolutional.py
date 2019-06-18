@@ -30,7 +30,7 @@ def leNet_cnn_single(dropout):
     return leNet_cnn(dropout, dropout, dropout, dropout)
 
 
-def leNet_cnn(dropout_pool1, dropout_pool2, dropout_fc1, dropout_fc2, type):
+def leNet_cnn(dropout_pooling, dropout_dense, type):
     model = Sequential()
 
     if type == 'cifar10':
@@ -38,23 +38,23 @@ def leNet_cnn(dropout_pool1, dropout_pool2, dropout_fc1, dropout_fc2, type):
     else:
         model.add(Conv2D(6, (5, 5), activation='relu', input_shape=(32, 32, 1)))
     model.add(AveragePooling2D())
-    if dropout_pool1 > 0:
-        model.add(Dropout(dropout_pool1))
+    if dropout_pooling > 0:
+        model.add(Dropout(dropout_pooling))
 
     model.add(Conv2D(16, (5, 5), activation='relu'))
     model.add(AveragePooling2D())
-    if dropout_pool2 > 0:
-        model.add(Dropout(dropout_pool2))
+    if dropout_pooling > 0:
+        model.add(Dropout(dropout_pooling))
 
     model.add(Flatten())
 
     model.add(Dense(units=120, activation='relu'))
-    if dropout_fc1 > 0:
-        model.add(Dropout(dropout_fc1))
+    if dropout_dense > 0:
+        model.add(Dropout(dropout_dense))
 
     model.add(Dense(units=84, activation='relu'))
-    if dropout_fc2 > 0:
-        model.add(Dropout(dropout_fc2))
+    if dropout_dense > 0:
+        model.add(Dropout(dropout_dense))
 
     model.add(Dense(units=10, activation='softmax'))
 
@@ -87,7 +87,7 @@ def leNet_cnn_l1reg(l1reg, type):
     return model
 
 
-def mini_VGG(dropout, type):
+def mini_VGG(dropout_pooling, dropout_dense, l1_reg, type):
     model = Sequential()
     if type == 'cifar10':
         model.add(Conv2D(32, (3, 3), activation='relu', padding='same', input_shape=(32, 32, 3)))
@@ -95,22 +95,25 @@ def mini_VGG(dropout, type):
         model.add(Conv2D(32, (3, 3), activation='relu', padding='same', input_shape=(32, 32, 1)))
     model.add(Conv2D(32, (3, 3), activation='relu', padding='same'))
     model.add(MaxPooling2D((2, 2)))
-    if dropout > 0:
-        model.add(Dropout(dropout))
+    if dropout_pooling > 0:
+        model.add(Dropout(dropout_pooling))
     model.add(Conv2D(64, (3, 3), activation='relu', padding='same'))
     model.add(Conv2D(64, (3, 3), activation='relu', padding='same'))
     model.add(MaxPooling2D((2, 2)))
-    if dropout > 0:
-        model.add(Dropout(dropout))
+    if dropout_pooling > 0:
+        model.add(Dropout(dropout_pooling))
     model.add(Conv2D(128, (3, 3), activation='relu', padding='same'))
     model.add(Conv2D(128, (3, 3), activation='relu', padding='same'))
     model.add(MaxPooling2D((2, 2)))
-    if dropout > 0:
-        model.add(Dropout(dropout))
+    if dropout_pooling > 0:
+        model.add(Dropout(dropout_pooling))
     model.add(Flatten())
-    model.add(Dense(128, activation='relu', kernel_initializer='he_uniform'))
-    if dropout > 0:
-        model.add(Dropout(dropout))
+    model.add(Dense(512, activation='relu', kernel_initializer='he_uniform'))
+    if dropout_dense > 0:
+        model.add(Dropout(dropout_dense))
+    model.add(Dense(200, activation='relu', kernel_initializer='he_uniform'))
+    if dropout_dense > 0:
+        model.add(Dropout(dropout_dense))
     model.add(Dense(10, activation='softmax'))
 
     model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
@@ -138,7 +141,8 @@ def mini_VGG_l1reg(l1reg, type):
     model.add(MaxPooling2D((2, 2)))
 
     model.add(Flatten())
-    model.add(Dense(128, activation='relu', kernel_initializer='he_uniform', kernel_regularizer=regularizers.l1(l1reg)))
+    model.add(Dense(512, activation='relu', kernel_initializer='he_uniform', kernel_regularizer=regularizers.l1(l1reg)))
+    model.add(Dense(200, activation='relu', kernel_initializer='he_uniform', kernel_regularizer=regularizers.l1(l1reg)))
     model.add(Dense(10, activation='softmax'))
 
     model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
@@ -146,12 +150,12 @@ def mini_VGG_l1reg(l1reg, type):
     return model
 
 
-def mini_VGG_foolbox(dropout, type):
+def mini_VGG_foolbox(dropout_pooling, dropout_dense, l1reg, type):
     """
     Implements a VGG-style architecture. This is the only architecture we use which achieves high enough accuracy
     on CIFAR-10.
     """
-    model = mini_VGG(dropout, type)
+    model = mini_VGG(dropout_pooling, dropout_dense, l1reg, type)
     classifier = KerasModel(model=model, bounds=(0, 1))
     return classifier
 
@@ -166,8 +170,8 @@ def mini_VGG_l1reg_foolbox(l1reg, type):
     return classifier
 
 
-def leNet_cnn_foolbox(dropout_pool1, dropout_pool2, dropout_fc1, dropout_fc2, type):
-    model = leNet_cnn(dropout_pool1, dropout_pool2, dropout_fc1, dropout_fc2, type)
+def leNet_cnn_foolbox(dropout_pooling, dropout_dense, type):
+    model = leNet_cnn(dropout_pooling, dropout_dense, type)
     classifier = KerasModel(model=model, bounds=(0, 1))
     return classifier
 
@@ -198,8 +202,8 @@ def mini_VGG_l1reg_art(l1reg, type):
     return classifier
 
 
-def leNet_cnn_art(dropout_pool1, dropout_pool2, dropout_fc1, dropout_fc2, type):
-    model = leNet_cnn(dropout_pool1, dropout_pool2, dropout_fc1, dropout_fc2, type)
+def leNet_cnn_art(dropout_pooling, dropout_dense, type):
+    model = leNet_cnn(dropout_pooling, dropout_dense, type)
     classifier = KerasClassifier(clip_values=(0., 1.), model=model)
     return classifier
 
