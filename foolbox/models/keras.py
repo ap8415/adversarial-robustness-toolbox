@@ -133,7 +133,7 @@ class KerasModel(DifferentiableModel):
         """
         Fits the underlying model.
         """
-        self.model.fit(x, y, verbose=0, epochs=epochs, batch_size=batch_size)
+        self.model.fit(x, y, verbose=1, epochs=epochs, batch_size=batch_size)
 
     def predict(self, x):
         """

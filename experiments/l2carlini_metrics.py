@@ -86,7 +86,7 @@ for dropout in [0, 5, 10]:
             classifier = neural_networks.asymmetric_six_layer_nn_art(x_train.shape[1:],
                                                                  dropout_levels[dropout], dropout_levels[dropout])
         elif args.experiment_type == "VGG":
-            classifier = convolutional.mini_VGG(dropout_levels[dropout], "mnist")
+            classifier = convolutional.mini_VGG_art(dropout_levels[dropout], "mnist")
         elif args.experiment_type == "leNet5":
             classifier = convolutional.leNet_cnn_single(dropout_levels[dropout])
 

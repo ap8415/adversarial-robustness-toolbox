@@ -27,6 +27,7 @@ set_session(tf.Session(config=config))
 
 parser = argparse.ArgumentParser(description='Experiment parameters.')
 parser.add_argument("experiment_type", help="The model type used by the experiment.")
+parser.add_argument("dropout_type", help="The model type used by the experiment.")
 parser.add_argument("-confidence", help="The confidence parameter of the attack.", type=int, default=0)
 args = parser.parse_args()
 
@@ -53,7 +54,7 @@ import time
 
 print("Current time: %.2f" % time.time())
 
-l1_regularization = [0, 1e-6]#1e-5, 2e-5, 3e-5, 4e-5, 5e-5, 7.5e-5, 1e-4, 1.5e-4, 2e-4, 3e-4, 5e-4]
+dr = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
 
 l1_std = []
 l2_std = []
@@ -69,25 +70,23 @@ linf_misclas = []
 
 failure_rate = []
 
-acc = []
-
 linear_mmd = []
 
-for l1_reg in l1_regularization:
+for dropout in dr:
     kmodel = None
 
-    if args.experiment_type == "three_layer_dnn":
-        kmodel = neural_networks.three_layer_dnn_foolbox(x_train.shape[1:], 300, 100, 0, l1_reg, 0)
-    elif args.experiment_type == "five_layer_dnn":
-        kmodel = neural_networks.symmetric_five_layer_nn_l1reg_foolbox(x_train.shape[1:], l1_reg, l1_reg)
+    if args.experiment_type == "five_layer_dnn":
+        if args.dropout_type == "early":
+            kmodel = neural_networks.symmetric_five_layer_nn_foolbox(x_train.shape[1:], dropout, 0)
+        else:
+            kmodel = neural_networks.symmetric_five_layer_nn_foolbox(x_train.shape[1:], 0, dropout)
     elif args.experiment_type == "six_layer_dnn":
-        kmodel = neural_networks.asymmetric_six_layer_nn_l1reg_foolbox(x_train.shape[1:], l1_reg)
-    # elif args.experiment_type == "VGG":
-    #     classifier = convolutional.mini_VGG(dropout_levels[dropout], "mnist")
-    # elif args.experiment_type == "leNet5":
-    #     classifier = convolutional.leNet_cnn_single(dropout_levels[dropout])
+        if args.dropout_type == "early":
+            kmodel = neural_networks.asymmetric_six_layer_nn_foolbox(x_train.shape[1:], dropout, 0)
+        else:
+            kmodel = neural_networks.asymmetric_six_layer_nn_foolbox(x_train.shape[1:], 0, dropout)
 
-    # kmodel.fit(x_train, y_train, epochs=1, batch_size=128)
+    # kmodel.fit(x_train, y_train, epochs=10, batch_size=128)
     kmodel.fit(x_train, y_train, epochs=50, batch_size=128)
 
     preds = np.argmax(kmodel.predict(x_test), axis=1)
@@ -203,8 +202,6 @@ for l1_reg in l1_regularization:
 
     linear_mmd.append(linear_mmd_real_vs_adversarial)
 
-    acc.append(100 * (len(x_sample) - misclassified) / len(x_sample)) # count the number of correctly classified samples on the adversarial set
-
     print("Current time: %.2f" % time.time())
 
 print('Average l1, l2, linf perturbations over the attacks:')
@@ -230,6 +227,3 @@ print('MMD computation for real vs adversarial samples:')
 print(linear_mmd)
 print('And in log-scale:')
 print([np.math.log(x) for x in linear_mmd])
-
-print('Accuracies on the adversarial test set:')
-print(acc)

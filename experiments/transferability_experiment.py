@@ -62,8 +62,8 @@ for confidence in [0, 20]:
             dropout_classifier = neural_networks.asymmetric_six_layer_nn(x_train.shape[1:], dropout, dropout)
             baseline_classifier = neural_networks.asymmetric_six_layer_nn(x_train.shape[1:], 0, 0)
         elif args.experiment_type == "VGG":
-            dropout_classifier = convolutional.mini_VGG(dropout, "mnist")
-            baseline_classifier = convolutional.mini_VGG(0, "mnist")
+            dropout_classifier = convolutional.mini_VGG_art(dropout, "mnist")
+            baseline_classifier = convolutional.mini_VGG_art(0, "mnist")
         elif args.experiment_type == "leNet5":
             dropout_classifier = convolutional.leNet_cnn_single(dropout)
             baseline_classifier = convolutional.leNet_cnn_single(0)

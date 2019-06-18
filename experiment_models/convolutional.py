@@ -1,7 +1,8 @@
 from keras.models import Sequential
-from keras.layers import Dense, Flatten, Conv2D, MaxPooling2D, Dropout, AveragePooling2D
+from keras.layers import Dense, Flatten, Conv2D, MaxPooling2D, Dropout, AveragePooling2D, regularizers
 
 from art.classifiers import KerasClassifier
+from foolbox.models import KerasModel
 
 
 def simple_cnn(dropout):
@@ -25,53 +26,22 @@ def simple_cnn(dropout):
     return classifier
 
 
-def leNet_cnn(dropout_pool1, dropout_pool2, dropout_fc1, dropout_fc2):
-    model = Sequential()
-
-    model.add(Conv2D(6, (3, 3), activation='relu', input_shape=(32, 32, 1)))
-    model.add(AveragePooling2D())
-    if dropout_pool1 > 0:
-        model.add(Dropout(dropout_pool1))
-
-    model.add(Conv2D(16, (3, 3), activation='relu'))
-    model.add(AveragePooling2D())
-    if dropout_pool2 > 0:
-        model.add(Dropout(dropout_pool2))
-
-    model.add(Flatten())
-
-    model.add(Dense(units=120, activation='relu'))
-    if dropout_fc1 > 0:
-        model.add(Dropout(dropout_fc1))
-
-    model.add(Dense(units=84, activation='relu'))
-    if dropout_fc2 > 0:
-        model.add(Dropout(dropout_fc2))
-
-    model.add(Dense(units=10, activation='softmax'))
-
-    model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-
-    classifier = KerasClassifier(clip_values=(0., 1.), model=model)
-    return classifier
-
-
 def leNet_cnn_single(dropout):
     return leNet_cnn(dropout, dropout, dropout, dropout)
 
 
-def leNet_cifar(dropout_pool1, dropout_pool2, dropout_fc1, dropout_fc2, type):
+def leNet_cnn(dropout_pool1, dropout_pool2, dropout_fc1, dropout_fc2, type):
     model = Sequential()
 
     if type == 'cifar10':
-        model.add(Conv2D(6, (3, 3), activation='relu', input_shape=(32, 32, 3)))
+        model.add(Conv2D(6, (5, 5), activation='relu', input_shape=(32, 32, 3)))
     else:
-        model.add(Conv2D(6, (3, 3), activation='relu', input_shape=(32, 32, 1)))
+        model.add(Conv2D(6, (5, 5), activation='relu', input_shape=(32, 32, 1)))
     model.add(AveragePooling2D())
     if dropout_pool1 > 0:
         model.add(Dropout(dropout_pool1))
 
-    model.add(Conv2D(16, (3, 3), activation='relu'))
+    model.add(Conv2D(16, (5, 5), activation='relu'))
     model.add(AveragePooling2D())
     if dropout_pool2 > 0:
         model.add(Dropout(dropout_pool2))
@@ -90,15 +60,34 @@ def leNet_cifar(dropout_pool1, dropout_pool2, dropout_fc1, dropout_fc2, type):
 
     model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
-    classifier = KerasClassifier(clip_values=(0., 1.), model=model)
-    return classifier
+    return model
+
+
+def leNet_cnn_l1reg(l1reg, type):
+    model = Sequential()
+
+    if type == 'cifar10':
+        model.add(Conv2D(6, (5, 5), activation='relu', input_shape=(32, 32, 3),
+                         kernel_regularizer=regularizers.l1(l1reg)))
+    else:
+        model.add(Conv2D(6, (5, 5), activation='relu', input_shape=(32, 32, 1),
+                         kernel_regularizer=regularizers.l1(l1reg)))
+    model.add(AveragePooling2D())
+
+    model.add(Conv2D(16, (5, 5), activation='relu', kernel_regularizer=regularizers.l1(l1reg)))
+    model.add(AveragePooling2D())
+    model.add(Flatten())
+
+    model.add(Dense(units=120, activation='relu', kernel_regularizer=regularizers.l1(l1reg)))
+    model.add(Dense(units=84, activation='relu', kernel_regularizer=regularizers.l1(l1reg)))
+    model.add(Dense(units=10, activation='softmax'))
+
+    model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+    return model
 
 
 def mini_VGG(dropout, type):
-    """
-    Implements a VGG-style architecture. This is the only architecture we use which achieves high enough accuracy
-    on CIFAR-10.
-    """
     model = Sequential()
     if type == 'cifar10':
         model.add(Conv2D(32, (3, 3), activation='relu', padding='same', input_shape=(32, 32, 3)))
@@ -126,5 +115,96 @@ def mini_VGG(dropout, type):
 
     model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
+    return model
+
+
+def mini_VGG_l1reg(l1reg, type):
+    model = Sequential()
+    if type == 'cifar10':
+        model.add(Conv2D(32, (3, 3), activation='relu', padding='same', input_shape=(32, 32, 3),
+                         kernel_regularizer=regularizers.l1(l1reg)))
+    else:  # MNIST
+        model.add(Conv2D(32, (3, 3), activation='relu', padding='same', input_shape=(32, 32, 1),
+                         kernel_regularizer=regularizers.l1(l1reg)))
+    model.add(Conv2D(32, (3, 3), activation='relu', padding='same', kernel_regularizer=regularizers.l1(l1reg)))
+    model.add(MaxPooling2D((2, 2)))
+
+    model.add(Conv2D(64, (3, 3), activation='relu', padding='same', kernel_regularizer=regularizers.l1(l1reg)))
+    model.add(Conv2D(64, (3, 3), activation='relu', padding='same', kernel_regularizer=regularizers.l1(l1reg)))
+    model.add(MaxPooling2D((2, 2)))
+
+    model.add(Conv2D(128, (3, 3), activation='relu', padding='same', kernel_regularizer=regularizers.l1(l1reg)))
+    model.add(Conv2D(128, (3, 3), activation='relu', padding='same', kernel_regularizer=regularizers.l1(l1reg)))
+    model.add(MaxPooling2D((2, 2)))
+
+    model.add(Flatten())
+    model.add(Dense(128, activation='relu', kernel_initializer='he_uniform', kernel_regularizer=regularizers.l1(l1reg)))
+    model.add(Dense(10, activation='softmax'))
+
+    model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+    return model
+
+
+def mini_VGG_foolbox(dropout, type):
+    """
+    Implements a VGG-style architecture. This is the only architecture we use which achieves high enough accuracy
+    on CIFAR-10.
+    """
+    model = mini_VGG(dropout, type)
+    classifier = KerasModel(model=model, bounds=(0, 1))
+    return classifier
+
+
+def mini_VGG_l1reg_foolbox(l1reg, type):
+    """
+    Implements a VGG-style architecture. This is the only architecture we use which achieves high enough accuracy
+    on CIFAR-10.
+    """
+    model = mini_VGG_l1reg(l1reg, type)
+    classifier = KerasModel(model=model, bounds=(0, 1))
+    return classifier
+
+
+def leNet_cnn_foolbox(dropout_pool1, dropout_pool2, dropout_fc1, dropout_fc2, type):
+    model = leNet_cnn(dropout_pool1, dropout_pool2, dropout_fc1, dropout_fc2, type)
+    classifier = KerasModel(model=model, bounds=(0, 1))
+    return classifier
+
+
+def leNet_cnn_l1reg_foolbox(l1reg, type):
+    model = leNet_cnn_l1reg(l1reg, type)
+    classifier = KerasModel(model=model, bounds=(0, 1))
+    return classifier
+
+
+def mini_VGG_art(dropout, type):
+    """
+    Implements a VGG-style architecture. This is the only architecture we use which achieves high enough accuracy
+    on CIFAR-10.
+    """
+    model = mini_VGG(dropout, type)
+    classifier = KerasClassifier(clip_values=(0., 1.), model=model)
+    return classifier
+
+
+def mini_VGG_l1reg_art(l1reg, type):
+    """
+    Implements a VGG-style architecture. This is the only architecture we use which achieves high enough accuracy
+    on CIFAR-10.
+    """
+    model = mini_VGG_l1reg(l1reg, type)
+    classifier = KerasClassifier(clip_values=(0., 1.), model=model)
+    return classifier
+
+
+def leNet_cnn_art(dropout_pool1, dropout_pool2, dropout_fc1, dropout_fc2, type):
+    model = leNet_cnn(dropout_pool1, dropout_pool2, dropout_fc1, dropout_fc2, type)
+    classifier = KerasClassifier(clip_values=(0., 1.), model=model)
+    return classifier
+
+
+def leNet_cifar_l1reg_art(l1reg, type):
+    model = leNet_cnn_l1reg(l1reg, type)
     classifier = KerasClassifier(clip_values=(0., 1.), model=model)
     return classifier

@@ -58,7 +58,7 @@ for dropout in dropout_levels:
 
     print("DROPOUT LEVEL %.03f%%" % dropout)
 
-    classifier = convolutional.mini_VGG(dropout, 'mnist')
+    classifier = convolutional.mini_VGG_art(dropout, 'mnist')
     # classifier = neural_networks.three_layer_dnn(x_train.shape[1:], 300, 100, 0, 0, 0)
     # TODO: add other types of experiments; the only real variable here is the classifier.
 
