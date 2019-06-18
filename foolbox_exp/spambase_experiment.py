@@ -9,7 +9,7 @@ from experiment_models.utils import mmd_evaluation
 from foolbox.models import KerasModel
 from keras.models import Sequential
 from keras.layers import Dense, Flatten, Conv2D, Dropout, AveragePooling2D
-from foolbox.batch_attacks import CarliniWagnerL2Attack
+from foolbox.batch_attacks import CarliniWagnerL2Attack, RandomPGD
 from foolbox.criteria import Misclassification
 
 import argparse
@@ -76,7 +76,8 @@ for dropout in dr:
 
     preds = np.argmax(kmodel.predict(x_test), axis=1)
 
-    attack = CarliniWagnerL2Attack(kmodel, Misclassification())
+    # attack = CarliniWagnerL2Attack(kmodel, Misclassification())
+    attack = RandomPGD(kmodel, Misclassification())
 
     # x_sample = x_test[:10]
     # y_sample = y_test[:10]
