@@ -1,0 +1,45 @@
+\n\n\n FIRST EXPERIMENT\n\n
+Current time: 1560956104.85
+Initially failed: 393
+Misclassified: (should be 0!):    11
+Failed after the 2nd attack attempt: 243
+Current time: 1560958495.45
+Initially failed: 193
+Misclassified: (should be 0!):    6
+Failed after the 2nd attack attempt: 53
+Current time: 1560960162.26
+Initially failed: 282
+Misclassified: (should be 0!):    9
+Failed after the 2nd attack attempt: 102
+Current time: 1560962051.31
+Initially failed: 577
+Misclassified: (should be 0!):    1
+Failed after the 2nd attack attempt: 165
+Current time: 1560964964.03
+Initially failed: 594
+Misclassified: (should be 0!):    9
+Failed after the 2nd attack attempt: 230
+Current time: 1560967915.70
+Initially failed: 749
+Misclassified: (should be 0!):    2
+Failed after the 2nd attack attempt: 437
+Current time: 1560971219.88
+Initially failed: 1037
+Misclassified: (should be 0!):    2
+Failed after the 2nd attack attempt: 845
+Current time: 1560975332.72
+Initially failed: 33
+Misclassified: (should be 0!):    14
+Failed after the 2nd attack attempt: 2
+Current time: 1560976416.93
+Initially failed: 5
+Misclassified: (should be 0!):    17
+Failed after the 2nd attack attempt: 2
+Current time: 1560977436.37
+Initially failed: 1
+Misclassified: (should be 0!):    18
+Failed after the 2nd attack attempt: 0
+Current time: 1560978307.09
+Initially failed: 0
+Misclassified: (should be 0!):    14
+Failed after the 2nd attack attempt: 0
