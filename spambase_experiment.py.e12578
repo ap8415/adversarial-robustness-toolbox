@@ -1,0 +1,4 @@
+import-im6.q16: unable to open X server `' @ error/import.c/ImportImageCommand/358.
+from: can't read /var/mail/os.path
+/var/spool/pbs/mom_priv/jobs/12578.firecrest.doc.ic.ac.uk.SC: line 4: syntax error near unexpected token `abspath'
+/var/spool/pbs/mom_priv/jobs/12578.firecrest.doc.ic.ac.uk.SC: line 4: `sys.path.append(abspath('.'))'
