@@ -69,8 +69,6 @@ linf_misclas = []
 
 failure_rate = []
 
-linear_mmd = []
-
 for dropout in dr:
     kmodel = None
 
@@ -175,14 +173,9 @@ for dropout in dr:
     orig_examples = np.array(orig_examples)
     perturbations = np.array(perturbations)
 
-    orig_examples_no_misclassification = np.array(orig_examples_no_misclassification)
-    adv_examples_no_misclassification = np.array(adv_examples_no_misclassification)
-
     l1_perturbations = [LA.norm(perturbation.flatten(), 1) for perturbation in perturbations]
     l2_perturbations = [LA.norm(perturbation.flatten(), 2) for perturbation in perturbations]
     lInf_perturbations = [LA.norm(perturbation.flatten(), np.inf) for perturbation in perturbations]
-    linear_mmd_real_vs_adversarial = mmd_evaluation(orig_examples_no_misclassification,
-                                                    adv_examples_no_misclassification)
 
     l1_std.append(np.average(l1_perturbations))
     l2_std.append(np.average(l2_perturbations))
@@ -204,8 +197,6 @@ for dropout in dr:
     l2_misclas.append(np.average(l2_perturbations) * attack_success_coef * misclassified_coef)
     linf_misclas.append(np.average(lInf_perturbations) * attack_success_coef * misclassified_coef)
 
-    linear_mmd.append(linear_mmd_real_vs_adversarial)
-
     print("Current time: %.2f" % time.time())
 
 print('Average l1, l2, linf perturbations over the attacks:')
@@ -226,8 +217,3 @@ print(linf_misclas)
 
 print('No of failures in attack after 2 attempts:')
 print(failure_rate)
-
-print('MMD computation for real vs adversarial samples:')
-print(linear_mmd)
-print('And in log-scale:')
-print([np.math.log(x) for x in linear_mmd])

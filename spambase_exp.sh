@@ -10,9 +10,9 @@ source activate venv
 
 echo "\n\n\n THREELAYERDNN"
 python3 foolbox_exp/spambase_experiment.py three_layer_dnn
-echo "\n\n\n FIVELAYERDNN"
-python3 foolbox_exp/spambase_experiment.py five_layer_dnn
-echo "\n\n\n SIXLAYERDNN"
-python3 foolbox_exp/spambase_experiment.py six_layer_dnn
+#echo "\n\n\n FIVELAYERDNN"
+#python3 foolbox_exp/spambase_experiment.py five_layer_dnn
+#echo "\n\n\n SIXLAYERDNN"
+#python3 foolbox_exp/spambase_experiment.py six_layer_dnn
 
 

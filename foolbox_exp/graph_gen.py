@@ -3,77 +3,53 @@ from os.path import abspath
 
 sys.path.append(abspath('.'))
 
-import argparse
-import numpy as np
-import numpy.linalg as LA
-import tensorflow as tf
 import matplotlib.pyplot as plt
-
-from art.attacks.carlini import CarliniL2Method
-from art.utils import load_mnist_vectorized, load_mnist
-from experiment_models import neural_networks, convolutional
-from experiment_models.utils import mmd_evaluation
-from statistics import mean
-from keras.backend.tensorflow_backend import set_session
 
 
 fig = plt.figure()
 
 dropout_levels = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85]
 
-l1_metric = [14.7519922273622, 15.359281555143685, 15.627670277936458, 15.27971358473565,
-             15.730460663369158, 15.046738201430395, 15.504061415554652, 15.830936674689335,
-             15.432925970605964, 15.77317169037623, 14.521927570395537, 14.829866380877016,
-             14.51221157978095, 14.135752031862191, 13.67340174816327, 12.508636105853565,
-             10.166936475091276, 9.770728835828297]
+[4.602683457277321, 4.629070225249031, 4.682535953013035, 4.829198891242909, 4.57244178648047,
+ 4.834771115149541, 4.688718115061125, 4.839491594646835, 4.786685898791224, 4.347531566994757,
+ 4.40929413750907, 4.697692269835482, 4.556300089866203, 4.647025095182523, 4.335377739823021,
+ 4.435541477925971, 4.575568252963059, 4.429956556447819]
 
-[14.974243668009406, 15.443470465688545, 15.64489741893764, 15.738540475048746,
- 15.457201378584386, 15.610316463310454, 15.175122449347008, 15.13097540047086,
- 15.124844783900482, 15.981599479161197, 15.140595346189905, 14.482685555726656,
- 14.661745078507499, 14.12278647477502, 13.483347551176795, 13.237602547052948,
- 11.740370141652242, 12.842273601234227]
+l2_min = [4.473, 4.468, 4.502, 4.535, 4.522,
+          4.553, 4.591, 4.619, 4.629, 4.447,
+          4.452, 4.512, 4.501, 4.495, 4.335,
+          4.345, 4.367, 4.326]
 
-l1_min = [14.7519922273622, 15.259281555143685, 15.627670277936458, 15.27971358473565,
-          15.457201378584386]
+l2_mean = [4.527, 4.569, 4.601, 4.653, 4.678,
+           4.693, 4.684, 4.704, 4.719, 4.631,
+           4.642, 4.648, 4.621, 4.621, 4.573,
+           4.548, 4.54, 4.471]
 
-
-l2_metric = [1.078364058293457, 1.1513407141391439, 1.148011047238633, 1.1186917128472362,
-             1.1399812312428312, 1.0876664689889906, 1.1279361430571613, 1.1647648411234748,
-             1.1125496174174863, 1.098730778732488, 1.0379450698512702, 1.0603500516627278,
-             1.0135491389306603, 0.9581720596661039, 0.9141356712790083, 0.8396848583025135,
-             0.6580497696112486, 0.6142328387171366]
-
-linf_metric = [0.2432650282567314, 0.27650753584423765, 0.2644987712525123, 0.2576821342862329,
-               0.2758840562627954, 0.2614846043733805, 0.2701722551101496, 0.2964142214373986,
-               0.2608121615031022, 0.2616200446061689, 0.26488936252959866, 0.26385502746145567,
-               0.23566267916215486, 0.21341420050321816, 0.20040100766669702, 0.16771407182773607,
-               0.1262471579798847, 0.10647661789061116]
+l2_max = [4.602, 4.639, 4.682, 4.829, 4.784,
+          4.834, 4.861, 4.839, 4.833, 4.769,
+          4.79, 4.781, 4.767, 4.793, 4.661,
+          4.671, 4.702, 4.591]
 
 
 
 
-plt.plot(dropout_levels, min_l1_perturbation,
-         dropout_levels, mean_l1_perturbation,
-         dropout_levels, max_l1_perturbation)
-fig.suptitle(actual_names[args.experiment_type] + ' on MNIST, L1 distance')
+
+
+plt.plot(dropout_levels, l2_min,
+         dropout_levels, l2_mean,
+         dropout_levels, l2_max)
+fig.suptitle('3-layer DNN, Carlini attack on Spambase')
 plt.xlabel('Dropout%')
-plt.ylabel('L1 distance')
-plt.savefig(args.experiment_type + '_l1_x.png')
+plt.ylabel('Security score')
+plt.savefig('figura.png')
 
-fig = plt.figure()
-plt.plot(dropout_levels, min_l2_perturbation,
-         dropout_levels, mean_l2_perturbation,
-         dropout_levels, max_l2_perturbation)
-fig.suptitle(actual_names[args.experiment_type] + ' on MNIST, L2 distance')
-plt.xlabel('Dropout%')
-plt.ylabel('L2 distance')
-plt.savefig(args.experiment_type + '_l2_x.png')
+# plt.plot(dropout_levels, linf_min,
+#          dropout_levels, linf_mean,
+#          dropout_levels, linf_max)
+# fig.suptitle('3-layer DNN, untargeted PGD attack on MNIST')
+# plt.xlabel('Dropout%')
+# plt.ylabel('Security score')
+# plt.savefig('figura.png')
 
-fig = plt.figure()
-plt.plot(dropout_levels, min_lInf_perturbation,
-         dropout_levels, mean_lInf_perturbation,
-         dropout_levels, max_lInf_perturbation)
-fig.suptitle(actual_names[args.experiment_type] + ' on MNIST, LInf distance')
-plt.xlabel('Dropout%')
-plt.ylabel('LInf distance')
-plt.savefig(args.experiment_type + '_lInf_x.png')
+
+
