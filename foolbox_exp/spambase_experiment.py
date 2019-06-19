@@ -76,16 +76,16 @@ for dropout in dr:
 
     preds = np.argmax(kmodel.predict(x_test), axis=1)
 
-    # attack = CarliniWagnerL2Attack(kmodel, Misclassification())
-    attack = RandomPGD(kmodel, Misclassification())
+    attack = CarliniWagnerL2Attack(kmodel, Misclassification())
+    # attack = RandomPGD(kmodel, Misclassification())
 
     # x_sample = x_test[:10]
     # y_sample = y_test[:10]
     x_sample = x_test
     y_sample = y_test
 
-    # adversarial = attack(x_sample, np.argmax(y_sample, axis=1), binary_search_steps=5, max_iterations=600)
-    adversarial = attack(x_sample, np.argmax(y_sample, axis=1), iterations=30)
+    adversarial = attack(x_sample, np.argmax(y_sample, axis=1), binary_search_steps=5, max_iterations=600)
+    # adversarial = attack(x_sample, np.argmax(y_sample, axis=1), iterations=30)
 
     # For those samples for which the L2 method does not produce an adversarial sample within the attack parameters,
     # we exclude them from the perturbation evaluation.
@@ -133,10 +133,10 @@ for dropout in dr:
     # If on a sample the attack fails even with these parameters, the sample is extremely resilient to attacks, and
     # we stop trying to attack it and instead incorporate it into our metrics.
     if len(orig_examples_failed) > 0:
-        # adversarial_strong = attack(orig_examples_failed, np.argmax(correct_labels_failed, axis=1),
-        #                             binary_search_steps=15, max_iterations=1000)
         adversarial_strong = attack(orig_examples_failed, np.argmax(correct_labels_failed, axis=1),
-                                    iterations=75)
+                                    binary_search_steps=15, max_iterations=1000)
+        # adversarial_strong = attack(orig_examples_failed, np.argmax(correct_labels_failed, axis=1),
+        #                             iterations=75)
 
         for i in range(0, len(adversarial_strong)):
             # If the attack fails, an array of NaN's is returned.
