@@ -66,6 +66,43 @@ def symmetric_five_layer_nn(input_shape, early_dropout, late_dropout):
 
     return model
 
+
+# Symmetric five layer NN.
+def symmetric_five_layer_nn_mixed_1(input_shape, dropout):
+    model = Sequential()
+    model.add(Dense(500, input_shape=input_shape, activation='relu'))
+    if dropout > 0:
+        model.add(Dropout(dropout))
+    model.add(Dense(800, activation='relu'))
+    model.add(Dense(800, activation='relu'))
+    if dropout > 0:
+        model.add(Dropout(dropout))
+    model.add(Dense(500, activation='relu'))
+    model.add(Dense(10, activation='softmax'))
+
+    model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+    return model
+
+
+# Symmetric five layer NN.
+def symmetric_five_layer_nn_mixed_2(input_shape, dropout):
+    model = Sequential()
+    model.add(Dense(500, input_shape=input_shape, activation='relu'))
+    model.add(Dense(800, activation='relu'))
+    if dropout > 0:
+        model.add(Dropout(dropout))
+    model.add(Dense(800, activation='relu'))
+    model.add(Dense(500, activation='relu'))
+    if dropout > 0:
+        model.add(Dropout(dropout))
+    model.add(Dense(10, activation='softmax'))
+
+    model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+    return model
+
+
 # Symmetric five layer NN.
 def symmetric_five_layer_nn_l1reg(input_shape, l1reg_early, l1reg_late):
     model = Sequential()
@@ -96,6 +133,44 @@ def asymmetric_six_layer_nn(input_shape, early_dropout, late_dropout):
     model.add(Dense(300, activation='relu'))
     if late_dropout > 0:
         model.add(Dropout(late_dropout))
+    model.add(Dense(10, activation='softmax'))
+
+    model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+    return model
+
+
+def asymmetric_six_layer_nn_mixed_1(input_shape, dropout):
+    model = Sequential()
+    model.add(Dense(1000, input_shape=input_shape, activation='relu'))
+    if dropout > 0:
+        model.add(Dropout(dropout))
+    model.add(Dense(800, activation='relu'))
+    model.add(Dense(600, activation='relu'))
+    if dropout > 0:
+        model.add(Dropout(dropout))
+    model.add(Dense(400, activation='relu'))
+    model.add(Dense(300, activation='relu'))
+    if dropout > 0:
+        model.add(Dropout(dropout))
+    model.add(Dense(10, activation='softmax'))
+
+    model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+    return model
+
+
+def asymmetric_six_layer_nn_mixed_2(input_shape, dropout):
+    model = Sequential()
+    model.add(Dense(1000, input_shape=input_shape, activation='relu'))
+    model.add(Dense(800, activation='relu'))
+    if dropout > 0:
+        model.add(Dropout(dropout))
+    model.add(Dense(600, activation='relu'))
+    model.add(Dense(400, activation='relu'))
+    if dropout > 0:
+        model.add(Dropout(dropout))
+    model.add(Dense(300, activation='relu'))
     model.add(Dense(10, activation='softmax'))
 
     model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
@@ -143,6 +218,20 @@ def symmetric_five_layer_nn_foolbox(input_shape, early_dropout, late_dropout):
     return kmodel
 
 
+# Symmetric five layer NN.
+def symmetric_five_layer_nn_mixed_1_foolbox(input_shape, dropout):
+    model = symmetric_five_layer_nn_mixed_1(input_shape, dropout)
+    kmodel = KerasModel(model=model, bounds=(0, 1))
+    return kmodel
+
+
+# Symmetric five layer NN.
+def symmetric_five_layer_nn_mixed_2_foolbox(input_shape, dropout):
+    model = symmetric_five_layer_nn_mixed_2(input_shape, dropout)
+    kmodel = KerasModel(model=model, bounds=(0, 1))
+    return kmodel
+
+
 def symmetric_five_layer_nn_l1reg_foolbox(input_shape, l1reg_early, l1reg_late):
     model = symmetric_five_layer_nn_l1reg(input_shape, l1reg_early, l1reg_late)
     kmodel = KerasModel(model=model, bounds=(0, 1))
@@ -151,6 +240,18 @@ def symmetric_five_layer_nn_l1reg_foolbox(input_shape, l1reg_early, l1reg_late):
 
 def asymmetric_six_layer_nn_foolbox(input_shape, early_dropout, late_dropout):
     model = asymmetric_six_layer_nn(input_shape, early_dropout, late_dropout)
+    kmodel = KerasModel(model=model, bounds=(0, 1))
+    return kmodel
+
+
+def asymmetric_six_layer_nn_mixed_1_foolbox(input_shape, dropout):
+    model = asymmetric_six_layer_nn_mixed_1(input_shape, dropout)
+    kmodel = KerasModel(model=model, bounds=(0, 1))
+    return kmodel
+
+
+def asymmetric_six_layer_nn_mixed_2_foolbox(input_shape, dropout):
+    model = asymmetric_six_layer_nn_mixed_2(input_shape, dropout)
     kmodel = KerasModel(model=model, bounds=(0, 1))
     return kmodel
 

@@ -3,7 +3,7 @@ from os.path import abspath
 
 sys.path.append(abspath('.'))
 
-from experiment_models import neural_networks, convolutional
+from experiment_models import neural_networks
 from experiment_models.utils import mmd_evaluation
 
 from foolbox.models import KerasModel
@@ -18,25 +18,38 @@ import numpy.linalg as LA
 import logging
 import tensorflow as tf
 
-from art.utils import load_cifar10
+from art.utils import load_mnist, load_mnist_vectorized
 from keras.backend.tensorflow_backend import set_session
 
 config = tf.ConfigProto()
 config.gpu_options.allow_growth = True
 set_session(tf.Session(config=config))
 
+parser = argparse.ArgumentParser(description='Experiment parameters.')
+parser.add_argument("experiment_type", help="The model type used by the experiment.")
+parser.add_argument("dropout_type", help="The dropout type used by the experiment: early or late.")
+parser.add_argument("-confidence", help="The confidence parameter of the attack.", type=int, default=0)
+args = parser.parse_args()
+
 np.set_printoptions(threshold=sys.maxsize)
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 
-(x_train, y_train), (x_test, y_test), min_, max_ = load_cifar10()
+x_train = None
+y_train = None
+x_test = None
+y_test = None
+min_ = None
+max_ = None
+
+
+(x_train, y_train), (x_test, y_test), min_, max_ = load_mnist_vectorized()
 
 import time
 
 print("Current time: %.2f" % time.time())
 
-dr = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85]
-# dr = [0.4]
+dr = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85]
 
 l1_std = []
 l2_std = []
@@ -54,13 +67,22 @@ failure_rate = []
 
 linear_mmd = []
 
-acc = []
-
 for dropout in dr:
-    kmodel = convolutional.mini_VGG_foolbox(dropout, dropout, 0, "cifar10")
+    kmodel = None
 
-    # kmodel.fit(x_train, y_train, epochs=1, batch_size=128)
-    kmodel.fit(x_train, y_train, epochs=100, batch_size=128)
+    if args.experiment_type == "five_layer_dnn":
+        if args.dropout_type == "mix1":
+            kmodel = neural_networks.symmetric_five_layer_nn_mixed_1_foolbox(x_train.shape[1:], dropout)
+        else:
+            kmodel = neural_networks.symmetric_five_layer_nn_mixed_2_foolbox(x_train.shape[1:], dropout)
+    elif args.experiment_type == "six_layer_dnn":
+        if args.dropout_type == "mix1":
+            kmodel = neural_networks.asymmetric_six_layer_nn_mixed_1_foolbox(x_train.shape[1:], dropout)
+        else:
+            kmodel = neural_networks.asymmetric_six_layer_nn_mixed_2_foolbox(x_train.shape[1:], dropout)
+
+    # kmodel.fit(x_train, y_train, epochs=10, batch_size=128)
+    kmodel.fit(x_train, y_train, epochs=50, batch_size=128)
 
     preds = np.argmax(kmodel.predict(x_test), axis=1)
 
@@ -110,7 +132,6 @@ for dropout in dr:
             correct_labels_failed.append(y_sample[i])
 
     print('Initially failed: %d' % failed)
-    print('Misclassified: %d' % misclassified)
 
     orig_examples_failed = np.array(orig_examples_failed)
     correct_labels_failed = np.array(correct_labels_failed)
@@ -132,8 +153,8 @@ for dropout in dr:
                 orig_examples.append(orig_examples_failed[i])
                 correct_labels.append(correct_labels_failed[i])
 
-                adv_examples_no_misclassification.append(adversarial_strong[i])
-                orig_examples_no_misclassification.append(orig_examples_failed[i])
+                adv_examples_no_misclassification.append(x_sample[i])
+                orig_examples_no_misclassification.append(adversarial_strong[i])
 
                 failed -= 1
 
@@ -178,9 +199,6 @@ for dropout in dr:
 
     print("Current time: %.2f" % time.time())
 
-    acc.append(100 * (len(x_sample) - misclassified) / len(x_sample))
-    # count the number of correctly classified samples on the adversarial set
-
 print('Average l1, l2, linf perturbations over the attacks:')
 print(l1_std)
 print(l2_std)
@@ -204,6 +222,3 @@ print('MMD computation for real vs adversarial samples:')
 print(linear_mmd)
 print('And in log-scale:')
 print([np.math.log(x) for x in linear_mmd])
-
-print('Accuracies on the adversarial test set:')
-print(acc)

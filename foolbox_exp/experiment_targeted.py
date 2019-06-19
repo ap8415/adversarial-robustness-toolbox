@@ -97,6 +97,7 @@ for dropout in dr:
     x_sample = np.take(x_sample, true_ones, axis=0)
 
     y_sample = np.array([to_one_hot(1) for _ in x_sample])
+    preds = np.argmax(kmodel.predict(x_sample), axis=1)
 
     attack = None
     if args.attack_type == 'l2':
