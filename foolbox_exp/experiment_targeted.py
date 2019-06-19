@@ -66,10 +66,6 @@ l1_normalized = []
 l2_normalized = []
 linf_normalized = []
 
-l1_misclas = []
-l2_misclas = []
-linf_misclas = []
-
 failure_rate = []
 
 for dropout in dr:
@@ -206,12 +202,6 @@ for dropout in dr:
     l2_normalized.append(np.average(l2_perturbations) * attack_success_coef)
     linf_normalized.append(np.average(lInf_perturbations) * attack_success_coef)
 
-    # We discount the misclassified samples in this computation.
-    misclassified_coef = 1 / ((len(x_sample) - misclassified) / len(x_sample))
-    l1_misclas.append(np.average(l1_perturbations) * attack_success_coef * misclassified_coef)
-    l2_misclas.append(np.average(l2_perturbations) * attack_success_coef * misclassified_coef)
-    linf_misclas.append(np.average(lInf_perturbations) * attack_success_coef * misclassified_coef)
-
     print("Current time: %.2f" % time.time())
 
 print('Average l1, l2, linf perturbations over the attacks:')
@@ -224,11 +214,6 @@ print(l1_normalized)
 print(l2_normalized)
 print(linf_normalized)
 
-# We discount the misclassified samples in this computation.
-print('Average l1, l2, linf normalized perturbations wrt failed and misclassified over the successful attacks:')
-print(l1_misclas)
-print(l2_misclas)
-print(linf_misclas)
 
 print('No of failures in attack after 2 attempts:')
 print(failure_rate)
