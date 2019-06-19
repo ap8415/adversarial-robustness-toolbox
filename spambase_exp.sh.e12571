@@ -1,0 +1,96 @@
+Using TensorFlow backend.
+2019-06-19 00:23:29.236589: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-06-19 00:23:29.259458: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3691555000 Hz
+2019-06-19 00:23:29.260171: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5653b47d57e0 executing computations on platform Host. Devices:
+2019-06-19 00:23:29.260221: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-19 00:23:29.370537: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5653b331c3d0 executing computations on platform CUDA. Devices:
+2019-06-19 00:23:29.370581: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX TITAN X, Compute Capability 5.2
+2019-06-19 00:23:29.370993: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:03:00.0
+totalMemory: 11.93GiB freeMemory: 7.43GiB
+2019-06-19 00:23:29.371015: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-19 00:23:29.371953: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-19 00:23:29.371977: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-19 00:23:29.371986: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-19 00:23:29.372240: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7227 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2)
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-06-19 00:23:33.425855: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally
+/vol/gpudata/ap8415/adversarial-robustness-toolbox/foolbox/batch_attacks/base.py:49: UserWarning: Not running the attack because the original input is already misclassified and the adversarial thus has a distance of 0.
+  warnings.warn('Not running the attack because the original input'
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+/vol/gpudata/ap8415/adversarial-robustness-toolbox/foolbox/batch_attacks/base.py:68: UserWarning: CarliniWagnerL2Attack did not find an adversarial, maybe the model or the criterion is not supported by this attack.
+  ' attack.'.format(self.name()))
+Using TensorFlow backend.
+2019-06-19 03:00:49.012915: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-06-19 03:00:49.035410: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3691555000 Hz
+2019-06-19 03:00:49.035975: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5556b946cd30 executing computations on platform Host. Devices:
+2019-06-19 03:00:49.036020: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-19 03:00:49.140384: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5556b946fed0 executing computations on platform CUDA. Devices:
+2019-06-19 03:00:49.140451: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX TITAN X, Compute Capability 5.2
+2019-06-19 03:00:49.141080: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:03:00.0
+totalMemory: 11.93GiB freeMemory: 7.43GiB
+2019-06-19 03:00:49.141116: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-19 03:00:49.142416: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-19 03:00:49.142446: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-19 03:00:49.142461: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-19 03:00:49.142836: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7227 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2)
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-06-19 03:00:51.108023: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally
+Traceback (most recent call last):
+  File "foolbox_exp/spambase_experiment.py", line 87, in <module>
+    adversarial = attack(x_sample, np.argmax(y_sample, axis=1), binary_search_steps=5, max_iterations=600)
+  File "/vol/gpudata/ap8415/adversarial-robustness-toolbox/foolbox/batch_attacks/base.py", line 34, in __call__
+    distance=distance, threshold=threshold, **kwargs)
+  File "/vol/gpudata/ap8415/adversarial-robustness-toolbox/foolbox/batching.py", line 58, in run_parallel
+    x = attack.send(result)
+  File "/vol/gpudata/ap8415/adversarial-robustness-toolbox/foolbox/batch_attacks/base.py", line 57, in wrapper
+    _ = yield from generator(self, a, **kwargs)
+TypeError: as_generator() got an unexpected keyword argument 'binary_search_steps'
+Using TensorFlow backend.
+2019-06-19 03:02:52.355306: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-06-19 03:02:52.379454: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3691555000 Hz
+2019-06-19 03:02:52.379950: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5605e7b08900 executing computations on platform Host. Devices:
+2019-06-19 03:02:52.379984: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-19 03:02:52.474721: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5605e77569e0 executing computations on platform CUDA. Devices:
+2019-06-19 03:02:52.474765: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX TITAN X, Compute Capability 5.2
+2019-06-19 03:02:52.475132: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:03:00.0
+totalMemory: 11.93GiB freeMemory: 7.43GiB
+2019-06-19 03:02:52.475155: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-06-19 03:02:52.475979: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-19 03:02:52.476001: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-06-19 03:02:52.476009: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-06-19 03:02:52.476229: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7227 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2)
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /vol/gpudata/ap8415/miniconda3/envs/venv/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-06-19 03:02:54.408666: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally
+Traceback (most recent call last):
+  File "foolbox_exp/spambase_experiment.py", line 87, in <module>
+    adversarial = attack(x_sample, np.argmax(y_sample, axis=1), binary_search_steps=5, max_iterations=600)
+  File "/vol/gpudata/ap8415/adversarial-robustness-toolbox/foolbox/batch_attacks/base.py", line 34, in __call__
+    distance=distance, threshold=threshold, **kwargs)
+  File "/vol/gpudata/ap8415/adversarial-robustness-toolbox/foolbox/batching.py", line 58, in run_parallel
+    x = attack.send(result)
+  File "/vol/gpudata/ap8415/adversarial-robustness-toolbox/foolbox/batch_attacks/base.py", line 57, in wrapper
+    _ = yield from generator(self, a, **kwargs)
+TypeError: as_generator() got an unexpected keyword argument 'binary_search_steps'
