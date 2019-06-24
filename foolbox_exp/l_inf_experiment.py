@@ -3,14 +3,10 @@ from os.path import abspath
 
 sys.path.append(abspath('.'))
 
-from experiment_models import neural_networks
-from experiment_models.utils import mmd_evaluation
+from old_models import neural_networks
+from old_models.utils import mmd_evaluation
 
-from foolbox.models import KerasModel
-from keras.models import Sequential
-from keras.layers import Dense, Flatten, Conv2D, Dropout, AveragePooling2D
 from foolbox.batch_attacks import RandomPGD
-from foolbox.criteria import Misclassification
 
 import argparse
 import numpy as np
@@ -18,7 +14,7 @@ import numpy.linalg as LA
 import logging
 import tensorflow as tf
 
-from art.utils import load_mnist, load_mnist_vectorized
+from models.utils import load_mnist, load_mnist_vectorized
 from keras.backend.tensorflow_backend import set_session
 
 config = tf.ConfigProto()

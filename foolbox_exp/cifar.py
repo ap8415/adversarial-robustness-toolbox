@@ -3,22 +3,18 @@ from os.path import abspath
 
 sys.path.append(abspath('.'))
 
-from experiment_models import neural_networks, convolutional
-from experiment_models.utils import mmd_evaluation
+from old_models import convolutional
+from old_models.utils import mmd_evaluation
 
-from foolbox.models import KerasModel
-from keras.models import Sequential
-from keras.layers import Dense, Flatten, Conv2D, Dropout, AveragePooling2D
 from foolbox.batch_attacks import CarliniWagnerL2Attack
 from foolbox.criteria import Misclassification
 
-import argparse
 import numpy as np
 import numpy.linalg as LA
 import logging
 import tensorflow as tf
 
-from art.utils import load_cifar10
+from models.utils import load_cifar10
 from keras.backend.tensorflow_backend import set_session
 
 config = tf.ConfigProto()
